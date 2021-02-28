@@ -1,0 +1,3187 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xsd:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+    <!-- Grupo {ideEvento} -->
+
+    <xsd:complexType name="T_ideEvento_evtTab">
+        <xsd:annotation>
+            <xsd:documentation>Informações de identificação do evento.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="tpAmb" type="TS_tpAmb" />
+            <xsd:element name="procEmi" type="TS_procEmi" />
+            <xsd:element name="verProc" type="TS_verProc" />
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="T_ideEvento_folha">
+        <xsd:annotation>
+            <xsd:documentation>Informações de identificação do evento.</xsd:documentation>
+            <xsd:documentation>CHAVE_GRUPO: {indApuracao}, {perApur}, {indGuia}</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="indRetif" type="TS_indRetif" />
+            <xsd:element name="nrRecibo" minOccurs="0" type="TS_nrRecibo" />
+            <xsd:element name="indApuracao" type="TS_indApuracao" />
+            <xsd:element name="perApur" type="TS_perApur" />
+            <xsd:element name="indGuia" minOccurs="0" type="TS_indGuia" />
+            <xsd:element name="tpAmb" type="TS_tpAmb" />
+            <xsd:element name="procEmi" type="TS_procEmi" />
+            <xsd:element name="verProc" type="TS_verProc" />
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="T_ideEvento_folha_opp">
+        <xsd:annotation>
+            <xsd:documentation>Informações de identificação do evento.</xsd:documentation>
+            <xsd:documentation>CHAVE_GRUPO: {indApuracao}, {perApur}</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="indRetif" type="TS_indRetif" />
+            <xsd:element name="nrRecibo" minOccurs="0" type="TS_nrRecibo" />
+            <xsd:element name="indApuracao" type="TS_indApuracao" />
+            <xsd:element name="perApur" type="TS_perApur" />
+            <xsd:element name="tpAmb" type="TS_tpAmb" />
+            <xsd:element name="procEmi" type="TS_procEmi" />
+            <xsd:element name="verProc" type="TS_verProc" />
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="T_ideEvento_folha_mensal">
+        <xsd:annotation>
+            <xsd:documentation>Informações de identificação do evento.</xsd:documentation>
+            <xsd:documentation>CHAVE_GRUPO: {perApur}, {indGuia}</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="indRetif" type="TS_indRetif" />
+            <xsd:element name="nrRecibo" minOccurs="0" type="TS_nrRecibo" />
+            <xsd:element name="perApur" type="TS_perApur_mensal" />
+            <xsd:element name="indGuia" minOccurs="0" type="TS_indGuia" />
+            <xsd:element name="tpAmb" type="TS_tpAmb" />
+            <xsd:element name="procEmi" type="TS_procEmi" />
+            <xsd:element name="verProc" type="TS_verProc" />
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="T_ideEvento_folha_sem_retificacao">
+        <xsd:annotation>
+            <xsd:documentation>Informações de identificação do evento.</xsd:documentation>
+            <xsd:documentation>CHAVE_GRUPO: {indApuracao}, {perApur}, {indGuia}</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="indApuracao" type="TS_indApuracao" />
+            <xsd:element name="perApur" type="TS_perApur" />
+            <xsd:element name="indGuia" minOccurs="0" type="TS_indGuia" />
+            <xsd:element name="tpAmb" type="TS_tpAmb" />
+            <xsd:element name="procEmi" type="TS_procEmi" />
+            <xsd:element name="verProc" type="TS_verProc" />
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="T_ideEvento_trab">
+        <xsd:annotation>
+            <xsd:documentation>Informações de identificação do evento.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="indRetif" type="TS_indRetif" />
+            <xsd:element name="nrRecibo" minOccurs="0" type="TS_nrRecibo" />
+            <xsd:element name="tpAmb" type="TS_tpAmb" />
+            <xsd:element name="procEmi" type="TS_procEmi" />
+            <xsd:element name="verProc" type="TS_verProc" />
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="T_ideEvento_trab_indGuia">
+        <xsd:annotation>
+            <xsd:documentation>Informações de identificação do evento.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="indRetif" type="TS_indRetif" />
+            <xsd:element name="nrRecibo" minOccurs="0" type="TS_nrRecibo" />
+            <xsd:element name="indGuia" minOccurs="0" type="TS_indGuia" />
+            <xsd:element name="tpAmb" type="TS_tpAmb" />
+            <xsd:element name="procEmi" type="TS_procEmi" />
+            <xsd:element name="verProc" type="TS_verProc" />
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="T_ideEvento_retorno_trab">
+        <xsd:annotation>
+            <xsd:documentation>Identificação do evento de retorno.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="nrRecArqBase" type="TS_nrRecibo">
+                <xsd:annotation>
+                    <xsd:documentation>Preencher com o número do recibo do arquivo que deu origem ao presente arquivo de retorno ao empregador.</xsd:documentation>
+                    <xsd:documentation>Validação: Deve ser um recibo de entrega válido, correspondente ao arquivo que deu origem ao presente arquivo de retorno (S-1200, S-2299, S-2399 ou S-3000).</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="indApuracao" type="TS_indApuracao" />
+            <xsd:element name="perApur" type="TS_perApur">
+                <xsd:annotation>
+                    <xsd:documentation>Informar o mês/ano (formato AAAA-MM) de referência das informações, se {indApuracao}(./indApuracao) for igual a [1], ou apenas o ano (formato AAAA), se {indApuracao}(./indApuracao) for igual a [2].</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="T_ideEvento_retorno_contrib">
+        <xsd:annotation>
+            <xsd:documentation>Identificação do evento de retorno.</xsd:documentation>
+            <xsd:documentation>DESCRICAO_COMPLETA:Identificação do evento de retorno.</xsd:documentation>
+            <xsd:documentation>Evento de origem: S-1299.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="indApuracao" type="TS_indApuracao" />
+            <xsd:element name="perApur" type="TS_perApur">
+                <xsd:annotation>
+                    <xsd:documentation>Informar o mês/ano (formato AAAA-MM) de referência das informações, se {indApuracao}(./indApuracao) for igual a [1], ou apenas o ano (formato AAAA), se {indApuracao}(./indApuracao) for igual a [2].</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <!-- Grupo {ideEmpregador} -->
+
+    <xsd:complexType name="T_ideEmpregador">
+        <xsd:annotation>
+            <xsd:documentation>Informações de identificação do empregador.</xsd:documentation>
+            <xsd:documentation>CHAVE_GRUPO: {tpInsc}, {nrInsc}</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="tpInsc" type="TS_tpInsc_1_2" />
+            <xsd:element name="nrInsc" type="TS_nrInsc_8_11_14">
+                <xsd:annotation>
+                    <xsd:documentation>Informar o número de inscrição do contribuinte de acordo com o tipo de inscrição indicado no campo {ideEmpregador/tpInsc}(./tpInsc) e conforme informado em S-1000.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="T_ideEmpregador_cnpj">
+        <xsd:annotation>
+            <xsd:documentation>Informações de identificação do empregador.</xsd:documentation>
+            <xsd:documentation>CHAVE_GRUPO: {tpInsc}, {nrInsc}</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="tpInsc" type="TS_tpInsc_1" />
+            <xsd:element name="nrInsc">
+                <xsd:simpleType>
+                    <xsd:annotation>
+                        <xsd:documentation>Informar o número de inscrição do contribuinte de acordo com o tipo de inscrição indicado no campo {ideEmpregador/tpInsc}(./tpInsc) e conforme informado em S-1000.</xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:pattern value="\d{8}|\d{14}" />
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <!-- Grupo {novaValidade} -->
+
+    <xsd:complexType name="T_novaValidade">
+        <xsd:annotation>
+            <xsd:documentation>Novo período de validade das informações.</xsd:documentation>
+            <xsd:documentation>DESCRICAO_COMPLETA:Informação preenchida exclusivamente em caso de alteração do período de validade das informações, apresentando o novo período de validade.</xsd:documentation>
+            <xsd:documentation>CONDICAO_GRUPO: OC</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="iniValid" type="TS_iniValid" />
+            <xsd:element name="fimValid" minOccurs="0" type="TS_fimValid" />
+        </xsd:sequence>
+    </xsd:complexType>
+       
+    <!-- Grupo {procJudTrab} -->
+
+    <xsd:complexType name="T_procJudTrab">
+        <xsd:annotation>
+            <xsd:documentation>Informações sobre a existência de processos judiciais do trabalhador</xsd:documentation>
+            <xsd:documentation>DESCRICAO_COMPLETA:Informações sobre a existência de processos judiciais do trabalhador com decisão favorável quanto à não incidência de contribuições sociais e/ou Imposto de Renda.</xsd:documentation>
+            <xsd:documentation>CHAVE_GRUPO: {tpTrib}, {nrProcJud}, {codSusp}</xsd:documentation>
+            <xsd:documentation>CONDICAO_GRUPO: OC</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="tpTrib" type="TS_tpTrib" />
+            <xsd:element name="nrProcJud" type="TS_nrProcJud_1" />
+            <xsd:element name="codSusp" type="TS_codSusp" />
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <!-- Grupo {infoInterm} -->
+
+    <xsd:complexType name="T_infoInterm">
+        <xsd:sequence>
+            <xsd:element name="dia" type="TS_dia" />
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="T_itensRemun_rpps">
+        <xsd:annotation>
+            <xsd:documentation>Itens da remuneração do trabalhador</xsd:documentation>
+            <xsd:documentation>DESCRICAO_COMPLETA:Rubricas que compõem a remuneração do trabalhador.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="codRubr" type="TS_codigo_esocial">
+                <xsd:annotation>
+                    <xsd:documentation>Informar o código atribuído pelo empregador que identifica a rubrica em sua folha de pagamento.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="ideTabRubr" type="TS_ideTabRubr" />
+            <xsd:element name="qtdRubr" minOccurs="0" type="TS_qtdRubr">
+                <xsd:annotation>
+                    <xsd:documentation>Informar a quantidade de referência para apuração (em horas, cotas, meses, etc.).</xsd:documentation>
+                    <xsd:documentation>Preenchimento obrigatório quando se tratar de rubrica relativa a faltas ou Descanso Semanal Remunerado - DSR sobre faltas (nesse caso, informar a quantidade de dias).</xsd:documentation>
+                    <xsd:documentation>Validação: Deve ser maior que 0 (zero). Informação obrigatória se {codRubr}(./codRubr) tiver {natRubr}(1010_infoRubrica_inclusao_dadosRubrica_natRubr) em S-1010 igual a [9207, 9211].</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="fatorRubr" minOccurs="0" type="TS_fator">
+                <xsd:annotation>
+                    <xsd:documentation>Informar o fator, percentual, etc. da rubrica, quando necessário.</xsd:documentation>
+                    <xsd:documentation>Validação: Deve ser maior que 0 (zero).</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="vrRubr" type="TS_vrRubr" />
+            <xsd:element name="indApurIR" type="TS_indApurIR">
+                <xsd:annotation>
+                    <xsd:documentation>Indicativo de tipo de apuração de IR.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <!-- Grupo {nascimento} -->
+
+    <xsd:complexType name="T_nascimento">
+        <xsd:annotation>
+            <xsd:documentation>Grupo de informações do nascimento do trabalhador.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="dtNascto" type="xsd:date">
+                <xsd:annotation>
+                    <xsd:documentation>Preencher com a data de nascimento.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="paisNascto" type="TS_pais">
+                <xsd:annotation>
+                    <xsd:documentation>Preencher com o código do país de nascimento do trabalhador.</xsd:documentation>
+                    <xsd:documentation>Validação: Deve ser um código válido e existente na Tabela 06.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="paisNac" type="TS_paisNac" />
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <!-- Endereço no Brasil -->
+
+    <xsd:complexType name="T_endereco_brasil">
+        <xsd:annotation>
+            <xsd:documentation>Endereço no Brasil.</xsd:documentation>
+            <xsd:documentation>CONDICAO_GRUPO: O (se não informado o grupo {exterior}(../exterior)); N (nos demais casos)</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="tpLograd" minOccurs="0" type="TS_tpLograd" />
+            <xsd:element name="dscLograd" type="TS_dscLograd" />
+            <xsd:element name="nrLograd" type="TS_nrLograd" />
+            <xsd:element name="complemento" minOccurs="0" type="TS_complemento" />
+            <xsd:element name="bairro" minOccurs="0" type="TS_bairro" />
+            <xsd:element name="cep" type="TS_cep" />
+            <xsd:element name="codMunic" type="TS_codMunic" />
+            <xsd:element name="uf" type="TS_uf">
+                <xsd:annotation>
+                    <xsd:documentation>Preencher com a sigla da Unidade da Federação - UF.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <!-- Endereço no exterior -->
+
+    <xsd:complexType name="T_endereco_exterior">
+        <xsd:annotation>
+            <xsd:documentation>Endereço no exterior.</xsd:documentation>
+            <xsd:documentation>CONDICAO_GRUPO: O (se não informado o grupo {brasil}(../brasil)); N (nos demais casos)</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="paisResid" type="TS_pais">
+                <xsd:annotation>
+                    <xsd:documentation>Preencher com o código do país.</xsd:documentation>
+                    <xsd:documentation>Validação: Deve ser um código válido e existente na Tabela 06.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="dscLograd" type="TS_dscLograd" />
+            <xsd:element name="nrLograd" type="TS_nrLograd" />
+            <xsd:element name="complemento" minOccurs="0" type="TS_complemento" />
+            <xsd:element name="bairro" minOccurs="0" type="TS_bairro" />
+            <xsd:element name="nmCid">
+                <xsd:simpleType>
+                    <xsd:annotation>
+                        <xsd:documentation>Nome da cidade.</xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:minLength value="2" />
+                        <xsd:maxLength value="50" />
+                        <xsd:pattern value=".*[^\s].*" />
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="codPostal" minOccurs="0" type="TS_codPostal" />
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <!-- Grupo {contato} -->
+
+    <xsd:complexType name="T_contato">
+        <xsd:sequence>
+            <xsd:element name="fonePrinc" minOccurs="0">
+                <xsd:simpleType>
+                    <xsd:annotation>
+                        <xsd:documentation>Número de telefone do trabalhador, com DDD.</xsd:documentation>
+                        <xsd:documentation>Validação: Se preenchido, deve conter apenas números, com o mínimo de dez dígitos.</xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:minLength value="8" />
+                        <xsd:maxLength value="13" />
+                        <xsd:pattern value=".*[^\s].*" />
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="emailPrinc" minOccurs="0">
+                <xsd:simpleType>
+                    <xsd:annotation>
+                        <xsd:documentation>Endereço eletrônico.</xsd:documentation>
+                        <xsd:documentation>Validação: O e-mail deve ser possuir o caractere "@" e este não pode estar no início e no fim do e-mail. Deve possuir no mínimo um caractere "." depois do @ e não pode estar no início ou no final do e-mail.</xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:minLength value="6" />
+                        <xsd:maxLength value="60" />
+                        <xsd:pattern value=".*[^\s].*" />
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <!-- Grupo {aprend} -->
+
+    <xsd:complexType name="T_aprend">
+        <xsd:sequence>
+            <xsd:element name="tpInsc" type="TS_tpInsc_1_2" />
+            <xsd:element name="nrInsc" type="TS_nrInsc_11_14">
+                <xsd:annotation>
+                    <xsd:documentation>Informar o número de inscrição do estabelecimento para o qual a contratação de aprendiz foi efetivada, de acordo com o tipo de inscrição indicado no campo {aprend/tpInsc}(./tpInsc).</xsd:documentation>
+                    <xsd:documentation>Validação: Deve ser um identificador válido e:</xsd:documentation>
+                    <xsd:documentation>a) Se {aprend/tpInsc}(./tpInsc) = [1], deve ser informado com 14 (catorze) algarismos. Se o empregador for pessoa jurídica, a raiz do CNPJ informado deve ser diferente de {ideEmpregador/nrInsc}(/ideEmpregador_nrInsc).</xsd:documentation>
+                    <xsd:documentation>b) Se {aprend/tpInsc}(./tpInsc) = [2], deve ser diferente do CPF do empregado. Se o empregador for pessoa física, também deve ser diferente do CPF do empregador.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <!-- Grupo {remuneracao} -->
+
+    <xsd:complexType name="T_remuneracao">
+        <xsd:sequence>
+            <xsd:element name="vrSalFx" type="TS_vrSalFx" />
+            <xsd:element name="undSalFixo" type="TS_undSalFixo" />
+            <xsd:element name="dscSalVar" minOccurs="0" type="TS_texto_999">
+                <xsd:annotation>
+                    <xsd:documentation>Descrição do salário por tarefa ou variável e como este é calculado. Ex.: Comissões pagas no percentual de 10% sobre as vendas.</xsd:documentation>
+                    <xsd:documentation>Validação: Preenchimento obrigatório se {undSalFixo}(./undSalFixo) for igual a [6, 7].</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <!-- Grupo {localTrabalho} -->
+
+    <xsd:complexType name="T_localTrabGeral">
+        <xsd:sequence>
+            <xsd:element name="tpInsc" type="TS_tpInsc_1_3_4" />
+            <xsd:element name="nrInsc" type="TS_nrInsc_12_14">
+                <xsd:annotation>
+                    <xsd:documentation>Informar o número de inscrição do contribuinte de acordo com o tipo de inscrição indicado no campo {localTrabGeral/tpInsc}(./tpInsc).</xsd:documentation>
+                    <xsd:documentation>Validação: Deve ser um número de inscrição válido e existente na Tabela de Estabelecimentos (S-1005), bem como compatível com {localTrabGeral/tpInsc}(./tpInsc).</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="descComp" minOccurs="0">
+                <xsd:simpleType>
+                    <xsd:annotation>
+                        <xsd:documentation>Descrição complementar do local de trabalho.</xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:minLength value="1" />
+                        <xsd:maxLength value="80" />
+                        <xsd:pattern value=".*[^\s].*" />
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <!-- Grupo {horContratual} -->
+
+    <xsd:complexType name="T_horContratual">
+        <xsd:sequence>
+            <xsd:element name="qtdHrsSem" minOccurs="0">
+                <xsd:simpleType>
+                    <xsd:annotation>
+                        <xsd:documentation>Quantidade média de horas relativas à jornada semanal do trabalhador.</xsd:documentation>
+                        <xsd:documentation>Validação: Deve ser preenchida se {codCateg}(../codCateg) for diferente de [111]. Se informada, deve ser maior que 0 (zero).</xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:restriction base="xsd:decimal">
+                        <xsd:totalDigits value="4" />
+                        <xsd:fractionDigits value="2" />
+                        <xsd:minExclusive value="0" />
+                        <xsd:maxInclusive value="99.99" />
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="tpJornada">
+                <xsd:simpleType>
+                    <xsd:annotation>
+                        <xsd:documentation>Tipo de jornada.</xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:restriction base="xsd:byte">
+                        <xsd:enumeration value="2">
+                            <xsd:annotation>
+                                <xsd:documentation>Jornada 12 x 36 (12 horas de trabalho seguidas de 36 horas ininterruptas de descanso)</xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:enumeration>
+                        <xsd:enumeration value="3">
+                            <xsd:annotation>
+                                <xsd:documentation>Jornada com horário diário fixo e folga variável</xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:enumeration>
+                        <xsd:enumeration value="4">
+                            <xsd:annotation>
+                                <xsd:documentation>Jornada com horário diário fixo e folga fixa (no domingo)</xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:enumeration>
+                        <xsd:enumeration value="5">
+                            <xsd:annotation>
+                                <xsd:documentation>Jornada com horário diário fixo e folga fixa (exceto no domingo)</xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:enumeration>
+                        <xsd:enumeration value="6">
+                            <xsd:annotation>
+                                <xsd:documentation>Jornada com horário diário fixo e folga fixa (em outro dia da semana), com folga adicional periódica no domingo</xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:enumeration>
+                        <xsd:enumeration value="7">
+                            <xsd:annotation>
+                                <xsd:documentation>Turno ininterrupto de revezamento</xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:enumeration>
+                        <xsd:enumeration value="9">
+                            <xsd:annotation>
+                                <xsd:documentation>Demais tipos de jornada</xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:enumeration>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="tmpParc">
+                <xsd:simpleType>
+                    <xsd:annotation>
+                        <xsd:documentation>Preencher com o código relativo ao tipo de contrato em tempo parcial.</xsd:documentation>
+                        <xsd:documentation>Validação: O código [1] só é válido se {codCateg}(../codCateg) = [104]. Os códigos [2, 3] não são válidos se {codCateg}(../codCateg) = [104].</xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:restriction base="xsd:byte">
+                        <xsd:enumeration value="0">
+                            <xsd:annotation>
+                                <xsd:documentation>Não é contrato em tempo parcial</xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:enumeration>
+                        <xsd:enumeration value="1">
+                            <xsd:annotation>
+                                <xsd:documentation>Limitado a 25 horas semanais</xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:enumeration>
+                        <xsd:enumeration value="2">
+                            <xsd:annotation>
+                                <xsd:documentation>Limitado a 30 horas semanais</xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:enumeration>
+                        <xsd:enumeration value="3">
+                            <xsd:annotation>
+                                <xsd:documentation>Limitado a 26 horas semanais</xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:enumeration>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="horNoturno" type="TS_sim_nao">
+                <xsd:annotation>
+                    <xsd:documentation>Indicar se a jornada semanal possui horário noturno (no todo ou em parte).</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="dscJorn" type="TS_texto_999">
+                <xsd:annotation>
+                    <xsd:documentation>Descrição da jornada semanal contratual, contendo os dias da semana e os respectivos horários contratuais (entrada, saída e intervalos).</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <!-- Grupo {alvaraJudicial} -->
+
+    <xsd:complexType name="T_alvaraJudicial">
+        <xsd:sequence>
+            <xsd:element name="nrProcJud" type="TS_nrProcJud">
+                <xsd:annotation>
+                    <xsd:documentation>Preencher com o número do processo judicial.</xsd:documentation>
+                    <xsd:documentation>Validação: Deve ser um número de processo judicial válido.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <!-- Grupo {treiCap} -->
+
+    <xsd:complexType name="T_treiCap">
+        <xsd:sequence>
+            <xsd:element name="codTreiCap">
+                <xsd:simpleType>
+                    <xsd:annotation>
+                        <xsd:documentation>Informar o código do treinamento, capacitação, exercício simulado ou outra anotação, conforme Tabela 28.</xsd:documentation>
+                        <xsd:documentation>Validação: Deve ser um código válido e existente na Tabela 28.</xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:restriction base="xsd:integer">
+                        <xsd:pattern value="\d{4}" />
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <!-- Grupo {ideVinculo} -->
+
+    <xsd:complexType name="T_ideVinculo">
+        <xsd:annotation>
+            <xsd:documentation>Informações de identificação do trabalhador e do vínculo.</xsd:documentation>
+            <xsd:documentation>CHAVE_GRUPO: {cpfTrab}, {matricula}</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="cpfTrab" type="TS_cpfTrab" />
+            <xsd:element name="matricula" type="TS_codigo_esocial">
+                <xsd:annotation>
+                    <xsd:documentation>Matrícula atribuída ao trabalhador pela empresa ou, no caso de servidor público, a matrícula constante no Sistema de Administração de Recursos Humanos do órgão.</xsd:documentation>
+                    <xsd:documentation>Validação: Deve corresponder à matrícula informada pelo empregador no evento S-2200 do respectivo vínculo trabalhista.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="T_ideVinculo_sst">
+        <xsd:annotation>
+            <xsd:documentation>Informações de identificação do trabalhador e do vínculo.</xsd:documentation>
+            <xsd:documentation>CHAVE_GRUPO: {cpfTrab}, {matricula}, {codCateg}</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="cpfTrab" type="TS_cpfTrab" />
+            <xsd:element name="matricula" minOccurs="0" type="TS_codigo_esocial">
+                <xsd:annotation>
+                    <xsd:documentation>Matrícula atribuída ao trabalhador pela empresa ou, no caso de servidor público, a matrícula constante no Sistema de Administração de Recursos Humanos do órgão.</xsd:documentation>
+                    <xsd:documentation>Validação: Deve corresponder à matrícula informada pelo empregador no evento S-2190, S-2200 ou S-2300 do respectivo contrato. Não preencher no caso de Trabalhador Sem Vínculo de Emprego/Estatutário - TSVE sem informação de matrícula no evento S-2300.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="codCateg" minOccurs="0" type="TS_codCateg">
+                <xsd:annotation>
+                    <xsd:documentation>Preencher com o código da categoria do trabalhador.</xsd:documentation>
+                    <xsd:documentation>Informar somente no caso de TSVE sem informação de matrícula no evento S-2300.</xsd:documentation>
+                    <xsd:documentation>Validação: Informação obrigatória e exclusiva se não houver preenchimento de {matricula}(./matricula). Se informado, deve ser um código válido e existente na Tabela 01.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <!-- Grupo {ideTrabSemVinculo} -->
+
+    <xsd:complexType name="T_ideTrabSemVinculo">
+        <xsd:annotation>
+            <xsd:documentation>Identificação do TSVE</xsd:documentation>
+            <xsd:documentation>DESCRICAO_COMPLETA:Identificação do Trabalhador Sem Vínculo de Emprego/Estatutário - TSVE.</xsd:documentation>
+            <xsd:documentation>CHAVE_GRUPO: {cpfTrab}, {matricula}, {codCateg}</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="cpfTrab" type="TS_cpfTrab" />
+            <xsd:element name="matricula" minOccurs="0" type="TS_codigo_esocial">
+                <xsd:annotation>
+                    <xsd:documentation>Matrícula atribuída ao trabalhador pela empresa.</xsd:documentation>
+                    <xsd:documentation>Validação: Deve corresponder à matrícula informada pelo empregador no evento S-2300 do respectivo contrato. Não preencher no caso de TSVE sem informação de matrícula no evento S-2300.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="codCateg" minOccurs="0" type="TS_codCateg">
+                <xsd:annotation>
+                    <xsd:documentation>Preencher com o código da categoria do trabalhador.</xsd:documentation>
+                    <xsd:documentation>Informar somente no caso de TSVE sem informação de matrícula no evento S-2300.</xsd:documentation>
+                    <xsd:documentation>Validação: Informação obrigatória e exclusiva se não houver preenchimento de {matricula}(./matricula). Se informado, deve ser um código válido e existente na Tabela 01.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <!-- Grupo {infoMV} -->
+
+    <xsd:complexType name="T_infoSimples">
+        <xsd:annotation>
+            <xsd:documentation>Informação relativa a empresas do Simples</xsd:documentation>
+            <xsd:documentation>DESCRICAO_COMPLETA:Informação relativa a empresas enquadradas no regime de tributação Simples Nacional.</xsd:documentation>
+            <xsd:documentation>CONDICAO_GRUPO: O (se {classTrib}(1000_infoEmpregador_inclusao_infoCadastro_classTrib) em S-1000 = [03]); N (nos demais casos)</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="indSimples" type="TS_indSimples">
+                <xsd:annotation>
+                    <xsd:documentation>Indicador de contribuição substituída.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+            
+    <!-- Grupo {infoMV} -->
+
+    <xsd:complexType name="T_infoMV">
+        <xsd:annotation>
+            <xsd:documentation>Informação de múltiplos vínculos</xsd:documentation>
+            <xsd:documentation>DESCRICAO_COMPLETA:Grupo preenchido exclusivamente em caso de trabalhador que possua outros vínculos/atividades nos quais já tenha ocorrido desconto de contribuição previdenciária.</xsd:documentation>
+            <xsd:documentation>CONDICAO_GRUPO: OC</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="indMV" type="TS_indMV" />
+            <xsd:element name="remunOutrEmpr" minOccurs="1" maxOccurs="999">
+                <xsd:annotation>
+                    <xsd:documentation>Remuneração recebida pelo trabalhador em outras empresas ou atividades</xsd:documentation>
+                    <xsd:documentation>DESCRICAO_COMPLETA:Informações relativas ao trabalhador que possui vínculo empregatício com outra(s) empresa(s) e/ou que exerce outras atividades como contribuinte individual, detalhando as empresas que efetuaram (ou efetuarão) desconto da contribuição.</xsd:documentation>
+                    <xsd:documentation>CHAVE_GRUPO: {tpInsc}, {nrInsc}, {codCateg}</xsd:documentation>
+                </xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="tpInsc" type="TS_tpInsc_1_2" />
+                        <xsd:element name="nrInsc" type="TS_nrInsc_11_14">
+                            <xsd:annotation>
+                                <xsd:documentation>Informar o número de inscrição do contribuinte de acordo com o tipo de inscrição indicado no campo {remunOutrEmpr/tpInsc}(./tpInsc).</xsd:documentation>
+                                <xsd:documentation>Validação: a) Se {remunOutrEmpr/tpInsc}(./tpInsc) = [1], deve ser um CNPJ válido, diferente do CNPJ base indicado no evento de Informações do Empregador (S-1000) e dos estabelecimentos informados através do evento S-1005.</xsd:documentation>
+                                <xsd:documentation>b) Se {remunOutrEmpr/tpInsc}(./tpInsc) = [2], deve ser um CPF válido e diferente do CPF do trabalhador e ainda, caso o empregador seja pessoa física, diferente do CPF do empregador.</xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:element>
+                        <xsd:element name="codCateg" type="TS_codCategOE" />
+                        <xsd:element name="vlrRemunOE" type="TS_vlrRemunOE" />
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <!-- Grupo {infoEstagiario} -->
+
+    <xsd:complexType name="T_infoEstagiario">
+        <xsd:sequence>
+            <xsd:element name="natEstagio">
+                <xsd:simpleType>
+                    <xsd:annotation>
+                        <xsd:documentation>Natureza do estágio.</xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:enumeration value="O">
+                            <xsd:annotation>
+                                <xsd:documentation>Obrigatório</xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:enumeration>
+                        <xsd:enumeration value="N">
+                            <xsd:annotation>
+                                <xsd:documentation>Não obrigatório</xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:enumeration>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="nivEstagio">
+                <xsd:simpleType>
+                    <xsd:annotation>
+                        <xsd:documentation>Informar o nível do estágio.</xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:restriction base="xsd:byte">
+                        <xsd:enumeration value="1">
+                            <xsd:annotation>
+                                <xsd:documentation>Fundamental</xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:enumeration>
+                        <xsd:enumeration value="2">
+                            <xsd:annotation>
+                                <xsd:documentation>Médio</xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:enumeration>
+                        <xsd:enumeration value="3">
+                            <xsd:annotation>
+                                <xsd:documentation>Formação profissional</xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:enumeration>
+                        <xsd:enumeration value="4">
+                            <xsd:annotation>
+                                <xsd:documentation>Superior</xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:enumeration>
+                        <xsd:enumeration value="8">
+                            <xsd:annotation>
+                                <xsd:documentation>Especial</xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:enumeration>
+                        <xsd:enumeration value="9">
+                            <xsd:annotation>
+                                <xsd:documentation>Mãe social (Lei 7.644/1987)</xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:enumeration>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="areaAtuacao" minOccurs="0" type="TS_texto_100">
+                <xsd:annotation>
+                    <xsd:documentation>Área de atuação do estagiário.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="nrApol" minOccurs="0" type="TS_codigo_esocial">
+                <xsd:annotation>
+                    <xsd:documentation>Número da apólice de seguro.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="dtPrevTerm" type="xsd:date">
+                <xsd:annotation>
+                    <xsd:documentation>Data prevista para o término do estágio.</xsd:documentation>
+                    <xsd:documentation>Validação: Deve ser uma data posterior à data de início do estágio.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="instEnsino">
+                <xsd:annotation>
+                    <xsd:documentation>Instituição de ensino.</xsd:documentation>
+                </xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="cnpjInstEnsino" minOccurs="0" type="TS_cnpj">
+                            <xsd:annotation>
+                                <xsd:documentation>Preencher com o CNPJ da instituição de ensino. Deve ser preenchido apenas se a instituição de ensino for brasileira.</xsd:documentation>
+                                <xsd:documentation>Validação: Se informado, deve ser um CNPJ válido, com 14 (catorze) algarismos.</xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:element>
+                        <xsd:element name="nmRazao" minOccurs="0" type="TS_texto_100">
+                            <xsd:annotation>
+                                <xsd:documentation>Informar a razão social.</xsd:documentation>
+                                <xsd:documentation>Validação: Preenchimento obrigatório e exclusivo se o campo {cnpjInstEnsino}(./cnpjInstEnsino) não estiver preenchido.</xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:element>
+                        <xsd:element name="dscLograd" minOccurs="0" type="TS_dscLograd">
+                            <xsd:annotation>
+                                <xsd:documentation>Descrição do logradouro.</xsd:documentation>
+                                <xsd:documentation>Validação: Preenchimento obrigatório e exclusivo se o campo {cnpjInstEnsino}(./cnpjInstEnsino) não estiver preenchido.</xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:element>
+                        <xsd:element name="nrLograd" minOccurs="0" type="TS_nrLograd">
+                            <xsd:annotation>
+                                <xsd:documentation>Número do logradouro.</xsd:documentation>
+                                <xsd:documentation>Se não houver número a ser informado, preencher com "S/N".</xsd:documentation>
+                                <xsd:documentation>Validação: Preenchimento obrigatório e exclusivo se o campo {cnpjInstEnsino}(./cnpjInstEnsino) não estiver preenchido.</xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:element>
+                        <xsd:element name="bairro" minOccurs="0" type="TS_bairro">
+                            <xsd:annotation>
+                                <xsd:documentation>Nome do bairro/distrito.</xsd:documentation>
+                                <xsd:documentation>Validação: Preenchimento obrigatório e exclusivo se o campo {cnpjInstEnsino}(./cnpjInstEnsino) não estiver preenchido.</xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:element>
+                        <xsd:element name="cep" minOccurs="0" type="TS_cep">
+                            <xsd:annotation>
+                                <xsd:documentation>Código de Endereçamento Postal - CEP.</xsd:documentation>
+                                <xsd:documentation>Validação: Não informar se o campo {cnpjInstEnsino}(./cnpjInstEnsino) estiver preenchido. Se informado, deve ser preenchido apenas com números, com 8 (oito) posições.</xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:element>
+                        <xsd:element name="codMunic" minOccurs="0" type="TS_codMunic">
+                            <xsd:annotation>
+                                <xsd:documentation>Preencher com o código do município, conforme tabela do IBGE.</xsd:documentation>
+                                <xsd:documentation>Validação: Não informar se o campo {cnpjInstEnsino}(./cnpjInstEnsino) estiver preenchido. Se informado, deve ser um código válido e existente na tabela do IBGE.</xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:element>
+                        <xsd:element name="uf" minOccurs="0" type="TS_uf">
+                            <xsd:annotation>
+                                <xsd:documentation>Preencher com a sigla da Unidade da Federação - UF.</xsd:documentation>
+                                <xsd:documentation>Validação: Não informar se o campo {cnpjInstEnsino}(./cnpjInstEnsino) estiver preenchido.</xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:element>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="ageIntegracao" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Agente de integração.</xsd:documentation>
+                    <xsd:documentation>CONDICAO_GRUPO: OC</xsd:documentation>
+                </xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="cnpjAgntInteg" type="TS_cnpj">
+                            <xsd:annotation>
+                                <xsd:documentation>CNPJ do agente de integração.</xsd:documentation>
+                                <xsd:documentation>Validação: Deve ser um CNPJ válido, com 14 (catorze) algarismos.</xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:element>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="supervisorEstagio" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Supervisor do estágio.</xsd:documentation>
+                    <xsd:documentation>CONDICAO_GRUPO: OC</xsd:documentation>
+                </xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="cpfSupervisor" type="TS_cpf">
+                            <xsd:annotation>
+                                <xsd:documentation>CPF do responsável pela supervisão do estagiário.</xsd:documentation>
+                                <xsd:documentation>Validação: Deve ser um CPF válido.</xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:element>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <!-- Grupo {ideBeneficio} -->
+
+    <xsd:complexType name="T_ideBeneficio">
+        <xsd:annotation>
+            <xsd:documentation>Identificação do beneficiário e do benefício.</xsd:documentation>
+            <xsd:documentation>CHAVE_GRUPO: {cpfBenef}, {nrBeneficio}</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="cpfBenef" type="TS_cpf">
+                <xsd:annotation>
+                    <xsd:documentation>Informar o CPF do beneficiário.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="nrBeneficio" type="TS_nrBeneficio">
+                <xsd:annotation>
+                    <xsd:documentation>Número do benefício.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <!-- Grupo {sucessaoVinc} (S-5001 e S_5003) -->
+
+    <xsd:complexType name="T_sucessaoVinc">
+        <xsd:sequence>
+            <xsd:element name="tpInsc" type="TS_tpInsc_1_2" />
+            <xsd:element name="nrInsc" type="TS_nrInsc_11_14">
+                <xsd:annotation>
+                    <xsd:documentation>Informar o número de inscrição do empregador anterior, de acordo com o tipo de inscrição indicado no campo {sucessaoVinc/tpInsc}(./tpInsc).</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="matricAnt" minOccurs="0" type="TS_codigo_esocial">
+                <xsd:annotation>
+                    <xsd:documentation>Matrícula do trabalhador no empregador anterior.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="dtAdm" type="xsd:date">
+                <xsd:annotation>
+                    <xsd:documentation>Preencher com a data de admissão do trabalhador. No caso de transferência do empregado, deve ser preenchida a data inicial do vínculo no primeiro empregador (data de início do vínculo).</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <!-- Campo {Id} -->
+
+    <xsd:simpleType name="TS_Id">
+        <xsd:annotation>
+            <xsd:documentation>Identificação única do evento.</xsd:documentation>
+            <xsd:documentation>REGRA:REGRA_VALIDA_ID_EVENTO</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:ID">
+            <xsd:length value="36" />
+            <xsd:pattern value="ID\d{34}" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="TS_Id_retorno">
+        <xsd:annotation>
+            <xsd:documentation>Identificação única do evento.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="TS_Id" />
+    </xsd:simpleType>
+
+    <!-- Campos do grupo {ideEvento} -->
+
+    <xsd:simpleType name="TS_indRetif">
+        <xsd:annotation>
+            <xsd:documentation>Informe [1] para arquivo original ou [2] para arquivo de retificação.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:byte">
+            <xsd:enumeration value="1">
+                <xsd:annotation>
+                    <xsd:documentation>Original</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="2">
+                <xsd:annotation>
+                    <xsd:documentation>Retificação</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="TS_nrRecibo">
+        <xsd:annotation>
+            <xsd:documentation>Preencher com o número do recibo do arquivo a ser retificado.</xsd:documentation>
+            <xsd:documentation>Validação: O preenchimento é obrigatório se {indRetif}(./indRetif) = [2].</xsd:documentation>
+            <xsd:documentation>Deve ser um recibo de entrega válido, correspondente ao arquivo que está sendo retificado.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="[1]{1}\.\d{1}\.\d{19}" />
+            <xsd:length value="23" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="TS_tpAmb">
+        <xsd:annotation>
+            <xsd:documentation>Identificação do ambiente.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:byte">
+            <xsd:enumeration value="1">
+                <xsd:annotation>
+                    <xsd:documentation>Produção</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="2">
+                <xsd:annotation>
+                    <xsd:documentation>Produção restrita</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="7">
+                <xsd:annotation>
+                    <xsd:documentation>Validação (uso interno)</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="8">
+                <xsd:annotation>
+                    <xsd:documentation>Teste (uso interno)</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="9">
+                <xsd:annotation>
+                    <xsd:documentation>Desenvolvimento (uso interno)</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="TS_procEmi">
+        <xsd:annotation>
+            <xsd:documentation>Processo de emissão do evento.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:byte">
+            <xsd:enumeration value="1">
+                <xsd:annotation>
+                    <xsd:documentation>Aplicativo do empregador</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="2">
+                <xsd:annotation>
+                    <xsd:documentation>Aplicativo governamental - Simplificado Pessoa Física</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="3">
+                <xsd:annotation>
+                    <xsd:documentation>Aplicativo governamental - Web Geral</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="4">
+                <xsd:annotation>
+                    <xsd:documentation>Aplicativo governamental - Simplificado Pessoa Jurídica</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="22">
+                <xsd:annotation>
+                    <xsd:documentation>Aplicativo governamental para dispositivos móveis - Empregador Doméstico</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="81">
+                <xsd:annotation>
+                    <xsd:documentation>Aplicativo governamental para envio de eventos pelo Judiciário</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="91">
+                <xsd:annotation>
+                    <xsd:documentation>Aplicativo governamental - Integração com a Junta Comercial</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="TS_verProc">
+        <xsd:annotation>
+            <xsd:documentation>Versão do processo de emissão do evento. Informar a versão do aplicativo emissor do evento.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1" />
+            <xsd:maxLength value="20" />
+            <xsd:pattern value=".*[^\s].*" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Campo {tpInsc} -->
+
+    <xsd:simpleType name="TS_tpInsc_1_2">
+        <xsd:annotation>
+            <xsd:documentation>Preencher com o código correspondente ao tipo de inscrição, conforme Tabela 05.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:byte">
+            <xsd:enumeration value="1">
+                <xsd:annotation>
+                    <xsd:documentation>CNPJ</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="2">
+                <xsd:annotation>
+                    <xsd:documentation>CPF</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="TS_tpInsc_1_3_4">
+        <xsd:annotation>
+            <xsd:documentation>Preencher com o código correspondente ao tipo de inscrição, conforme Tabela 05.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:byte">
+            <xsd:enumeration value="1">
+                <xsd:annotation>
+                    <xsd:documentation>CNPJ</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="3">
+                <xsd:annotation>
+                    <xsd:documentation>CAEPF</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="4">
+                <xsd:annotation>
+                    <xsd:documentation>CNO</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="TS_tpInsc_1_2_4">
+        <xsd:annotation>
+            <xsd:documentation>Preencher com o código correspondente ao tipo de inscrição, conforme Tabela 05.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:byte">
+            <xsd:enumeration value="1">
+                <xsd:annotation>
+                    <xsd:documentation>CNPJ</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="2">
+                <xsd:annotation>
+                    <xsd:documentation>CPF</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="4">
+                <xsd:annotation>
+                    <xsd:documentation>CNO</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="TS_tpInsc_1_2_3_4">
+        <xsd:annotation>
+            <xsd:documentation>Preencher com o código correspondente ao tipo de inscrição, conforme Tabela 05.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:byte">
+            <xsd:enumeration value="1">
+                <xsd:annotation>
+                    <xsd:documentation>CNPJ</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="2">
+                <xsd:annotation>
+                    <xsd:documentation>CPF</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="3">
+                <xsd:annotation>
+                    <xsd:documentation>CAEPF</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="4">
+                <xsd:annotation>
+                    <xsd:documentation>CNO</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="TS_tpInsc_1">
+        <xsd:annotation>
+            <xsd:documentation>Preencher com o código correspondente ao tipo de inscrição, conforme Tabela 05.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:byte">
+            <xsd:enumeration value="1">
+                <xsd:annotation>
+                    <xsd:documentation>CNPJ</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="TS_tpInsc_2">
+        <xsd:annotation>
+            <xsd:documentation>Preencher com o código correspondente ao tipo de inscrição, conforme Tabela 05.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:byte">
+            <xsd:enumeration value="2">
+                <xsd:annotation>
+                    <xsd:documentation>CPF</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+  
+    <!-- Campo {nrInsc} -->
+
+    <xsd:simpleType name="TS_nrInsc_8_11_14">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="\d{8}|\d{11}|\d{14}" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="TS_nrInsc_12_14">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="\d{12}|\d{14}" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="TS_nrInsc_11_12_14">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="\d{11}|\d{12}|\d{14}" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="TS_nrInsc_11_14">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="\d{11}|\d{14}" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="TS_cnpj">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="\d{14}" />
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <!-- Campo {iniValid} -->
+
+    <xsd:simpleType name="TS_iniValid">
+        <xsd:annotation>
+            <xsd:documentation>Preencher com o mês e ano de início da validade das informações prestadas no evento, no formato AAAA-MM.</xsd:documentation>
+            <xsd:documentation>Validação: Deve ser uma data válida, igual ou posterior à data de início de obrigatoriedade deste evento para o empregador no eSocial, no formato AAAA-MM.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="TS_periodo_mensal" />
+    </xsd:simpleType>
+
+    <!-- Campo {fimValid} -->
+
+    <xsd:simpleType name="TS_fimValid">
+        <xsd:annotation>
+            <xsd:documentation>Preencher com o mês e ano de término da validade das informações, se houver.</xsd:documentation>
+            <xsd:documentation>Validação: Se informado, deve estar no formato AAAA-MM e ser um período igual ou posterior a {iniValid}(./iniValid).</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="TS_periodo_mensal" />
+    </xsd:simpleType>
+        
+    <!-- Campo {indCoop} -->
+
+    <xsd:simpleType name="TS_indCoop">
+        <xsd:restriction base="xsd:byte">
+            <xsd:enumeration value="0">
+                <xsd:annotation>
+                    <xsd:documentation>Não é cooperativa</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="1">
+                <xsd:annotation>
+                    <xsd:documentation>Cooperativa de trabalho</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="2">
+                <xsd:annotation>
+                    <xsd:documentation>Cooperativa de produção</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="3">
+                <xsd:annotation>
+                    <xsd:documentation>Outras cooperativas</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+        
+    <!-- Campo {indConstr} -->
+
+    <xsd:simpleType name="TS_indConstr">
+        <xsd:restriction base="xsd:byte">
+            <xsd:enumeration value="0">
+                <xsd:annotation>
+                    <xsd:documentation>Não é construtora</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="1">
+                <xsd:annotation>
+                    <xsd:documentation>Empresa construtora</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Campo {cnaePrep} -->
+
+    <xsd:simpleType name="TS_cnae">
+        <xsd:annotation>
+            <xsd:documentation>Preencher com o código CNAE conforme legislação vigente, referente à atividade econômica preponderante do estabelecimento.</xsd:documentation>
+            <xsd:documentation>Validação: Deve ser um número existente na tabela CNAE.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:integer">
+            <xsd:pattern value="\d{7}" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Campo {aliqRat} -->
+
+    <xsd:simpleType name="TS_aliqRat">
+        <xsd:restriction base="xsd:byte">
+            <xsd:enumeration value="1" />
+            <xsd:enumeration value="2" />
+            <xsd:enumeration value="3" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Campo {fap} -->
+
+    <xsd:simpleType name="TS_fap">
+        <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="5" />
+            <xsd:fractionDigits value="4" />
+            <xsd:minInclusive value="0.5" />
+            <xsd:maxInclusive value="2" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Campo {tpProc} -->
+
+    <xsd:simpleType name="TS_tpProc_1_2">
+        <xsd:annotation>
+            <xsd:documentation>Preencher com o código correspondente ao tipo de processo.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:byte">
+            <xsd:enumeration value="1">
+                <xsd:annotation>
+                    <xsd:documentation>Administrativo</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="2">
+                <xsd:annotation>
+                    <xsd:documentation>Judicial</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="TS_tpProc_1_2_4">
+        <xsd:annotation>
+            <xsd:documentation>Preencher com o código correspondente ao tipo de processo.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:byte">
+            <xsd:enumeration value="1">
+                <xsd:annotation>
+                    <xsd:documentation>Administrativo</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="2">
+                <xsd:annotation>
+                    <xsd:documentation>Judicial</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="4">
+                <xsd:annotation>
+                    <xsd:documentation>Processo FAP de exercício anterior a 2019</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Campo {nrProc} -->
+
+    <xsd:simpleType name="TS_nrProc_17_20_21">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="\d{17}|\d{20}|\d{21}" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="TS_nrProc_16_17_20_21">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="\d{16}|\d{17}|\d{20}|\d{21}" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Campo {nrProcJud} -->
+
+    <xsd:simpleType name="TS_nrProcJud_1">
+        <xsd:annotation>
+            <xsd:documentation>Informar um número de processo judicial cadastrado através do evento S-1070, cujo {indMatProc}(1070_infoProcesso_inclusao_dadosProc_indMatProc) seja igual a [1].</xsd:documentation>
+            <xsd:documentation>Validação: Deve ser um número de processo judicial válido e existente na Tabela de Processos (S-1070), com {indMatProc}(1070_infoProcesso_inclusao_dadosProc_indMatProc) = [1].</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="TS_nrProcJud" />
+    </xsd:simpleType>
+
+    <xsd:simpleType name="TS_nrProcJud_1_7">
+        <xsd:annotation>
+            <xsd:documentation>Informar um número de processo judicial cadastrado através do evento S-1070, cujo {indMatProc}(1070_infoProcesso_inclusao_dadosProc_indMatProc) seja igual a [1, 7].</xsd:documentation>
+            <xsd:documentation>Validação: Deve ser um número de processo judicial válido e existente na Tabela de Processos (S-1070), com {indMatProc}(1070_infoProcesso_inclusao_dadosProc_indMatProc) = [1, 7].</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="TS_nrProcJud" />
+    </xsd:simpleType>
+
+    <xsd:simpleType name="TS_nrProcJud">
+        <xsd:restriction base="xsd:string">
+            <xsd:length value="20" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Campo {codSusp} -->
+
+    <xsd:simpleType name="TS_codSusp">
+        <xsd:annotation>
+            <xsd:documentation>Código do indicativo da suspensão, atribuído pelo empregador em S-1070.</xsd:documentation>
+            <xsd:documentation>Validação: A informação prestada deve estar de acordo com o que foi informado em S-1070.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:integer">
+            <xsd:pattern value="\d{1,14}" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Campo {indSubstPatrObra} -->
+
+    <xsd:simpleType name="TS_indSubstPatrObra">
+        <xsd:restriction base="xsd:byte">
+            <xsd:enumeration value="1">
+                <xsd:annotation>
+                    <xsd:documentation>Contribuição patronal substituída</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="2">
+                <xsd:annotation>
+                    <xsd:documentation>Contribuição patronal não substituída</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <!-- Campos {codRubr}, {codLotacao}, {ideDmDev}, {matricula}, {matricAnt}, {matricOrig}, {matricCed} -->
+
+    <xsd:simpleType name="TS_codigo_esocial">
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1" />
+            <xsd:maxLength value="30" />
+            <xsd:pattern value=".*[^\s].*" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Campo {ideTabRubr} -->
+
+    <xsd:simpleType name="TS_ideTabRubr">
+        <xsd:annotation>
+            <xsd:documentation>Preencher com o identificador da Tabela de Rubricas para a rubrica definida em {codRubr}(./codRubr).</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1" />
+            <xsd:maxLength value="8" />
+            <xsd:pattern value=".*[^\s].*" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Campo {observacao} -->
+
+    <xsd:simpleType name="TS_observacao">
+        <xsd:annotation>
+            <xsd:documentation>Observação.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="TS_texto_255" />
+    </xsd:simpleType>
+
+    <!-- Campo {tpLotacao} -->
+
+    <xsd:simpleType name="TS_tpLotacao">
+        <xsd:annotation>
+            <xsd:documentation>Preencher com o código correspondente ao tipo de lotação.</xsd:documentation>
+            <xsd:documentation>Validação: Deve ser um código válido e existente na Tabela 10, bem como compatível com a classificação tributária indicada no evento S-1000, conforme Tabela 12.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="\d{2}" />
+        </xsd:restriction>
+    </xsd:simpleType>
+ 
+    <!-- Campo {fpas} -->
+
+    <xsd:simpleType name="TS_fpas">
+        <xsd:annotation>
+            <xsd:documentation>Preencher com o código relativo ao FPAS.</xsd:documentation>
+            <xsd:documentation>Validação: Deve ser um código FPAS válido, conforme Tabela 04.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:integer">
+            <xsd:pattern value="\d{3}" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Campos {codTercs}, {codTercsSusp} e {codTerc} -->
+
+    <xsd:simpleType name="TS_codTercs">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="\d{4}" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Campo UF -->
+
+    <xsd:simpleType name="TS_uf">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="AC" />
+            <xsd:enumeration value="AL" />
+            <xsd:enumeration value="AP" />
+            <xsd:enumeration value="AM" />
+            <xsd:enumeration value="BA" />
+            <xsd:enumeration value="CE" />
+            <xsd:enumeration value="DF" />
+            <xsd:enumeration value="ES" />
+            <xsd:enumeration value="GO" />
+            <xsd:enumeration value="MA" />
+            <xsd:enumeration value="MT" />
+            <xsd:enumeration value="MS" />
+            <xsd:enumeration value="MG" />
+            <xsd:enumeration value="PA" />
+            <xsd:enumeration value="PB" />
+            <xsd:enumeration value="PR" />
+            <xsd:enumeration value="PE" />
+            <xsd:enumeration value="PI" />
+            <xsd:enumeration value="RJ" />
+            <xsd:enumeration value="RN" />
+            <xsd:enumeration value="RS" />
+            <xsd:enumeration value="RO" />
+            <xsd:enumeration value="RR" />
+            <xsd:enumeration value="SC" />
+            <xsd:enumeration value="SP" />
+            <xsd:enumeration value="SE" />
+            <xsd:enumeration value="TO" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Campo {codMunic} -->
+
+    <xsd:simpleType name="TS_codMunic">
+        <xsd:annotation>
+            <xsd:documentation>Preencher com o código do município, conforme tabela do IBGE.</xsd:documentation>
+            <xsd:documentation>Validação: Deve ser um código válido e existente na tabela do IBGE.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:integer">
+            <xsd:pattern value="\d{7}" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Campo {indApuracao} -->
+ 
+    <xsd:simpleType name="TS_indApuracao">
+        <xsd:annotation>
+            <xsd:documentation>Indicativo de período de apuração.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:byte">
+            <xsd:enumeration value="1">
+                <xsd:annotation>
+                    <xsd:documentation>Mensal</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="2">
+                <xsd:annotation>
+                    <xsd:documentation>Anual (13° salário)</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Campo {perApur} (mensal ou anual) -->
+    
+    <xsd:simpleType name="TS_perApur">
+        <xsd:annotation>
+            <xsd:documentation>Informar o mês/ano (formato AAAA-MM) de referência das informações, se {indApuracao}(./indApuracao) for igual a [1], ou apenas o ano (formato AAAA), se {indApuracao}(./indApuracao) for igual a [2].</xsd:documentation>
+            <xsd:documentation>Validação: Deve ser um mês/ano ou ano válido, igual ou posterior ao início da obrigatoriedade dos eventos periódicos para o empregador.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="[2]{1}\d{3}-(1[0-2]|0[1-9])" />
+            <xsd:pattern value="[2]{1}\d{3}" />
+            <xsd:minLength value="4" />
+            <xsd:maxLength value="7" />
+        </xsd:restriction>
+    </xsd:simpleType>
+   
+    <!-- Campo {perApur} (apenas mensal) -->
+
+    <xsd:simpleType name="TS_perApur_mensal">
+        <xsd:annotation>
+            <xsd:documentation>Informar o mês/ano (formato AAAA-MM) de referência das informações.</xsd:documentation>
+            <xsd:documentation>Validação: Deve ser um mês/ano válido, igual ou posterior ao início da obrigatoriedade dos eventos periódicos para o empregador.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="TS_periodo_mensal" />
+    </xsd:simpleType>
+   
+    <!-- Campo {indGuia} -->
+
+    <xsd:simpleType name="TS_indGuia">
+        <xsd:annotation>
+            <xsd:documentation>Indicativo do tipo de guia.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:byte">
+            <xsd:enumeration value="1">
+                <xsd:annotation>
+                    <xsd:documentation>Documento de Arrecadação do eSocial - DAE</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Campo CPF -->
+
+    <xsd:simpleType name="TS_cpfRemun">
+        <xsd:annotation>
+            <xsd:documentation>Preencher com o número do CPF do trabalhador.</xsd:documentation>
+            <xsd:documentation>Validação: Deve ser um CPF válido.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="TS_cpf" />
+    </xsd:simpleType>
+
+    <xsd:simpleType name="TS_cpfDep">
+        <xsd:annotation>
+            <xsd:documentation>Número de inscrição no CPF.</xsd:documentation>
+            <xsd:documentation>Validação: Deve ser um número de CPF válido, observando o que segue:</xsd:documentation>
+            <xsd:documentation>a) O preenchimento é obrigatório se {depIRRF}(./depIRRF) = [S];</xsd:documentation>
+            <xsd:documentation>b) Em arquivo de empregador Pessoa Física, deve ser diferente do CPF informado em {ideEmpregador}(/ideEmpregador);</xsd:documentation>
+            <xsd:documentation>c) Não pode haver mais de um dependente com o mesmo número de CPF.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="TS_cpf" />
+    </xsd:simpleType>
+
+    <xsd:simpleType name="TS_cpfDepBenef">
+        <xsd:annotation>
+            <xsd:documentation>Número de inscrição no CPF.</xsd:documentation>
+            <xsd:documentation>Validação: Deve ser um número de CPF válido, observando o que segue:</xsd:documentation>
+            <xsd:documentation>a) O preenchimento é obrigatório se {depIRRF}(./depIRRF) = [S];</xsd:documentation>
+            <xsd:documentation>b) Não pode haver mais de um dependente com o mesmo número de CPF.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="TS_cpf" />
+    </xsd:simpleType>
+    
+    <xsd:simpleType name="TS_cpfTrab">
+        <xsd:annotation>
+            <xsd:documentation>Preencher com o número do CPF do trabalhador.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="TS_cpf" />
+    </xsd:simpleType>
+    
+    <xsd:simpleType name="TS_cpfRetorno">
+        <xsd:annotation>
+            <xsd:documentation>Preencher com o número do CPF do trabalhador.</xsd:documentation>
+            <xsd:documentation>Validação: Deve ser um CPF constante no arquivo gerado pelo empregador no evento de origem.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="TS_cpf" />
+    </xsd:simpleType>
+
+    <xsd:simpleType name="TS_cpf">
+    <xsd:restriction base="xsd:string">
+        <xsd:pattern value="\d{11}" />
+    </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Campo {indMV} -->
+
+    <xsd:simpleType name="TS_indMV">
+        <xsd:annotation>
+            <xsd:documentation>Indicador de desconto da contribuição previdenciária do trabalhador.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:byte">
+            <xsd:enumeration value="1">
+                <xsd:annotation>
+                    <xsd:documentation>O declarante aplica a(s) alíquota(s) de desconto do segurado sobre a remuneração por ele informada (o percentual da(s) alíquota(s) será(ão) obtido(s) considerando a remuneração total do trabalhador)</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="2">
+                <xsd:annotation>
+                    <xsd:documentation>O declarante aplica a(s) alíquota(s) de desconto do segurado sobre a diferença entre o limite máximo do salário de contribuição e a remuneração de outra(s) empresa(s) para as quais o trabalhador informou que houve o desconto</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="3">
+                <xsd:annotation>
+                    <xsd:documentation>O declarante não realiza desconto do segurado, uma vez que houve desconto sobre o limite máximo de salário de contribuição em outra(s) empresa(s)</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Campo {remunOutrEmpr/codCateg} -->
+
+    <xsd:simpleType name="TS_codCategOE">
+        <xsd:annotation>
+            <xsd:documentation>Preencher com o código da categoria do trabalhador na qual houve a remuneração.</xsd:documentation>
+            <xsd:documentation>Validação: Deve ser um código válido e existente na Tabela 01.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="TS_codCateg" />
+    </xsd:simpleType>
+ 
+    <!-- Campo {remunOutrEmpr/vlrRemunOE} -->
+
+    <xsd:simpleType name="TS_vlrRemunOE">
+        <xsd:annotation>
+            <xsd:documentation>Preencher com o valor da remuneração recebida pelo trabalhador na outra empresa/atividade, sobre a qual houve desconto/recolhimento da contribuição do segurado.</xsd:documentation>
+            <xsd:documentation>Validação: Deve ser maior que 0 (zero).</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="TS_valorMonetario_positivo" />
+    </xsd:simpleType>
+
+    <!-- Campo nome -->
+
+    <xsd:simpleType name="TS_nmTrab">
+        <xsd:annotation>
+            <xsd:documentation>Informar o nome do trabalhador.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="TS_nome" />
+    </xsd:simpleType>
+
+    <xsd:simpleType name="TS_nmSoc">
+        <xsd:annotation>
+            <xsd:documentation>Nome social para travesti ou transexual.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="TS_nome" />
+    </xsd:simpleType>
+
+    <xsd:simpleType name="TS_nmDep">
+        <xsd:annotation>
+            <xsd:documentation>Nome do dependente.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="TS_nome" />
+    </xsd:simpleType>
+
+        <xsd:simpleType name="TS_nmBenefic">
+        <xsd:annotation>
+            <xsd:documentation>Informar o nome do beneficiário.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="TS_nome" />
+    </xsd:simpleType>
+
+    <xsd:simpleType name="TS_nome">
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="2" />
+            <xsd:maxLength value="70" />
+            <xsd:pattern value=".*[^\s].*" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Campo {dtNascto} -->
+
+    <xsd:simpleType name="TS_dtNascto">
+        <xsd:annotation>
+            <xsd:documentation>Preencher com a data de nascimento.</xsd:documentation>
+            <xsd:documentation>Validação: Deve ser maior ou igual que 01/01/1890 e menor ou igual à data atual.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:date">
+            <xsd:minInclusive value="1890-01-01" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Campo {sucessaoVinc/matricAnt} -->
+
+    <xsd:simpleType name="TS_matricAnt">
+        <xsd:annotation>
+            <xsd:documentation>Matrícula do trabalhador no empregador anterior.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="TS_codigo_esocial" />
+    </xsd:simpleType>    
+
+    <!-- Campo {sucessaoVinc/dtAdm} -->
+
+    <xsd:simpleType name="TS_dtAdm">
+        <xsd:annotation>
+            <xsd:documentation>Preencher com a data de admissão do trabalhador. No caso de transferência do empregado, deve ser preenchida a data inicial do vínculo no primeiro empregador (data de início do vínculo).</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:date" />
+    </xsd:simpleType>   
+
+    <!-- Campo {tpTrib} -->
+
+    <xsd:simpleType name="TS_tpTrib">
+        <xsd:annotation>
+            <xsd:documentation>Abrangência da decisão.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:byte">
+            <xsd:enumeration value="1">
+                <xsd:annotation>
+                    <xsd:documentation>IRRF</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="2">
+                <xsd:annotation>
+                    <xsd:documentation>Contribuições sociais do trabalhador</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Campos {dia}, {qtdDiasAv} e {qtdDiasTrab} -->
+
+    <xsd:simpleType name="TS_dia">
+        <xsd:annotation>
+            <xsd:documentation>Dia do mês efetivamente trabalhado pelo empregado com contrato de trabalho intermitente.</xsd:documentation>
+            <xsd:documentation>Validação: Deve ser um número entre 1 e 31, de acordo com o calendário anual.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:byte">
+            <xsd:minInclusive value="1" />
+            <xsd:maxInclusive value="31" />
+            <xsd:pattern value="\d{1,2}" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Campo {codCateg} -->
+   
+    <xsd:simpleType name="TS_codCateg">
+        <xsd:annotation>
+            <xsd:documentation>Preencher com o código da categoria do trabalhador.</xsd:documentation>
+            <xsd:documentation>Validação: Deve ser um código válido e existente na Tabela 01.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:integer">
+            <xsd:pattern value="\d{3}" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Campo {ideEstabLot/tpInsc} -->
+
+    <xsd:simpleType name="TS_tpInsc_EstabLot">
+        <xsd:annotation>
+            <xsd:documentation>Preencher com o código correspondente ao tipo de inscrição do estabelecimento, de acordo com as opções da Tabela 05.</xsd:documentation>
+            <xsd:documentation>Validação: Se {classTrib}(1000_infoEmpregador_inclusao_infoCadastro_classTrib) em S-1000 = [21], deve ser igual a [3, 4].</xsd:documentation>
+            <xsd:documentation>Se {classTrib}(1000_infoEmpregador_inclusao_infoCadastro_classTrib) em S-1000 = [22], deve ser igual a [3, 4] e, se for igual a [3] e não se tratar de empregado doméstico, o CAEPF deve constar na Tabela S-1005 como sendo de segurado especial.</xsd:documentation>
+            <xsd:documentation>Nos demais casos ({classTrib}(1000_infoEmpregador_inclusao_infoCadastro_classTrib) em S-1000 diferente de [21, 22]), deve ser igual a [1, 4].</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="TS_tpInsc_1_3_4" />
+    </xsd:simpleType>
+
+    <xsd:simpleType name="TS_tpInsc_EstabLot_1_4">
+        <xsd:annotation>
+            <xsd:documentation>Preencher com o código correspondente ao tipo de inscrição do estabelecimento, de acordo com as opções da Tabela 05.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:byte">
+            <xsd:enumeration value="1">
+                <xsd:annotation>
+                    <xsd:documentation>CNPJ</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="4">
+                <xsd:annotation>
+                    <xsd:documentation>CNO</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Campo {ideEstabLot/nrInsc} -->
+
+    <xsd:simpleType name="TS_nrInsc_EstabLot">
+        <xsd:annotation>
+            <xsd:documentation>Informar o número de inscrição do estabelecimento do contribuinte de acordo com o tipo de inscrição indicado no campo {ideEstabLot/tpInsc}(./tpInsc).</xsd:documentation>
+            <xsd:documentation>Validação: A inscrição informada deve ser compatível com {ideEstabLot/tpInsc}(./tpInsc).</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="TS_nrInsc_12_14" />
+    </xsd:simpleType>
+
+    <!-- Campo {ideEstabLot/codLotacao} -->
+
+    <xsd:simpleType name="TS_codLotacao">
+        <xsd:annotation>
+            <xsd:documentation>Informar o código atribuído pelo empregador para a lotação tributária.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="TS_codigo_esocial" />
+    </xsd:simpleType>
+
+    <!-- Campo {indSimples} -->
+
+    <xsd:simpleType name="TS_indSimples">
+        <xsd:annotation>
+            <xsd:documentation>Indicador de contribuição substituída.</xsd:documentation>
+            <xsd:documentation>Validação: O preenchimento do campo é obrigatório apenas no caso das empresas enquadradas no regime de tributação Simples Nacional, com tributação previdenciária substituída e não substituída ({classTrib}(1000_infoEmpregador_inclusao_infoCadastro_classTrib) em S-1000 = [03]). Para os demais empregadores, não deve ser informado.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:byte">
+            <xsd:enumeration value="1">
+                <xsd:annotation>
+                    <xsd:documentation>Contribuição substituída integralmente</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="2">
+                <xsd:annotation>
+                    <xsd:documentation>Contribuição não substituída</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="3">
+                <xsd:annotation>
+                    <xsd:documentation>Contribuição não substituída concomitante com contribuição substituída</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Campo {qtdRubr} -->
+
+    <xsd:simpleType name="TS_qtdRubr">
+        <xsd:annotation>
+            <xsd:documentation>Informar a quantidade de referência para apuração (em horas, cotas, meses, etc.). Ex.: Quantidade de horas extras trabalhadas relacionada com uma rubrica de hora extra, quantidade de dias trabalhados relacionada com uma rubrica de salário, etc.</xsd:documentation>
+            <xsd:documentation>Preenchimento obrigatório quando se tratar de rubrica relativa a faltas ou Descanso Semanal Remunerado - DSR sobre faltas (nesse caso, informar a quantidade de dias).</xsd:documentation>
+            <xsd:documentation>Validação: Deve ser maior que 0 (zero). Informação obrigatória se {codRubr}(./codRubr) tiver {natRubr}(1010_infoRubrica_inclusao_dadosRubrica_natRubr) em S-1010 igual a [9207, 9211].</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="12" />
+            <xsd:fractionDigits value="2" />
+            <xsd:minExclusive value="0" />
+            <xsd:maxInclusive value="9999999999.99" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Campo {fatorRubr} -->
+
+    <xsd:simpleType name="TS_fator">
+        <xsd:annotation>
+            <xsd:documentation>Informar o fator, percentual, etc. da rubrica, quando necessário. Ex.: Adicional de horas extras 50%, relacionado a uma rubrica de horas extras: Fator = 50.</xsd:documentation>
+            <xsd:documentation>Validação: Deve ser maior que 0 (zero).</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="5" />
+            <xsd:fractionDigits value="2" />
+            <xsd:minExclusive value="0" />
+            <xsd:maxInclusive value="999.99" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Campo {vrRubr} -->
+
+    <xsd:simpleType name="TS_vrRubr">
+        <xsd:annotation>
+            <xsd:documentation>Valor total da rubrica.</xsd:documentation>
+            <xsd:documentation>Validação: Deve ser maior que 0 (zero).</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="TS_valorMonetario_positivo" />
+    </xsd:simpleType>
+
+    <!-- Campo {indApurIR} -->
+
+    <xsd:simpleType name="TS_indApurIR">
+        <xsd:restriction base="xsd:byte">
+            <xsd:enumeration value="0">
+                <xsd:annotation>
+                    <xsd:documentation>Normal (apuração sob a folha de pagamento declarada no eSocial)</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="1">
+                <xsd:annotation>
+                    <xsd:documentation>Situação especial de apuração de IR</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Campo {grauExp} -->
+
+    <xsd:simpleType name="TS_grauExp">
+        <xsd:annotation>
+            <xsd:documentation>Preencher com o código que representa o grau de exposição a agentes nocivos, conforme Tabela 02.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:byte">
+            <xsd:enumeration value="1">
+                <xsd:annotation>
+                    <xsd:documentation>Não ensejador de aposentadoria especial</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="2">
+                <xsd:annotation>
+                    <xsd:documentation>Ensejador de aposentadoria especial - FAE15_12% (15 anos de contribuição e alíquota de 12%)</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="3">
+                <xsd:annotation>
+                    <xsd:documentation>Ensejador de aposentadoria especial - FAE20_09% (20 anos de contribuição e alíquota de 9%)</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="4">
+                <xsd:annotation>
+                    <xsd:documentation>Ensejador de aposentadoria especial - FAE25_06% (25 anos de contribuição e alíquota de 6%)</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Campo {perRef} -->
+
+    <xsd:simpleType name="TS_perRef">
+        <xsd:annotation>
+            <xsd:documentation>Informar o período ao qual se refere o complemento de remuneração, no formato AAAA-MM.</xsd:documentation>
+            <xsd:documentation>Validação: Deve ser igual ou anterior ao período de apuração informado em {perApur}(/ideEvento_perApur).</xsd:documentation>
+            <xsd:documentation>Deve ser informado no formato AAAA-MM.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="TS_periodo_mensal" />
+    </xsd:simpleType>
+
+    <!-- Campo {tpAcConv} (S-1200 e S-5001) -->
+
+    <xsd:simpleType name="TS_tpAcConv">
+        <xsd:annotation>
+            <xsd:documentation>Tipo do instrumento ou situação ensejadora da remuneração relativa a períodos de apuração anteriores.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="A">
+                <xsd:annotation>
+                    <xsd:documentation>Acordo Coletivo de Trabalho</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="B">
+                <xsd:annotation>
+                    <xsd:documentation>Legislação federal, estadual, municipal ou distrital</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="C">
+                <xsd:annotation>
+                    <xsd:documentation>Convenção Coletiva de Trabalho</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="D">
+                <xsd:annotation>
+                    <xsd:documentation>Sentença normativa - Dissídio</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="E">
+                <xsd:annotation>
+                    <xsd:documentation>Conversão de licença saúde em acidente de trabalho</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="F">
+                <xsd:annotation>
+                    <xsd:documentation>Outras verbas de natureza salarial ou não salarial devidas após o desligamento</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="G">
+                <xsd:annotation>
+                    <xsd:documentation>Antecipação de diferenças de acordo, convenção ou dissídio coletivo</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Campo {dsc} -->
+
+    <xsd:simpleType name="TS_dsc">
+        <xsd:annotation>
+            <xsd:documentation>Descrição do instrumento ou situação que originou o pagamento das verbas relativas a períodos anteriores.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="TS_texto_255" />
+    </xsd:simpleType>
+
+    <!-- Campo CBO -->
+
+    <xsd:simpleType name="TS_cbo">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="\d{6}" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Campo {natAtividade} -->
+   
+    <xsd:simpleType name="TS_natAtividade">
+        <xsd:annotation>
+            <xsd:documentation>Natureza da atividade.</xsd:documentation>
+            <xsd:documentation>Validação: Se {codCateg}(../../infoContrato_codCateg) = [104], deve ser preenchido com [1]. Se {codCateg}(../../infoContrato_codCateg) = [102], deve ser preenchido com [2].</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:byte">
+            <xsd:enumeration value="1">
+                <xsd:annotation>
+                    <xsd:documentation>Trabalho urbano</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="2">
+                <xsd:annotation>
+                    <xsd:documentation>Trabalho rural</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Campo {nrBeneficio} -->
+
+    <xsd:simpleType name="TS_nrBeneficio">
+        <xsd:annotation>
+            <xsd:documentation>Número do benefício.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1" />
+            <xsd:maxLength value="20" />
+            <xsd:pattern value=".*[^\s].*" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Campo {indComerc} -->
+
+    <xsd:simpleType name="TS_indComerc">
+        <xsd:restriction base="xsd:byte">
+            <xsd:enumeration value="2">
+                <xsd:annotation>
+                    <xsd:documentation>Comercialização da produção efetuada diretamente no varejo a consumidor final ou a outro produtor rural pessoa física por produtor rural pessoa física, inclusive por segurado especial, ou por pessoa física não produtor rural</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="3">
+                <xsd:annotation>
+                    <xsd:documentation>Comercialização da produção por prod. rural PF/seg. especial - Vendas a PJ (exceto entidade inscrita no Programa de Aquisição de Alimentos - PAA) ou a intermediário PF</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="7">
+                <xsd:annotation>
+                    <xsd:documentation>Comercialização da produção isenta de acordo com a Lei 13.606/2018</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="8">
+                <xsd:annotation>
+                    <xsd:documentation>Comercialização da produção da pessoa física/segurado especial para entidade inscrita no PAA</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="9">
+                <xsd:annotation>
+                    <xsd:documentation>Comercialização da produção no mercado externo</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <!-- Campo {indSubstPatr} -->
+
+    <xsd:simpleType name="TS_indSubstPatr">
+        <xsd:restriction base="xsd:byte">
+            <xsd:enumeration value="1">
+                <xsd:annotation>
+                    <xsd:documentation>Integralmente substituída</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="2">
+                <xsd:annotation>
+                    <xsd:documentation>Parcialmente substituída</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Campo {vrSalFx} -->
+
+    <xsd:simpleType name="TS_vrSalFx">
+        <xsd:annotation>
+            <xsd:documentation>Salário base do trabalhador, correspondente à parte fixa da remuneração.</xsd:documentation>
+            <xsd:documentation>Validação: Se {undSalFixo}(./undSalFixo) for igual a [7], preencher com 0 (zero).</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="TS_valorMonetario" />
+    </xsd:simpleType>
+
+    <!-- Campo {undSalFixo} -->
+
+    <xsd:simpleType name="TS_undSalFixo">
+        <xsd:annotation>
+            <xsd:documentation>Unidade de pagamento da parte fixa da remuneração.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:byte">
+            <xsd:enumeration value="1">
+                <xsd:annotation>
+                    <xsd:documentation>Por hora</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="2">
+                <xsd:annotation>
+                    <xsd:documentation>Por dia</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="3">
+                <xsd:annotation>
+                    <xsd:documentation>Por semana</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="4">
+                <xsd:annotation>
+                    <xsd:documentation>Por quinzena</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="5">
+                <xsd:annotation>
+                    <xsd:documentation>Por mês</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="6">
+                <xsd:annotation>
+                    <xsd:documentation>Por tarefa</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="7">
+                <xsd:annotation>
+                    <xsd:documentation>Não aplicável - Salário exclusivamente variável</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Campo {tpContr} -->
+
+    <xsd:simpleType name="TS_tpContr">
+        <xsd:annotation>
+            <xsd:documentation>Tipo de contrato de trabalho.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:byte">
+            <xsd:enumeration value="1">
+                <xsd:annotation>
+                    <xsd:documentation>Prazo indeterminado</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="2">
+                <xsd:annotation>
+                    <xsd:documentation>Prazo determinado, definido em dias</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="3">
+                <xsd:annotation>
+                    <xsd:documentation>Prazo determinado, vinculado à ocorrência de um fato</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Campo sexo -->
+
+    <xsd:simpleType name="TS_sexoTrab">
+        <xsd:annotation>
+            <xsd:documentation>Sexo do trabalhador.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="TS_sexo" />
+    </xsd:simpleType>
+
+    <xsd:simpleType name="TS_sexo">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="M">
+                <xsd:annotation>
+                    <xsd:documentation>Masculino</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="F">
+                <xsd:annotation>
+                    <xsd:documentation>Feminino</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Campo {racaCor} -->
+
+    <xsd:simpleType name="TS_racaCorTrab">
+        <xsd:annotation>
+            <xsd:documentation>Raça e cor do trabalhador.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="TS_racaCor" />
+    </xsd:simpleType>
+
+    <xsd:simpleType name="TS_racaCorBenef">
+        <xsd:annotation>
+            <xsd:documentation>Raça e cor do beneficiário.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="TS_racaCor" />
+    </xsd:simpleType>
+
+    <xsd:simpleType name="TS_racaCor">
+        <xsd:restriction base="xsd:byte">
+            <xsd:enumeration value="1">
+                <xsd:annotation>
+                    <xsd:documentation>Branca</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="2">
+                <xsd:annotation>
+                    <xsd:documentation>Preta</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="3">
+                <xsd:annotation>
+                    <xsd:documentation>Parda</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="4">
+                <xsd:annotation>
+                    <xsd:documentation>Amarela</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="5">
+                <xsd:annotation>
+                    <xsd:documentation>Indígena</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="6">
+                <xsd:annotation>
+                    <xsd:documentation>Não informado</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Campo {estCiv} -->
+
+    <xsd:simpleType name="TS_estCivilTrab">
+        <xsd:annotation>
+            <xsd:documentation>Estado civil do trabalhador.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="TS_estCivil" />
+    </xsd:simpleType>
+
+    <xsd:simpleType name="TS_estCivilBenef">
+        <xsd:annotation>
+            <xsd:documentation>Estado civil do beneficiário.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="TS_estCivil" />
+    </xsd:simpleType>
+
+    <xsd:simpleType name="TS_estCivil">
+        <xsd:restriction base="xsd:byte">
+            <xsd:enumeration value="1">
+                <xsd:annotation>
+                    <xsd:documentation>Solteiro</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="2">
+                <xsd:annotation>
+                    <xsd:documentation>Casado</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="3">
+                <xsd:annotation>
+                    <xsd:documentation>Divorciado</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="4">
+                <xsd:annotation>
+                    <xsd:documentation>Separado</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="5">
+                <xsd:annotation>
+                    <xsd:documentation>Viúvo</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Campo {grauInstr} -->
+
+    <xsd:simpleType name="TS_grauInstr">
+        <xsd:annotation>
+            <xsd:documentation>Grau de instrução do trabalhador.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="01">
+                <xsd:annotation>
+                    <xsd:documentation>Analfabeto, inclusive o que, embora tenha recebido instrução, não se alfabetizou</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="02">
+                <xsd:annotation>
+                    <xsd:documentation>Até o 5º ano incompleto do ensino fundamental (antiga 4ª série) ou que se tenha alfabetizado sem ter frequentado escola regular</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="03">
+                <xsd:annotation>
+                    <xsd:documentation>5º ano completo do ensino fundamental</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="04">
+                <xsd:annotation>
+                    <xsd:documentation>Do 6º ao 9º ano do ensino fundamental incompleto (antiga 5ª a 8ª série)</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="05">
+                <xsd:annotation>
+                    <xsd:documentation>Ensino fundamental completo</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="06">
+                <xsd:annotation>
+                    <xsd:documentation>Ensino médio incompleto</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="07">
+                <xsd:annotation>
+                    <xsd:documentation>Ensino médio completo</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="08">
+                <xsd:annotation>
+                    <xsd:documentation>Educação superior incompleta</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="09">
+                <xsd:annotation>
+                    <xsd:documentation>Educação superior completa</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="10">
+                <xsd:annotation>
+                    <xsd:documentation>Pós-graduação completa</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="11">
+                <xsd:annotation>
+                    <xsd:documentation>Mestrado completo</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="12">
+                <xsd:annotation>
+                    <xsd:documentation>Doutorado completo</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Campo {tpLograd} -->
+
+    <xsd:simpleType name="TS_tpLograd">
+        <xsd:annotation>
+            <xsd:documentation>Tipo de logradouro.</xsd:documentation>
+            <xsd:documentation>Validação: Se informado, deve ser um código válido e existente na Tabela 20.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1" />
+            <xsd:maxLength value="4" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Campo {dscLograd} -->
+
+    <xsd:simpleType name="TS_dscLograd">
+        <xsd:annotation>
+            <xsd:documentation>Descrição do logradouro.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="TS_texto_100" />
+    </xsd:simpleType>
+
+    <!-- Campo {nrLograd} -->
+
+    <xsd:simpleType name="TS_nrLograd">
+        <xsd:annotation>
+            <xsd:documentation>Número do logradouro.</xsd:documentation>
+            <xsd:documentation>Se não houver número a ser informado, preencher com "S/N".</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1" />
+            <xsd:maxLength value="10" />
+            <xsd:pattern value=".*[^\s].*" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Campo {complemento} -->
+
+    <xsd:simpleType name="TS_complemento">
+        <xsd:annotation>
+            <xsd:documentation>Complemento do logradouro.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="TS_codigo_esocial" />
+    </xsd:simpleType>
+
+    <!-- Campo {bairro} -->
+
+    <xsd:simpleType name="TS_bairro">
+        <xsd:annotation>
+            <xsd:documentation>Nome do bairro/distrito.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1" />
+            <xsd:maxLength value="90" />
+            <xsd:pattern value=".*[^\s].*" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Campo {cep} -->
+    
+    <xsd:simpleType name="TS_cep">
+        <xsd:annotation>
+            <xsd:documentation>Código de Endereçamento Postal - CEP.</xsd:documentation>
+            <xsd:documentation>Validação: Deve ser preenchido apenas com números, com 8 (oito) posições.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="\d{8}" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Campo {codPostal} -->
+    
+    <xsd:simpleType name="TS_codPostal">
+        <xsd:annotation>
+            <xsd:documentation>Código de Endereçamento Postal.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="4" />
+            <xsd:maxLength value="12" />
+            <xsd:pattern value=".*[^\s].*" />
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <!-- Campo {tmpResid} -->
+
+    <xsd:simpleType name="TS_tmpResid">
+        <xsd:restriction base="xsd:byte">
+            <xsd:enumeration value="1">
+                <xsd:annotation>
+                    <xsd:documentation>Prazo indeterminado</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="2">
+                <xsd:annotation>
+                    <xsd:documentation>Prazo determinado</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Campo {condIng} -->
+    
+    <xsd:simpleType name="TS_condIng">
+        <xsd:annotation>
+            <xsd:documentation>Condição de ingresso do trabalhador imigrante.</xsd:documentation>
+            <xsd:documentation>Validação: Se {tmpResid}(./tmpResid) = [1], não pode ser informado [2, 5]. Se {tmpResid}(./tmpResid) = [2], não pode ser informado [1].</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:byte">
+            <xsd:enumeration value="1">
+                <xsd:annotation>
+                    <xsd:documentation>Refugiado</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="2">
+                <xsd:annotation>
+                    <xsd:documentation>Solicitante de refúgio</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="3">
+                <xsd:annotation>
+                    <xsd:documentation>Permanência no Brasil em razão de reunião familiar</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="4">
+                <xsd:annotation>
+                    <xsd:documentation>Beneficiado pelo acordo entre países do Mercosul</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="5">
+                <xsd:annotation>
+                    <xsd:documentation>Dependente de agente diplomático e/ou consular de países que mantêm acordo de reciprocidade para o exercício de atividade remunerada no Brasil</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="6">
+                <xsd:annotation>
+                    <xsd:documentation>Beneficiado pelo Tratado de Amizade, Cooperação e Consulta entre a República Federativa do Brasil e a República Portuguesa</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="7">
+                <xsd:annotation>
+                    <xsd:documentation>Outra condição</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <!-- Campos do grupo {infoDeficiencia} -->
+    
+    <xsd:simpleType name="TS_defFisica">
+        <xsd:annotation>
+            <xsd:documentation>Deficiência física.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="TS_sim_nao" />
+    </xsd:simpleType>
+
+    <xsd:simpleType name="TS_defVisual">
+        <xsd:annotation>
+            <xsd:documentation>Deficiência visual.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="TS_sim_nao" />
+    </xsd:simpleType>
+
+    <xsd:simpleType name="TS_defAuditiva">
+        <xsd:annotation>
+            <xsd:documentation>Deficiência auditiva.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="TS_sim_nao" />
+    </xsd:simpleType>
+
+    <xsd:simpleType name="TS_defMental">
+        <xsd:annotation>
+            <xsd:documentation>Deficiência mental.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="TS_sim_nao" />
+    </xsd:simpleType>
+
+    <xsd:simpleType name="TS_defIntelectual">
+        <xsd:annotation>
+            <xsd:documentation>Deficiência intelectual.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="TS_sim_nao" />
+    </xsd:simpleType>
+
+    <xsd:simpleType name="TS_reabReadap">
+        <xsd:annotation>
+            <xsd:documentation>Informar se o trabalhador é reabilitado (empregado) ou readaptado (servidor público/militar).</xsd:documentation>
+            <xsd:documentation>Reabilitado: estando o empregado incapacitado parcial ou totalmente para o trabalho, cumpriu programa de reabilitação profissional no INSS, recebendo certificado e sendo proporcionados os meios indicados para participar do mercado de trabalho.</xsd:documentation>
+            <xsd:documentation>Readaptado: o servidor está investido em cargo de atribuições e responsabilidades compatíveis com a limitação que tenha sofrido em sua capacidade física ou mental verificada em inspeção médica.</xsd:documentation>                                           
+        </xsd:annotation>
+        <xsd:restriction base="TS_sim_nao" />
+    </xsd:simpleType>
+     
+    <!-- Campo {tpDep} -->
+
+    <xsd:simpleType name="TS_tpDep">
+        <xsd:annotation>
+            <xsd:documentation>Tipo de dependente.</xsd:documentation>
+            <xsd:documentation>Validação: Deve ser um código válido e existente na Tabela 07.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="\d{2}" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Campo {depIRRF} -->
+
+    <xsd:simpleType name="TS_depIRRF">
+        <xsd:annotation>
+            <xsd:documentation>Informar se é dependente do trabalhador para fins de dedução de seu rendimento tributável pelo Imposto de Renda.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="TS_sim_nao" />
+    </xsd:simpleType>
+
+    <xsd:simpleType name="TS_depIRRF_Benef">
+        <xsd:annotation>
+            <xsd:documentation>Informar se é dependente do beneficiário para fins de dedução de seu rendimento tributável pelo Imposto de Renda.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="TS_sim_nao" />
+    </xsd:simpleType>
+
+    <!-- Campo {depSF} -->
+
+    <xsd:simpleType name="TS_depSF">
+        <xsd:annotation>
+            <xsd:documentation>Informar se é dependente para fins de recebimento do benefício de salário-família.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="TS_sim_nao" />
+    </xsd:simpleType>
+
+    <!-- Campo {incTrab} -->
+
+    <xsd:simpleType name="TS_incTrab">
+        <xsd:annotation>
+            <xsd:documentation>Informar se o dependente tem incapacidade física ou mental para o trabalho.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="TS_sim_nao" />
+    </xsd:simpleType>
+
+    <!-- Campo {tpRegTrab} -->
+
+    <xsd:simpleType name="TS_tpRegTrab">
+        <xsd:annotation>
+            <xsd:documentation>Tipo de regime trabalhista.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:byte">
+            <xsd:enumeration value="1">
+                <xsd:annotation>
+                    <xsd:documentation>CLT - Consolidação das Leis de Trabalho e legislações trabalhistas específicas</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="2">
+                <xsd:annotation>
+                    <xsd:documentation>Estatutário/legislações específicas (servidor temporário, militar, agente político, etc.)</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Campo {tpRegPrev} -->
+   
+    <xsd:simpleType name="TS_tpRegPrev">
+        <xsd:annotation>
+            <xsd:documentation>Tipo de regime previdenciário (ou Sistema de Proteção Social dos Militares).</xsd:documentation>
+            <xsd:documentation>Validação: Se {codCateg}(./infoContrato_codCateg) = [104], deve ser preenchido com [1]. Se {codCateg}(./infoContrato_codCateg) = [101, 102, 103, 105, 106, 107, 108, 111], não pode ser preenchido com [2].</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:byte">
+            <xsd:enumeration value="1">
+                <xsd:annotation>
+                    <xsd:documentation>Regime Geral de Previdência Social - RGPS</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="2">
+                <xsd:annotation>
+                    <xsd:documentation>Regime Próprio de Previdência Social - RPPS ou Sistema de Proteção Social dos Militares</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="3">
+                <xsd:annotation>
+                    <xsd:documentation>Regime de Previdência Social no exterior</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Campo {tpRegJor} -->
+   
+    <xsd:simpleType name="TS_tpRegJor">
+        <xsd:annotation>
+            <xsd:documentation>Regime de jornada do empregado.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:byte">
+            <xsd:enumeration value="1">
+                <xsd:annotation>
+                    <xsd:documentation>Submetido a horário de trabalho (Capítulo II do Título II da CLT)</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="2">
+                <xsd:annotation>
+                    <xsd:documentation>Atividade externa especificada no inciso I do art. 62 da CLT</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="3">
+                <xsd:annotation>
+                    <xsd:documentation>Função especificada no inciso II do art. 62 da CLT</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="4">
+                <xsd:annotation>
+                    <xsd:documentation>Teletrabalho, previsto no inciso III do art. 62 da CLT</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Campo {dtBase} -->
+   
+    <xsd:simpleType name="TS_dtBase">
+        <xsd:annotation>
+            <xsd:documentation>Mês relativo à data base da categoria profissional do trabalhador.</xsd:documentation>
+            <xsd:documentation>Validação: Se informado, deve ser maior ou igual a 1 e menor ou igual a 12.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:byte">
+            <xsd:pattern value="\d{1,2}" />
+            <xsd:minInclusive value="1" />
+            <xsd:maxInclusive value="12" />
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <!-- Campo {cnpjSindCategProf} -->
+
+    <xsd:simpleType name="TS_cnpjSindCategProf">
+        <xsd:annotation>
+            <xsd:documentation>Preencher com o CNPJ do sindicato representativo da categoria (preponderante ou diferenciada).</xsd:documentation>
+            <xsd:documentation>Validação: Deve ser um CNPJ válido, com 14 (catorze) algarismos.</xsd:documentation>
+        </xsd:annotation>
+            <xsd:restriction base="TS_cnpj" />
+    </xsd:simpleType>
+
+    <!-- Campo {dtOpcFGTS} -->
+
+    <xsd:simpleType name="TS_dtOpcFGTS">
+        <xsd:annotation>
+            <xsd:documentation>Informar a data de opção do trabalhador pelo FGTS.</xsd:documentation>
+        </xsd:annotation>
+            <xsd:restriction base="xsd:date" />
+    </xsd:simpleType>
+
+    <!-- Campo {tpPlanRP} -->
+
+    <xsd:simpleType name="TS_tpPlanRP">
+        <xsd:annotation>
+            <xsd:documentation>Tipo de plano de segregação da massa.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:byte">
+            <xsd:enumeration value="0">
+                <xsd:annotation>
+                    <xsd:documentation>Sem segregação da massa</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="1">
+                <xsd:annotation>
+                    <xsd:documentation>Fundo em capitalização</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="2">
+                <xsd:annotation>
+                    <xsd:documentation>Fundo em repartição</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="3">
+                <xsd:annotation>
+                    <xsd:documentation>Mantido pelo Tesouro</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Campo {CBOCargo} -->
+
+    <xsd:simpleType name="TS_CBOCargo">
+        <xsd:annotation>
+            <xsd:documentation>Informar a Classificação Brasileira de Ocupações - CBO relativa ao cargo.</xsd:documentation>
+            <xsd:documentation>Validação: Informação obrigatória e exclusiva se {nmCargo}(./nmCargo) for preenchido. Se informado, deve ser um código válido e existente na tabela de CBO, com 6 (seis) posições.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="TS_cbo" />
+    </xsd:simpleType>
+
+    <!-- Campo {CBOFuncao} -->
+
+    <xsd:simpleType name="TS_CBOFuncao">
+        <xsd:annotation>
+            <xsd:documentation>Informar a CBO relativa à função de confiança/cargo em comissão.</xsd:documentation>
+            <xsd:documentation>Validação: Informação obrigatória e exclusiva se {nmFuncao}(./nmFuncao) for preenchido. Se informado, deve ser um código válido e existente na tabela de CBO, com 6 (seis) posições.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="TS_cbo" />
+    </xsd:simpleType>
+
+    <!-- Campo {dtTerm} -->
+
+    <xsd:simpleType name="TS_dtTerm">
+        <xsd:annotation>
+            <xsd:documentation>Data do término do contrato por prazo determinado.</xsd:documentation>
+            <xsd:documentation>Validação: O preenchimento é obrigatório se {tpContr}(./tpContr) = [2]. Não informar se {tpContr}(./tpContr) = [1]. Se preenchido, deve ser igual ou posterior à data de admissão (no caso de transferência ou mudança de CPF, igual ou posterior a {sucessaoVinc/dtTransf}(2200_vinculo_sucessaoVinc_dtTransf), {transfDom/dtTransf}(2200_vinculo_transfDom_dtTransf) ou {dtAltCPF}(2200_vinculo_mudancaCPF_dtAltCPF) do evento S-2200, conforme o caso).</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:date" />
+    </xsd:simpleType>
+
+    <!-- Campo {objDet} -->
+
+    <xsd:simpleType name="TS_objDet">
+        <xsd:annotation>
+            <xsd:documentation>Indicação do objeto determinante da contratação por prazo determinado (obra, serviço, safra, etc.).</xsd:documentation>
+            <xsd:documentation>Validação: O preenchimento é obrigatório e exclusivo se {tpContr}(./tpContr) = [3].</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="TS_texto_255" />
+    </xsd:simpleType>
+
+    <!-- Campo {codMotAfast} -->
+
+    <xsd:simpleType name="TS_codMotAfast">
+        <xsd:annotation>
+            <xsd:documentation>Preencher com o código do motivo de afastamento temporário.</xsd:documentation>
+            <xsd:documentation>Validação: Deve ser um código válido e existente na Tabela 18.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="\d{2}" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Campo {dtAlteracao} -->
+
+    <xsd:simpleType name="TS_dtAlteracao">
+        <xsd:annotation>
+            <xsd:documentation>Preencher com a data da alteração das informações.</xsd:documentation>
+            <xsd:documentation>Validação: Não pode ser posterior a 180 (cento e oitenta) dias da data atual.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:date" />
+    </xsd:simpleType>
+
+    <!-- Campo {paisNac} -->
+
+    <xsd:simpleType name="TS_paisNac">
+        <xsd:annotation>
+            <xsd:documentation>Preencher com o código do país de nacionalidade do trabalhador.</xsd:documentation>
+            <xsd:documentation>Validação: Deve ser um código válido e existente na Tabela 06.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="TS_pais" />
+    </xsd:simpleType>
+
+    <!-- Campo {nrCRM} -->
+
+    <xsd:simpleType name="TS_crm">
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1" />
+            <xsd:maxLength value="8" />
+            <xsd:pattern value=".*[^\s].*" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Campo {pensAlim} -->
+
+    <xsd:simpleType name="TS_pensAlim">
+        <xsd:restriction base="xsd:byte">
+            <xsd:enumeration value="0">
+                <xsd:annotation>
+                    <xsd:documentation>Não existe pensão alimentícia</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="1">
+                <xsd:annotation>
+                    <xsd:documentation>Percentual de pensão alimentícia</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="2">
+                <xsd:annotation>
+                    <xsd:documentation>Valor de pensão alimentícia</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="3">
+                <xsd:annotation>
+                    <xsd:documentation>Percentual e valor de pensão alimentícia</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Campo {percAliment} -->
+
+    <xsd:simpleType name="TS_percAliment">
+        <xsd:annotation>
+            <xsd:documentation>Percentual a ser destinado a pensão alimentícia.</xsd:documentation>
+            <xsd:documentation>Validação: Deve ser maior que 0 (zero) e menor ou igual a 100 (cem).</xsd:documentation>
+            <xsd:documentation>Informação obrigatória e exclusiva se {pensAlim}(./pensAlim) = [1, 3].</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="TS_percentual_positivo" />
+    </xsd:simpleType>
+
+    <!-- Campo {vrAlim} -->
+
+    <xsd:simpleType name="TS_vrAlim">
+        <xsd:annotation>
+            <xsd:documentation>Valor da pensão alimentícia.</xsd:documentation>
+            <xsd:documentation>Validação: Deve ser maior que 0 (zero).</xsd:documentation>
+            <xsd:documentation>Informação obrigatória e exclusiva se {pensAlim}(./pensAlim) = [2, 3].</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="TS_valorMonetario_positivo" />
+    </xsd:simpleType>
+
+    <!-- Campo {indRemunCargo} -->
+
+    <xsd:simpleType name="TS_indRemunCargo">
+        <xsd:annotation>
+            <xsd:documentation>Indicar se o servidor optou pela remuneração do cargo efetivo.</xsd:documentation>
+            <xsd:documentation>Validação: Informação obrigatória e exclusiva se {CBOCargo}(../cargoFuncao_CBOCargo) = [111120, 111250, 111255]).</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="TS_sim_nao" />
+    </xsd:simpleType>
+
+    <!-- Campo {incFisMen} -->
+
+    <xsd:simpleType name="TS_incFisMen">
+        <xsd:annotation>
+            <xsd:documentation>Informar se o beneficiário é pessoa com doença incapacitante que isenta da contribuição previdenciária, total ou parcialmente, reconhecida administrativa ou judicialmente, na forma da lei.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="TS_sim_nao" />
+    </xsd:simpleType>
+
+    <!-- Campo {dependente/incFisMen} -->
+
+    <xsd:simpleType name="TS_incFisMenDep">
+        <xsd:annotation>
+            <xsd:documentation>Informar se o dependente é pessoa com doença incapacitante, na forma da lei.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="TS_sim_nao" />
+    </xsd:simpleType>
+
+    <!-- Campo {tpBeneficio} -->
+    
+    <xsd:simpleType name="TS_tpBeneficio">
+        <xsd:restriction base="xsd:integer">
+            <xsd:pattern value="\d{4}" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Campo {tpPenMorte} -->
+    
+    <xsd:simpleType name="TS_tpPenMorte">
+        <xsd:annotation>
+            <xsd:documentation>Tipo de pensão por morte.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:byte">
+            <xsd:enumeration value="1">
+                <xsd:annotation>
+                    <xsd:documentation>Vitalícia</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="2">
+                <xsd:annotation>
+                    <xsd:documentation>Temporária</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Campo {ind13} -->
+
+    <xsd:simpleType name="TS_ind13">
+        <xsd:annotation>
+            <xsd:documentation>Indicativo de 13° salário.</xsd:documentation>
+            <xsd:documentation>Validação: Se {indApuracao}(/ideEvento_perApur) = [2], preencher com [1].</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:byte">
+            <xsd:enumeration value="0">
+                <xsd:annotation>
+                    <xsd:documentation>Mensal</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="1">
+                <xsd:annotation>
+                    <xsd:documentation>13° salário ({codIncCP}(1010_infoRubrica_inclusao_dadosRubrica_codIncCP) em S-1010 = [12, 14, 16, 22, 26, 32, 92, 94, 96, 98])</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Campos {indIncid} e {indIncidE} -->
+
+    <xsd:simpleType name="TS_indIncid">
+        <xsd:annotation>
+            <xsd:documentation>Indicativo de incidência de FGTS.</xsd:documentation>
+            <xsd:documentation>Validação: Se {codIncFGTS}(1010_infoRubrica_inclusao_dadosRubrica_codIncFGTS) em S-1010 for igual a [11, 12, 21], deve ser retornado [1].</xsd:documentation>
+            <xsd:documentation>Se {codIncFGTS}(1010_infoRubrica_inclusao_dadosRubrica_codIncFGTS) em S-1010 for igual a [91, 92, 93], deve ser retornado [9].</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:byte">
+            <xsd:enumeration value="1">
+                <xsd:annotation>
+                    <xsd:documentation>Normal (incidência de FGTS)</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="9">
+                <xsd:annotation>
+                    <xsd:documentation>Incidência de FGTS suspensa em decorrência de decisão judicial</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Campo {tpValorE} -->
+
+    <xsd:simpleType name="TS_tpValorE">
+        <xsd:restriction base="xsd:byte">
+            <xsd:enumeration value="13">
+                <xsd:annotation>
+                    <xsd:documentation>FGTS dissídio mensal</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="14">
+                <xsd:annotation>
+                    <xsd:documentation>FGTS dissídio 13º salário</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="17">
+                <xsd:annotation>
+                    <xsd:documentation>FGTS dissídio mensal - Aprendiz/Contrato Verde e Amarelo</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="18">
+                <xsd:annotation>
+                    <xsd:documentation>FGTS dissídio 13º salário - Aprendiz/Contrato Verde e Amarelo</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="24">
+                <xsd:annotation>
+                    <xsd:documentation>FGTS dissídio mês da rescisão</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="25">
+                <xsd:annotation>
+                    <xsd:documentation>FGTS dissídio 13º salário rescisório</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="26">
+                <xsd:annotation>
+                    <xsd:documentation>FGTS dissídio aviso prévio indenizado</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="30">
+                <xsd:annotation>
+                    <xsd:documentation>FGTS dissídio mês da rescisão - Aprendiz/Contrato Verde e Amarelo</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="31">
+                <xsd:annotation>
+                    <xsd:documentation>FGTS dissídio 13° salário rescisório - Aprendiz/Contrato Verde e Amarelo</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="32">
+                <xsd:annotation>
+                    <xsd:documentation>FGTS dissídio aviso prévio indenizado - Aprendiz/Contrato Verde e Amarelo</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="43">
+                <xsd:annotation>
+                    <xsd:documentation>FGTS dissídio mensal - Indenização compensatória do empregado doméstico</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="44">
+                <xsd:annotation>
+                    <xsd:documentation>FGTS dissídio 13º salário - Indenização compensatória do empregado doméstico</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="48">
+                <xsd:annotation>
+                    <xsd:documentation>FGTS dissídio mês da rescisão - Indenização compensatória do empregado doméstico</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="49">
+                <xsd:annotation>
+                    <xsd:documentation>FGTS dissídio 13º salário rescisório - Indenização compensatória do empregado doméstico</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="50">
+                <xsd:annotation>
+                    <xsd:documentation>FGTS dissídio aviso prévio indenizado - Indenização compensatória do empregado doméstico</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Campo {nrRecArqBase} (S-5011 e S-5013) -->
+
+    <xsd:simpleType name="TS_nrRecArqBase">
+        <xsd:annotation>
+            <xsd:documentation>Preencher com o número do recibo do arquivo que deu origem ao presente arquivo de retorno ao empregador.</xsd:documentation>
+            <xsd:documentation>Validação: Deve ser um recibo de entrega válido, correspondente ao arquivo que deu origem ao presente arquivo de retorno (S-1299).</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="TS_nrRecibo" />
+    </xsd:simpleType>
+
+    <!-- Campo de período mensal -->
+    
+    <xsd:simpleType name="TS_periodo_mensal">
+        <xsd:restriction base="xsd:string">
+            <xsd:length value="7" />
+            <xsd:pattern value="[2]{1}\d{3}-(1[0-2]|0[1-9])" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Campo do tipo caractere com tamanho 1-100 -->
+
+    <xsd:simpleType name="TS_texto_100">
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1" />
+            <xsd:maxLength value="100" />
+            <xsd:pattern value=".*[^\s].*" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Campo do tipo caractere com tamanho 1-255 -->
+
+    <xsd:simpleType name="TS_texto_255">
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1" />
+            <xsd:maxLength value="255" />
+            <xsd:pattern value=".*[^\s].*" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Campo do tipo caractere com tamanho 1-999 -->
+
+    <xsd:simpleType name="TS_texto_999">
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1" />
+            <xsd:maxLength value="999" />
+            <xsd:pattern value=".*[^\s].*" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Campo com valores Sim/Não -->
+
+    <xsd:simpleType name="TS_sim_nao">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="S">
+                <xsd:annotation>
+                    <xsd:documentation>Sim</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="N">
+                <xsd:annotation>
+                    <xsd:documentation>Não</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Campo de valor -->
+
+    <xsd:simpleType name="TS_valor">
+        <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="14" />
+            <xsd:fractionDigits value="2" />
+            <xsd:minInclusive value="-999999999999.99" />
+            <xsd:maxInclusive value="999999999999.99" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Campo de valor maior que 0 -->
+
+    <xsd:simpleType name="TS_valorMonetario_positivo">
+        <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="14" />
+            <xsd:fractionDigits value="2" />
+            <xsd:minExclusive value="0" />
+            <xsd:maxInclusive value="999999999999.99" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Campo de valor maior ou igual a 0 -->
+
+    <xsd:simpleType name="TS_valorMonetario">
+        <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="14" />
+            <xsd:fractionDigits value="2" />
+            <xsd:minInclusive value="0" />
+            <xsd:maxInclusive value="999999999999.99" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Campo percentual maior que 0 -->
+
+    <xsd:simpleType name="TS_percentual_positivo">
+        <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="5" />
+            <xsd:fractionDigits value="2" />
+            <xsd:minExclusive value="0" />
+            <xsd:maxInclusive value="100" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Campo percentual maior ou igual a 0 -->
+
+    <xsd:simpleType name="TS_percentual">
+        <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="5" />
+            <xsd:fractionDigits value="2" />
+            <xsd:minInclusive value="0" />
+            <xsd:maxInclusive value="100" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Campo país -->
+
+    <xsd:simpleType name="TS_pais">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="\d{3}" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Campo hora -->
+
+    <xsd:simpleType name="TS_hora">
+        <xsd:restriction base="xsd:integer">
+            <xsd:pattern value="\d{4}" />
+            <xsd:pattern value="(([0-1][0-9]|2[0-3])[0-5][0-9])" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+</xsd:schema>
