@@ -20,4 +20,39 @@ public class Utils {
       sb.append("   ");
     }
   }
+  
+  public static String convertType(String type, boolean returnTypeOnDefault){
+    if(type == null) return null;
+    switch(type){
+      case "xs:integer": 
+      case "xsd:integer":
+        return "Integer";
+      case "xs:string":
+      case "xsd:string":
+        return "String";
+      case "xs:byte":
+      case "xsd:byte":
+        return "String";
+      case "xs:date":
+      case "xsd:date":
+        return "javax.xml.datatype.XMLGregorianCalendar";
+      case "xs:decimal":
+      case "xsd:decimal":
+        return "Double";
+      case "xs:ID":
+      case "xsd:ID":
+        return "String";
+      default:
+        return returnTypeOnDefault ? type : null;
+        
+    }
+  }
+  
+  public static boolean isResolvedType(String type) {
+    return "Integer".equals(type) ||
+            "String".equals(type) ||
+            "javax.xml.datatype.XMLGregorianCalendar".equals(type) ||
+            "Double".equals(type);
+            
+  }
 }

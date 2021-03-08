@@ -21,11 +21,16 @@ public final class SimpleTypeNode extends SchemaNode {
   public TemplatesField fatherField;
   public TemplatesSimpleType attributedSimpleType;
   
+  public SimpleTypeNode(Node node) {
+    this(node, null);
+  }
+          
   public SimpleTypeNode(Node node, TemplatesField fatherField) {
     super(node);
     this.fatherField = fatherField;
     attributedSimpleType = Main.ctx.startSimpleType();
     attributedSimpleType.fatherField = fatherField;
+    attributedSimpleType.name = getThisAttrValue("name");
     traverse();
     finish();
   }

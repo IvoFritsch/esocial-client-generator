@@ -26,19 +26,25 @@ public class Context {
   
   private Map<String, TemplatesSimpleType> simpleTypesCatalog = new HashMap<>();
   private List<TemplatesSimpleType> unresolvedSimpleTypes = new ArrayList<>();
+  private List<TemplatesField> fieldsCatalog = new ArrayList<>();
   
 
   public Context(TemplatesClass rootClass) {
     this.rootClass = rootClass;
     this.currentProccessingClass = rootClass;
+    rootClass.isRootClass = true;
   }
   
   public TemplatesClass startClass() {
     TemplatesClass c = new TemplatesClass();
-    c.fatherClass = currentProccessingClass;
-    currentProccessingClass.addChildClass(c);
+    addChildClass(c);
     currentProccessingClass = c;
     return c;
+  }
+  
+  public void addChildClass(TemplatesClass c) {
+    c.fatherClass = currentProccessingClass;
+    currentProccessingClass.addChildClass(c);
   }
 
   public TemplatesField getCurrentProccessingField() {
@@ -75,6 +81,9 @@ public class Context {
   }
   
   public void finishField(){
+    if(currentProccessingField != null){
+      fieldsCatalog.add(currentProccessingField);
+    }
     currentProccessingField = null;
   }
   
@@ -84,6 +93,19 @@ public class Context {
   
   public TemplatesSimpleType getSimpleTypeFromCatalog(String name){
     return simpleTypesCatalog.get(name);
+  }
+  
+  public void finishResolvingAllTypes(){
+    unresolvedSimpleTypes.forEach(TemplatesSimpleType::resolveTypeAndGet);
+    fieldsCatalog.forEach(TemplatesField::resolveType);
+  }
+  
+  public void importSimpleTypesFrom(Context ctx) {
+    this.simpleTypesCatalog = ctx.simpleTypesCatalog;
+  }
+
+  public TemplatesClass getRootClass() {
+    return rootClass;
   }
   
 }

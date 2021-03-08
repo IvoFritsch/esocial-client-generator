@@ -60,6 +60,7 @@ public abstract class SchemaNode {
    */
   protected final boolean nextNode(){
       Node ret = childNodes.item(nextChildNumber);
+      
       currentChild = ret;
       nextChildNumber++;
       currentChildNumber++;

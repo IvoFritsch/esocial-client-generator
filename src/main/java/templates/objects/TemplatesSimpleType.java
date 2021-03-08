@@ -8,6 +8,7 @@ package templates.objects;
 import java.util.ArrayList;
 import java.util.List;
 import main.Main;
+import main.Utils;
 
 /**
  *
@@ -26,28 +27,17 @@ public class TemplatesSimpleType {
   
   public void setType(String type){
     rawType = type;
-    switch(type){
-      case "xs:integer": 
-        correspondingType = "Integer";
-        break;
-      case "xs:string":
-        correspondingType = "String";
-        break;
-      case "xs:byte":
-        correspondingType = "String";
-      case "xs:date":
-        correspondingType = "xs:date";
-        break;
-      default: 
-        Main.ctx.addUnresolvedSimpleType(this);
-        break;
+    correspondingType = Utils.convertType(type, false);
+    if(correspondingType == null){
+      Main.ctx.addUnresolvedSimpleType(this);
     }
   }
   
   public String resolveTypeAndGet(){
+    if(correspondingType != null) return correspondingType;
     TemplatesSimpleType st = Main.ctx.getSimpleTypeFromCatalog(rawType);
     if(st == null) {
-      throw new RuntimeException("Incapaz de resolver o simpleType: " + rawType);
+      throw new RuntimeException(String.valueOf(this.name) + " -> incapaz de resolver o simpleType: " + rawType);
     }
     correspondingType = st.resolveTypeAndGet();
     if(fatherField != null) {
@@ -55,5 +45,11 @@ public class TemplatesSimpleType {
     }
     return correspondingType;
   }
+
+  @Override
+  public String toString() {
+    return "TemplatesSimpleType{" + "name=" + name + ", rawType=" + rawType + ", correspondingType=" + correspondingType + ", isEnumeration=" + isEnumeration + '}';
+  }
+  
   
 }

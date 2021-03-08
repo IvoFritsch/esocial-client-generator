@@ -42,7 +42,7 @@ public final class ElementNode extends SchemaNode{
         case "complexType": 
           attributedField.setType(Utils.capFirst(attributedField.name));
           ComplexTypeNode complexTypeNode = new ComplexTypeNode(currentChild, attributedField);
-          attributedField.setType(complexTypeNode.attributedClass.getFullName());
+          attributedField.setType(complexTypeNode.attributedClass.name);
           break;
         case "simpleType": 
           SimpleTypeNode simpleTypeNode = new SimpleTypeNode(currentChild, attributedField);

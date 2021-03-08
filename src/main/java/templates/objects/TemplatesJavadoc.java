@@ -29,17 +29,19 @@ public class TemplatesJavadoc {
   public String toString(int tabs) {
     StringBuilder sb = new StringBuilder();
     Utils.appendTabulation(sb, tabs);
-    sb.append("/*\n");
+    sb.append("/**\n");
     Utils.appendTabulation(sb, tabs);
-    sb.append(" * <b>");
+    sb.append(" * ");
     sb.append(title);
-    sb.append("</b>\n");
+    sb.append("\n");
     Utils.appendTabulation(sb, tabs);
     sb.append(" *\n");
     lines.forEach(l -> {
       Utils.appendTabulation(sb, tabs);
       sb.append(" * ");
+      sb.append("<p>");
       sb.append(l);
+      sb.append("</p>");
       sb.append("\n");
     });
     Utils.appendTabulation(sb, tabs);

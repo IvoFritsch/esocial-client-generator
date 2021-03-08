@@ -17,6 +17,7 @@ public class TemplatesClass {
   public String name;
   public TemplatesClass fatherClass;
   public TemplatesJavadoc javadoc;
+  public boolean isRootClass = false;
   public List<TemplatesClass> childClasses = new ArrayList<>();
   public List<TemplatesField> fields = new ArrayList<>();
 
@@ -44,6 +45,11 @@ public class TemplatesClass {
   public void setJavadoc(TemplatesJavadoc jd) {
     javadoc = jd;
   }
+  
+  public boolean hasChildClass(String name){
+    if(name == null) return false;
+    return childClasses.stream().anyMatch(c -> name.equals(c.name));
+  }
 
   public String toString(int tabs) {
     StringBuilder sb = new StringBuilder();
@@ -51,7 +57,7 @@ public class TemplatesClass {
       sb.append(javadoc.toString(tabs));
     }
     Utils.appendTabulation(sb, tabs);
-    sb.append("class ").append(this.name).append(" {\n");
+    sb.append("public static class ").append(this.name).append(" {\n");
     fields.forEach(f -> {
       sb.append(f.toString(tabs + 1));
       sb.append("\n");
