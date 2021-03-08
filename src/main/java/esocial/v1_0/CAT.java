@@ -14,12 +14,6 @@ public class CAT {
   
   public T_ideEvento_evtTrab<CAT> ideEvento(){
     
-    ESocial_1_0_Tipos.T_ideEvento_evtTab t_ideEvento_evtTab = new ESocial_1_0_Tipos.T_ideEvento_evtTab();
     
-    
-    if(ideEvento == null){
-      ideEvento = new T_ideEvento_evtTrab<>(this);
-    }
-    return ideEvento;
   }
 }
