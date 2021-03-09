@@ -8,6 +8,7 @@ package templates.objects;
 import java.util.ArrayList;
 import java.util.List;
 import main.Utils;
+import templates.TemplatesManager;
 
 /**
  *
@@ -26,6 +27,26 @@ public class TemplatesClass {
 
   public TemplatesClass(String name) {
     this.name = name;
+  }
+
+  public List<TemplatesClass> getChildClasses() {
+    return childClasses;
+  }
+
+  public List<TemplatesField> getFields() {
+    return fields;
+  }
+
+  public TemplatesJavadoc getJavadoc() {
+    return javadoc;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public boolean isIsRootClass() {
+    return isRootClass;
   }
   
   public void addChildClass(TemplatesClass c){
@@ -51,24 +72,9 @@ public class TemplatesClass {
     return childClasses.stream().anyMatch(c -> name.equals(c.name));
   }
 
-  public String toString(int tabs) {
-    StringBuilder sb = new StringBuilder();
-    if(javadoc != null){
-      sb.append(javadoc.toString(tabs));
-    }
-    Utils.appendTabulation(sb, tabs);
-    sb.append("public static class ").append(this.name).append(" {\n");
-    fields.forEach(f -> {
-      sb.append(f.toString(tabs + 1));
-      sb.append("\n");
-    });
-    childClasses.forEach(c -> {
-      sb.append(c.toString(tabs + 1));
-      sb.append("\n");
-    });
-    Utils.appendTabulation(sb, tabs);
-    sb.append("}\n");
-    return sb.toString();
+  @Override
+  public String toString() {
+    return TemplatesManager.process("class", this);
   }
   
   
