@@ -57,7 +57,7 @@ public class Main {
           }
         }
         ctx.finishResolvingAllTypes();
-        System.out.println(ctx.getRootClass().toString(0));
+        System.out.println(ctx.getRootClass().toString());
 
        } catch (Exception e) {
           e.printStackTrace();
