@@ -10,6 +10,7 @@ import java.util.List;
 import main.Utils;
 import org.w3c.dom.Node;
 import parser.nodes.JavadocNode;
+import templates.TemplatesManager;
 
 /**
  * 
@@ -26,6 +27,19 @@ public class TemplatesJavadoc {
     lines = n.lines;
   }
 
+  public String getTitle() {
+    return title;
+  }
+
+  public List<String> getLines() {
+    return lines;
+  }
+  
+  @Override
+  public String toString() {
+    return TemplatesManager.process("javadoc", this);
+  }
+  
   public String toString(int tabs) {
     StringBuilder sb = new StringBuilder();
     Utils.appendTabulation(sb, tabs);
