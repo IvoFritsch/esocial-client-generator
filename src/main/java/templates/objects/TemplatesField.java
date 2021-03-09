@@ -8,12 +8,15 @@ package templates.objects;
 import java.util.Objects;
 import main.Main;
 import main.Utils;
+import templates.TemplatesManager;
 
 /**
  *
  * @author Ivo
  */
 public class TemplatesField {
+  
+  
   public TemplatesClass fatherClass;
   public TemplatesJavadoc javadoc;
   public String name;
@@ -25,18 +28,13 @@ public class TemplatesField {
     javadoc = jd;
   }
 
-  public String toString(int tabs) {
-    StringBuilder sb = new StringBuilder();
-    if(javadoc != null){
-      sb.append(javadoc.toString(tabs));
-    }
-    Utils.appendTabulation(sb, tabs);
-    sb.append(getFullType());
-    sb.append(" ");
-    sb.append(name);
-    sb.append(";");
-    sb.append("\n");
-    return sb.toString();
+  public TemplatesJavadoc getJavadoc() {
+    return javadoc;
+  }
+
+  @Override
+  public String toString() {
+    return TemplatesManager.process("field-declaration", this);
   }
 
   public void setType(String type) {
@@ -53,6 +51,10 @@ public class TemplatesField {
   public String getFullType() {
     if(Utils.isResolvedType(type) || fatherClass.hasChildClass(type)) return type;
     return "Tipos." + type;
+  }
+
+  public String getName() {
+    return name;
   }
   
   public String getType() {
