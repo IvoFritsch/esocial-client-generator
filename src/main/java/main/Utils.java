@@ -52,7 +52,8 @@ public class Utils {
     return "Integer".equals(type) ||
             "String".equals(type) ||
             "javax.xml.datatype.XMLGregorianCalendar".equals(type) ||
-            "Double".equals(type);
+            "Double".equals(type) ||
+            "Signature".equals(type);
             
   }
 }

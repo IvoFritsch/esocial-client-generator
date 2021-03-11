@@ -32,6 +32,10 @@ public final class ComplexTypeNode extends SchemaNode {
     super(node);
     attributedClass = Main.ctx.startClass();
     attributedClass.name = fatherField.getType();
+    if("ESocial".equals(attributedClass.name)) {
+      attributedClass.name = "Evento_" + Main.ctx.getRootClass().name;
+      attributedClass.isMainESocialClass = true;
+    }
     this.fatherField = fatherField;
     traverse();
     finish();
@@ -49,7 +53,7 @@ public final class ComplexTypeNode extends SchemaNode {
           }
           break;
         case "sequence": 
-          new FieldsSequenceNode(currentChild);
+          new FieldsSequenceOrChoiceNode(currentChild, attributedClass);
           break;
       }
     }

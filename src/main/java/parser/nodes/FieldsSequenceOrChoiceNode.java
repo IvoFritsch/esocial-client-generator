@@ -7,16 +7,20 @@ package parser.nodes;
 
 import main.Main;
 import org.w3c.dom.Node;
+import templates.objects.TemplatesClass;
 import templates.objects.TemplatesJavadoc;
 
 /**
  * Traversa uma sequencia de campo dentro de um complex type
  * @author Ivo
  */
-public final class FieldsSequenceNode extends SchemaNode {
+public final class FieldsSequenceOrChoiceNode extends SchemaNode {
 
-  public FieldsSequenceNode(Node node) {
+  public TemplatesClass attributedClass;
+  
+  public FieldsSequenceOrChoiceNode(Node node, TemplatesClass attributedClass) {
     super(node);
+    this.attributedClass = attributedClass;
     traverse();
     finish();
   }
@@ -27,6 +31,10 @@ public final class FieldsSequenceNode extends SchemaNode {
       switch(getCurrentChildName()){
         case "element": 
           new ElementNode(currentChild);
+          break;
+        case "choice": 
+          attributedClass.isChoise = true;
+          new FieldsSequenceOrChoiceNode(currentChild, attributedClass);
           break;
       }
     }

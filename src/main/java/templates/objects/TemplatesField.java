@@ -49,7 +49,7 @@ public class TemplatesField {
 
   
   public String getFullType() {
-    if(Utils.isResolvedType(type) || fatherClass.hasChildClass(type)) return type;
+    if(Utils.isResolvedType(type) || Main.ctx.classIsFromCurrentContext(type)) return type;
     return "Tipos." + type;
   }
 
@@ -63,12 +63,25 @@ public class TemplatesField {
   
   public void resolveType() {
     TemplatesSimpleType resolved = Main.ctx.getSimpleTypeFromCatalog(type);
+    //System.out.println(name + "  " + type);
     if(resolved != null) {
       // Caso esse field não tem javadoc, copia o javadoc do simpleType correspondente
       if(this.javadoc == null){
         this.javadoc = resolved.javadoc;
       }
       type = resolved.resolveTypeAndGet();
+    }
+    // Caso não resolveu em um simple type, é uma classe, faz um switch de javadocs, se necessário
+    if(resolved == null) {
+      TemplatesClass classFromCatalog = Main.ctx.getClassFromCatalog(type);
+      if(classFromCatalog != null) {
+        if(classFromCatalog.javadoc == null){
+          classFromCatalog.javadoc = this.javadoc;
+        }
+        if(this.javadoc == null) {
+          this.javadoc = classFromCatalog.javadoc;
+        }
+      }
     }
   }
   

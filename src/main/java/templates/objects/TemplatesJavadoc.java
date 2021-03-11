@@ -21,6 +21,7 @@ public class TemplatesJavadoc {
   
   public String title;
   public List<String> lines;
+  public boolean isReferringClassChoice = false;
 
   public TemplatesJavadoc(JavadocNode n) {
     title = n.title;
@@ -33,6 +34,10 @@ public class TemplatesJavadoc {
 
   public List<String> getLines() {
     return lines;
+  }
+
+  public boolean isIsReferringClassChoice() {
+    return isReferringClassChoice;
   }
   
   @Override

@@ -16,11 +16,14 @@ import templates.TemplatesManager;
  */
 public class TemplatesClass {
   public String name;
+  public boolean isMainESocialClass;
   public TemplatesClass fatherClass;
   public TemplatesJavadoc javadoc;
   public boolean isRootClass = false;
+  public boolean isChoise = false;
   public List<TemplatesClass> childClasses = new ArrayList<>();
   public List<TemplatesField> fields = new ArrayList<>();
+  public boolean isFromThisContext = true;
 
   public TemplatesClass() {
   }
@@ -38,6 +41,9 @@ public class TemplatesClass {
   }
 
   public TemplatesJavadoc getJavadoc() {
+    if(javadoc != null) {
+      javadoc.isReferringClassChoice = this.isChoise;
+    }
     return javadoc;
   }
 
@@ -47,6 +53,10 @@ public class TemplatesClass {
 
   public boolean isIsRootClass() {
     return isRootClass;
+  }
+
+  public boolean isIsMainESocialClass() {
+    return isMainESocialClass;
   }
   
   public void addChildClass(TemplatesClass c){

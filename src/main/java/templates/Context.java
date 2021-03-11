@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Stack;
 import templates.objects.TemplatesClass;
 import templates.objects.TemplatesField;
 import templates.objects.TemplatesSimpleType;
@@ -18,48 +19,57 @@ import templates.objects.TemplatesSimpleType;
  * @author Ivo
  */
 public class Context {
-  private final TemplatesClass rootClass;
+  private TemplatesClass rootClass;
   
-  private TemplatesClass currentProccessingClass;
+  private final Stack<TemplatesClass> proccessingClasses = new Stack<>();
   private TemplatesSimpleType currentProccessingSimpleType;
-  private TemplatesField currentProccessingField;
+  private final Stack<TemplatesField> proccessingFields = new Stack<>();
   
   private Map<String, TemplatesSimpleType> simpleTypesCatalog = new HashMap<>();
-  private List<TemplatesSimpleType> unresolvedSimpleTypes = new ArrayList<>();
-  private List<TemplatesField> fieldsCatalog = new ArrayList<>();
+  private Map<String, TemplatesClass> allClassesCatalog = new HashMap<>();
+  private final List<TemplatesSimpleType> unresolvedSimpleTypes = new ArrayList<>();
+  private final List<TemplatesField> fieldsCatalog = new ArrayList<>();
   
 
   public Context(TemplatesClass rootClass) {
     this.rootClass = rootClass;
-    this.currentProccessingClass = rootClass;
+    proccessingClasses.push(rootClass);
     rootClass.isRootClass = true;
   }
   
   public TemplatesClass startClass() {
     TemplatesClass c = new TemplatesClass();
     addChildClass(c);
-    currentProccessingClass = c;
+    proccessingClasses.push(c);
     return c;
   }
   
   public void addChildClass(TemplatesClass c) {
-    c.fatherClass = currentProccessingClass;
-    currentProccessingClass.addChildClass(c);
+    c.fatherClass = getCurrentProccessingClass();
+    c.fatherClass.addChildClass(c);
   }
 
   public TemplatesField getCurrentProccessingField() {
-    return currentProccessingField;
+    try{
+      return proccessingFields.peek();
+    } catch (Exception e) {
+      return null;
+    }
   }
-
+  
   public TemplatesClass getCurrentProccessingClass() {
-    return currentProccessingClass;
+    try {
+      return proccessingClasses.peek();
+    } catch (Exception e) {
+      return null;
+    }
   }
   
   public TemplatesField startField(){
     TemplatesField f = new TemplatesField();
-    f.fatherClass = currentProccessingClass;
-    currentProccessingClass.addField(f);
-    currentProccessingField = f;
+    f.fatherClass = getCurrentProccessingClass();
+    f.fatherClass.addField(f);
+    proccessingFields.push(f);
     return f;
   }
   
@@ -77,14 +87,19 @@ public class Context {
   }
   
   public void finishClass(){
-    currentProccessingClass = currentProccessingClass.fatherClass;
+    TemplatesClass currentProccessingClass = getCurrentProccessingClass();
+    if(currentProccessingClass.name != null){
+      allClassesCatalog.put(currentProccessingClass.name, currentProccessingClass);
+    }
+    proccessingClasses.pop();
   }
   
   public void finishField(){
+    TemplatesField currentProccessingField = getCurrentProccessingField();
     if(currentProccessingField != null){
       fieldsCatalog.add(currentProccessingField);
     }
-    currentProccessingField = null;
+    proccessingFields.pop();
   }
   
   public void addUnresolvedSimpleType(TemplatesSimpleType st){
@@ -95,17 +110,38 @@ public class Context {
     return simpleTypesCatalog.get(name);
   }
   
+  public TemplatesClass getClassFromCatalog(String name){
+    return allClassesCatalog.get(name);
+  }
+  
   public void finishResolvingAllTypes(){
     unresolvedSimpleTypes.forEach(TemplatesSimpleType::resolveTypeAndGet);
     fieldsCatalog.forEach(TemplatesField::resolveType);
   }
   
-  public void importSimpleTypesFrom(Context ctx) {
+  public void importTypesFrom(Context ctx) {
     this.simpleTypesCatalog = ctx.simpleTypesCatalog;
+    this.allClassesCatalog = ctx.allClassesCatalog;
+    this.allClassesCatalog.values().forEach(c -> c.isFromThisContext = false);
   }
 
   public TemplatesClass getRootClass() {
     return rootClass;
+  }
+  
+  public boolean classIsFromCurrentContext(String name) {
+    TemplatesClass c = allClassesCatalog.get(name);
+    return c.isFromThisContext;
+  }
+
+  public void transformESocialSubClassToRoot() {
+    TemplatesClass mainESocialClass = rootClass.childClasses.stream().filter(c -> c.isMainESocialClass).findFirst().get();
+    mainESocialClass.isRootClass = true;
+    rootClass.childClasses.stream().filter(c -> c != mainESocialClass).forEach(c -> {
+      c.fatherClass = mainESocialClass;
+      mainESocialClass.addChildClass(c);
+    });
+    rootClass = mainESocialClass;
   }
   
 }
