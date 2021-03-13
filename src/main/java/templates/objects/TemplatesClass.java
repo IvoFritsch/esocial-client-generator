@@ -55,6 +55,18 @@ public class TemplatesClass {
     return isRootClass;
   }
 
+  public String getFullGenericsPath(boolean endChain) {
+    String ret = this.name;
+    if(endChain) {
+      if(fatherClass != null) ret += "<T>";
+      return ret;
+    }
+    if(fatherClass != null) {
+      ret = ret + "<"+fatherClass.getFullGenericsPath(true)+">";
+    }
+    return ret;
+  }
+  
   public boolean isIsMainESocialClass() {
     return isMainESocialClass;
   }

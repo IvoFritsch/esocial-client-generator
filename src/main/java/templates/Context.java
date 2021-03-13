@@ -5,11 +5,14 @@
  */
 package templates;
 
+import com.google.googlejavaformat.java.Formatter;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Stack;
+import org.apache.commons.io.FileUtils;
 import templates.objects.TemplatesClass;
 import templates.objects.TemplatesField;
 import templates.objects.TemplatesSimpleType;
@@ -137,11 +140,28 @@ public class Context {
   public void transformESocialSubClassToRoot() {
     TemplatesClass mainESocialClass = rootClass.childClasses.stream().filter(c -> c.isMainESocialClass).findFirst().get();
     mainESocialClass.isRootClass = true;
+    mainESocialClass.fatherClass = null;
     rootClass.childClasses.stream().filter(c -> c != mainESocialClass).forEach(c -> {
       c.fatherClass = mainESocialClass;
       mainESocialClass.addChildClass(c);
     });
     rootClass = mainESocialClass;
+  }
+  
+  public void writeToDir(File dir) {
+    try {
+      
+      String path = dir.toString();
+      if(!path.endsWith("/")){
+        path += "/";
+      }
+      path += rootClass.name + ".java";
+
+      String formatted = new Formatter().formatSource(rootClass.toString());
+      FileUtils.write(new File(path), formatted, "UTF-8");
+    } catch (Exception e) {
+      throw new RuntimeException(e);
+    }
   }
   
 }

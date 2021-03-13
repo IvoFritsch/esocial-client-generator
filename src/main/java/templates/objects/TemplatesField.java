@@ -21,6 +21,8 @@ public class TemplatesField {
   public TemplatesJavadoc javadoc;
   public String name;
   private String type;
+  private boolean isClassType;
+  private TemplatesClass resolvedClassType;
   public boolean isDate = false;
   
 
@@ -35,6 +37,14 @@ public class TemplatesField {
   @Override
   public String toString() {
     return TemplatesManager.process("field-declaration", this);
+  }
+  
+  public String getGetter() {
+    return TemplatesManager.process("field-getter", this);
+  }
+  
+  public String getSetter() {
+    return TemplatesManager.process("field-setter", this);
   }
 
   public void setType(String type) {
@@ -52,6 +62,14 @@ public class TemplatesField {
     if(Utils.isResolvedType(type) || Main.ctx.classIsFromCurrentContext(type)) return type;
     return "Tipos." + type;
   }
+  
+  public String getBuilderFunctionReturnType() {
+    return resolvedClassType.getFullGenericsPath(false);
+  }
+
+  public boolean isIsClassType() {
+    return isClassType;
+  }
 
   public String getName() {
     return name;
@@ -59,6 +77,10 @@ public class TemplatesField {
   
   public String getType() {
     return type;
+  }
+
+  public TemplatesClass getFatherClass() {
+    return fatherClass;
   }
   
   public void resolveType() {
@@ -75,6 +97,8 @@ public class TemplatesField {
     if(resolved == null) {
       TemplatesClass classFromCatalog = Main.ctx.getClassFromCatalog(type);
       if(classFromCatalog != null) {
+        isClassType = true;
+        resolvedClassType = classFromCatalog;
         if(classFromCatalog.javadoc == null){
           classFromCatalog.javadoc = this.javadoc;
         }

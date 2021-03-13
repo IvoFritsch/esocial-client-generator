@@ -5,12 +5,18 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlTransient;
 
 </#if>
 <#if javadoc??>
-    ${javadoc}
+    <#if isRootClass>
+        ${javadoc.onlyTitle}
+    <#else>
+        ${javadoc.onlyTitle
+                .param('<T> Tipo do retorno do método finish()')}
+    </#if>
 </#if>
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
 <#list fields as field>
     "${field.name}",
@@ -25,12 +31,19 @@ public ${isRootClass?then('', 'static')} class ${name}${isRootClass?then('', '<T
     ${field}
 </#list>
 
+<#list fields as field>
+    ${field.getter}
+
+    ${field.setter}
+</#list>
+
 <#if !isRootClass> 
 
     public ${name}(Object pai) {
       this.pai = pai;
     }
       
+    @XmlTransient
     private final Object pai;
 
     /**

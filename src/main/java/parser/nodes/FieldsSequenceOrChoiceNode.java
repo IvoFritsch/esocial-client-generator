@@ -5,10 +5,8 @@
  */
 package parser.nodes;
 
-import main.Main;
 import org.w3c.dom.Node;
 import templates.objects.TemplatesClass;
-import templates.objects.TemplatesJavadoc;
 
 /**
  * Traversa uma sequencia de campo dentro de um complex type

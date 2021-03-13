@@ -1,4 +1,4 @@
 <#if javadoc??>
-    ${javadoc}
+    ${javadoc.onlyTitle}
 </#if>
 private ${fullType} ${name};

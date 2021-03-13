@@ -4,9 +4,10 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlTransient;
 
 /** S-1000 - Informações do Empregador/Contribuinte/Órgão Público */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(
     name = "",
     propOrder = {
@@ -16,28 +17,19 @@ import javax.xml.bind.annotation.XmlType;
 @XmlRootElement(name = "eSocial")
 public class Evento_InfoEmpregador {
 
-  /**
-   * Evento Informações do Empregador.
-   *
-   * <p>CHAVE_GRUPO: {Id}
-   *
-   * <p>REGRA:REGRA_ENVIO_PROC_FECHAMENTO
-   *
-   * <p>REGRA:REGRA_INFO_EMP_PERIODO_CONFLITANTE
-   *
-   * <p>REGRA:REGRA_INFO_EMP_VALIDA_CLASSTRIB_NATJURID
-   *
-   * <p>REGRA:REGRA_INFO_EMP_VALIDA_DTINICIAL
-   *
-   * <p>REGRA:REGRA_TAB_PERMITE_EXCLUSAO
-   *
-   * <p>REGRA:REGRA_VALIDA_DT_FUTURA
-   *
-   * <p>REGRA:REGRA_VALIDA_EMPREGADOR
-   */
+  /** Evento Informações do Empregador. */
   private EvtInfoEmpregador evtInfoEmpregador;
 
-  private String signature;
+  private Signature signature;
+
+  /**
+   * Evento Informações do Empregador.
+   *
+   * @return Valor do campo evtInfoEmpregador
+   */
+  public EvtInfoEmpregador getEvtInfoEmpregador() {
+    return this.evtInfoEmpregador;
+  }
 
   /**
    * Evento Informações do Empregador.
@@ -57,34 +49,31 @@ public class Evento_InfoEmpregador {
    * <p>REGRA:REGRA_VALIDA_DT_FUTURA
    *
    * <p>REGRA:REGRA_VALIDA_EMPREGADOR
+   *
+   * @return O objeto EvtInfoEmpregador para população dos campos filhos
    */
-  public EvtInfoEmpregador<Evento_InfoEmpregador> evtInfoEmpregador() {
-    if(evtInfoEmpregador == null) {
-      evtInfoEmpregador = new EvtInfoEmpregador(this);
+  public EvtInfoEmpregador<Evento_InfoEmpregador> setEvtInfoEmpregador() {
+    if (this.evtInfoEmpregador == null) {
+      this.evtInfoEmpregador = new EvtInfoEmpregador(this);
     }
-    return evtInfoEmpregador;
+    return this.evtInfoEmpregador;
   }
-  
+
+  public Signature getSignature() {
+    return this.signature;
+  }
+
+  public Evento_InfoEmpregador setSignature(Signature signature) {
+    this.signature = signature;
+    return this;
+  }
+
   /**
    * Evento Informações do Empregador.
    *
-   * <p>CHAVE_GRUPO: {Id}
-   *
-   * <p>REGRA:REGRA_ENVIO_PROC_FECHAMENTO
-   *
-   * <p>REGRA:REGRA_INFO_EMP_PERIODO_CONFLITANTE
-   *
-   * <p>REGRA:REGRA_INFO_EMP_VALIDA_CLASSTRIB_NATJURID
-   *
-   * <p>REGRA:REGRA_INFO_EMP_VALIDA_DTINICIAL
-   *
-   * <p>REGRA:REGRA_TAB_PERMITE_EXCLUSAO
-   *
-   * <p>REGRA:REGRA_VALIDA_DT_FUTURA
-   *
-   * <p>REGRA:REGRA_VALIDA_EMPREGADOR
+   * @param <T> Tipo do retorno do método finish()
    */
-  @XmlAccessorType(XmlAccessType.PROPERTY)
+  @XmlAccessorType(XmlAccessType.FIELD)
   @XmlType(
       name = "",
       propOrder = {
@@ -94,41 +83,89 @@ public class Evento_InfoEmpregador {
       })
   public static class EvtInfoEmpregador<T> {
 
-    private final Object pai;
-
-    public EvtInfoEmpregador(Object pai) {
-      this.pai = pai;
-    }
-
     /** Informações de identificação do evento. */
     private Tipos.T_ideEvento_evtTab ideEvento;
+
+    /** Informações de identificação do empregador. */
+    private IdeEmpregador ideEmpregador;
+
+    /** Informações do empregador. */
+    private InfoEmpregador infoEmpregador;
+
+    /**
+     * Informações de identificação do evento.
+     *
+     * @return Valor do campo ideEvento
+     */
+    public Tipos.T_ideEvento_evtTab getIdeEvento() {
+      return this.ideEvento;
+    }
+
+    /**
+     * Informações de identificação do evento.
+     *
+     * @return O objeto Tipos.T_ideEvento_evtTab para população dos campos filhos
+     */
+    public Tipos.T_ideEvento_evtTab<EvtInfoEmpregador<T>> setIdeEvento() {
+      if (this.ideEvento == null) {
+        this.ideEvento = new Tipos.T_ideEvento_evtTab(this);
+      }
+      return this.ideEvento;
+    }
+
+    /**
+     * Informações de identificação do empregador.
+     *
+     * @return Valor do campo ideEmpregador
+     */
+    public IdeEmpregador getIdeEmpregador() {
+      return this.ideEmpregador;
+    }
 
     /**
      * Informações de identificação do empregador.
      *
      * <p>CHAVE_GRUPO: {tpInsc}, {nrInsc}
+     *
+     * @return O objeto IdeEmpregador para população dos campos filhos
      */
-    private IdeEmpregador ideEmpregador;
+    public IdeEmpregador<EvtInfoEmpregador<T>> setIdeEmpregador() {
+      if (this.ideEmpregador == null) {
+        this.ideEmpregador = new IdeEmpregador(this);
+      }
+      return this.ideEmpregador;
+    }
+
+    /**
+     * Informações do empregador.
+     *
+     * @return Valor do campo infoEmpregador
+     */
+    public InfoEmpregador getInfoEmpregador() {
+      return this.infoEmpregador;
+    }
 
     /**
      * Informações do empregador.
      *
      * <p>DESCRICAO_COMPLETA:Identificação da operação (inclusão, alteração ou exclusão) e das
      * respectivas informações do empregador.
-     */
-    private InfoEmpregador infoEmpregador;
-    /**
-     * Informações de identificação do empregador.
      *
-     * <p>CHAVE_GRUPO: {tpInsc}, {nrInsc}
+     * @return O objeto InfoEmpregador para população dos campos filhos
      */
-    public IdeEmpregador<EvtInfoEmpregador<Evento_InfoEmpregador>> ideEmpregador() {
-      if(ideEmpregador == null) {
-        ideEmpregador = new IdeEmpregador(this);
+    public InfoEmpregador<EvtInfoEmpregador<T>> setInfoEmpregador() {
+      if (this.infoEmpregador == null) {
+        this.infoEmpregador = new InfoEmpregador(this);
       }
-      return ideEmpregador;
+      return this.infoEmpregador;
     }
-    
+
+    public EvtInfoEmpregador(Object pai) {
+      this.pai = pai;
+    }
+
+    @XmlTransient private final Object pai;
+
     /**
      * Finaliza a população dos campos filhos desse nível
      *
@@ -137,13 +174,12 @@ public class Evento_InfoEmpregador {
     public T finish() {
       return (T) pai;
     }
-
     /**
      * Informações de identificação do empregador.
      *
-     * <p>CHAVE_GRUPO: {tpInsc}, {nrInsc}
+     * @param <T> Tipo do retorno do método finish()
      */
-    @XmlAccessorType(XmlAccessType.PROPERTY)
+    @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(
         name = "",
         propOrder = {
@@ -151,14 +187,44 @@ public class Evento_InfoEmpregador {
         })
     public static class IdeEmpregador<T> {
 
-      private final Object pai;
-
-      public IdeEmpregador(Object pai) {
-        this.pai = pai;
-      }
-
       /** Preencher com o código correspondente ao tipo de inscrição, conforme Tabela 05. */
       private String tpInsc;
+
+      /**
+       * Informar o número de inscrição do contribuinte de acordo com o tipo de inscrição indicado
+       * no campo {tpInsc}(./tpInsc).
+       */
+      private String nrInsc;
+
+      /**
+       * Preencher com o código correspondente ao tipo de inscrição, conforme Tabela 05.
+       *
+       * @return Valor do campo tpInsc
+       */
+      public String getTpInsc() {
+        return this.tpInsc;
+      }
+
+      /**
+       * Preencher com o código correspondente ao tipo de inscrição, conforme Tabela 05.
+       *
+       * @param tpInsc Valor para atribuir ao campo tpInsc
+       * @return O próprio IdeEmpregador para continuar populando outros campos
+       */
+      public IdeEmpregador<T> setTpInsc(String tpInsc) {
+        this.tpInsc = tpInsc;
+        return this;
+      }
+
+      /**
+       * Informar o número de inscrição do contribuinte de acordo com o tipo de inscrição indicado
+       * no campo {tpInsc}(./tpInsc).
+       *
+       * @return Valor do campo nrInsc
+       */
+      public String getNrInsc() {
+        return this.nrInsc;
+      }
 
       /**
        * Informar o número de inscrição do contribuinte de acordo com o tipo de inscrição indicado
@@ -171,8 +237,20 @@ public class Evento_InfoEmpregador {
        * posições).
        *
        * <p>Se {tpInsc}(./tpInsc) for igual a [2], deve ser um CPF válido.
+       *
+       * @param nrInsc Valor para atribuir ao campo nrInsc
+       * @return O próprio IdeEmpregador para continuar populando outros campos
        */
-      private String nrInsc;
+      public IdeEmpregador<T> setNrInsc(String nrInsc) {
+        this.nrInsc = nrInsc;
+        return this;
+      }
+
+      public IdeEmpregador(Object pai) {
+        this.pai = pai;
+      }
+
+      @XmlTransient private final Object pai;
 
       /**
        * Finaliza a população dos campos filhos desse nível
@@ -187,12 +265,9 @@ public class Evento_InfoEmpregador {
     /**
      * Informações do empregador.
      *
-     * <p>Obs.: Escolha somente um dos campos filhos
-     *
-     * <p>DESCRICAO_COMPLETA:Identificação da operação (inclusão, alteração ou exclusão) e das
-     * respectivas informações do empregador.
+     * @param <T> Tipo do retorno do método finish()
      */
-    @XmlAccessorType(XmlAccessType.PROPERTY)
+    @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(
         name = "",
         propOrder = {
@@ -202,32 +277,89 @@ public class Evento_InfoEmpregador {
         })
     public static class InfoEmpregador<T> {
 
-      private final Object pai;
+      /** Inclusão de novas informações. */
+      private Inclusao inclusao;
 
-      public InfoEmpregador(Object pai) {
-        this.pai = pai;
+      /** Alteração das informações. */
+      private Alteracao alteracao;
+
+      /** Exclusão das informações. */
+      private Exclusao exclusao;
+
+      /**
+       * Inclusão de novas informações.
+       *
+       * @return Valor do campo inclusao
+       */
+      public Inclusao getInclusao() {
+        return this.inclusao;
       }
 
       /**
        * Inclusão de novas informações.
        *
        * <p>CONDICAO_GRUPO: OC
+       *
+       * @return O objeto Inclusao para população dos campos filhos
        */
-      private Inclusao inclusao;
+      public Inclusao<InfoEmpregador<T>> setInclusao() {
+        if (this.inclusao == null) {
+          this.inclusao = new Inclusao(this);
+        }
+        return this.inclusao;
+      }
+
+      /**
+       * Alteração das informações.
+       *
+       * @return Valor do campo alteracao
+       */
+      public Alteracao getAlteracao() {
+        return this.alteracao;
+      }
 
       /**
        * Alteração das informações.
        *
        * <p>CONDICAO_GRUPO: OC
+       *
+       * @return O objeto Alteracao para população dos campos filhos
        */
-      private Alteracao alteracao;
+      public Alteracao<InfoEmpregador<T>> setAlteracao() {
+        if (this.alteracao == null) {
+          this.alteracao = new Alteracao(this);
+        }
+        return this.alteracao;
+      }
+
+      /**
+       * Exclusão das informações.
+       *
+       * @return Valor do campo exclusao
+       */
+      public Exclusao getExclusao() {
+        return this.exclusao;
+      }
 
       /**
        * Exclusão das informações.
        *
        * <p>CONDICAO_GRUPO: OC
+       *
+       * @return O objeto Exclusao para população dos campos filhos
        */
-      private Exclusao exclusao;
+      public Exclusao<InfoEmpregador<T>> setExclusao() {
+        if (this.exclusao == null) {
+          this.exclusao = new Exclusao(this);
+        }
+        return this.exclusao;
+      }
+
+      public InfoEmpregador(Object pai) {
+        this.pai = pai;
+      }
+
+      @XmlTransient private final Object pai;
 
       /**
        * Finaliza a população dos campos filhos desse nível
@@ -237,13 +369,12 @@ public class Evento_InfoEmpregador {
       public T finish() {
         return (T) pai;
       }
-
       /**
        * Inclusão de novas informações.
        *
-       * <p>CONDICAO_GRUPO: OC
+       * @param <T> Tipo do retorno do método finish()
        */
-      @XmlAccessorType(XmlAccessType.PROPERTY)
+      @XmlAccessorType(XmlAccessType.FIELD)
       @XmlType(
           name = "",
           propOrder = {
@@ -252,21 +383,61 @@ public class Evento_InfoEmpregador {
           })
       public static class Inclusao<T> {
 
-        private final Object pai;
+        /** Período de validade das informações. */
+        private T_idePeriodo idePeriodo;
 
-        public Inclusao(Object pai) {
-          this.pai = pai;
+        /** Detalhamento das informações do empregador. */
+        private T_infoCadastro infoCadastro;
+
+        /**
+         * Período de validade das informações.
+         *
+         * @return Valor do campo idePeriodo
+         */
+        public T_idePeriodo getIdePeriodo() {
+          return this.idePeriodo;
         }
 
         /**
          * Período de validade das informações.
          *
          * <p>CHAVE_GRUPO: {iniValid}, {fimValid}
+         *
+         * @return O objeto T_idePeriodo para população dos campos filhos
          */
-        private T_idePeriodo idePeriodo;
+        public T_idePeriodo<Inclusao<T>> setIdePeriodo() {
+          if (this.idePeriodo == null) {
+            this.idePeriodo = new T_idePeriodo(this);
+          }
+          return this.idePeriodo;
+        }
 
-        /** Detalhamento das informações do empregador. */
-        private T_infoCadastro infoCadastro;
+        /**
+         * Detalhamento das informações do empregador.
+         *
+         * @return Valor do campo infoCadastro
+         */
+        public T_infoCadastro getInfoCadastro() {
+          return this.infoCadastro;
+        }
+
+        /**
+         * Detalhamento das informações do empregador.
+         *
+         * @return O objeto T_infoCadastro para população dos campos filhos
+         */
+        public T_infoCadastro<Inclusao<T>> setInfoCadastro() {
+          if (this.infoCadastro == null) {
+            this.infoCadastro = new T_infoCadastro(this);
+          }
+          return this.infoCadastro;
+        }
+
+        public Inclusao(Object pai) {
+          this.pai = pai;
+        }
+
+        @XmlTransient private final Object pai;
 
         /**
          * Finaliza a população dos campos filhos desse nível
@@ -281,9 +452,9 @@ public class Evento_InfoEmpregador {
       /**
        * Alteração das informações.
        *
-       * <p>CONDICAO_GRUPO: OC
+       * @param <T> Tipo do retorno do método finish()
        */
-      @XmlAccessorType(XmlAccessType.PROPERTY)
+      @XmlAccessorType(XmlAccessType.FIELD)
       @XmlType(
           name = "",
           propOrder = {
@@ -293,21 +464,67 @@ public class Evento_InfoEmpregador {
           })
       public static class Alteracao<T> {
 
-        private final Object pai;
+        /** Período de validade das informações. */
+        private T_idePeriodo idePeriodo;
 
-        public Alteracao(Object pai) {
-          this.pai = pai;
+        /** Detalhamento das informações do empregador. */
+        private T_infoCadastro infoCadastro;
+
+        /** Novo período de validade das informações. */
+        private T_idePeriodo novaValidade;
+
+        /**
+         * Período de validade das informações.
+         *
+         * @return Valor do campo idePeriodo
+         */
+        public T_idePeriodo getIdePeriodo() {
+          return this.idePeriodo;
         }
 
         /**
          * Período de validade das informações.
          *
          * <p>CHAVE_GRUPO: {iniValid}, {fimValid}
+         *
+         * @return O objeto T_idePeriodo para população dos campos filhos
          */
-        private T_idePeriodo idePeriodo;
+        public T_idePeriodo<Alteracao<T>> setIdePeriodo() {
+          if (this.idePeriodo == null) {
+            this.idePeriodo = new T_idePeriodo(this);
+          }
+          return this.idePeriodo;
+        }
 
-        /** Detalhamento das informações do empregador. */
-        private T_infoCadastro infoCadastro;
+        /**
+         * Detalhamento das informações do empregador.
+         *
+         * @return Valor do campo infoCadastro
+         */
+        public T_infoCadastro getInfoCadastro() {
+          return this.infoCadastro;
+        }
+
+        /**
+         * Detalhamento das informações do empregador.
+         *
+         * @return O objeto T_infoCadastro para população dos campos filhos
+         */
+        public T_infoCadastro<Alteracao<T>> setInfoCadastro() {
+          if (this.infoCadastro == null) {
+            this.infoCadastro = new T_infoCadastro(this);
+          }
+          return this.infoCadastro;
+        }
+
+        /**
+         * Novo período de validade das informações.
+         *
+         * @return Valor do campo novaValidade
+         */
+        public T_idePeriodo getNovaValidade() {
+          return this.novaValidade;
+        }
 
         /**
          * Novo período de validade das informações.
@@ -316,8 +533,21 @@ public class Evento_InfoEmpregador {
          * período de validade das informações, apresentando o novo período de validade.
          *
          * <p>CONDICAO_GRUPO: OC
+         *
+         * @return O objeto T_idePeriodo para população dos campos filhos
          */
-        private T_idePeriodo novaValidade;
+        public T_idePeriodo<Alteracao<T>> setNovaValidade() {
+          if (this.novaValidade == null) {
+            this.novaValidade = new T_idePeriodo(this);
+          }
+          return this.novaValidade;
+        }
+
+        public Alteracao(Object pai) {
+          this.pai = pai;
+        }
+
+        @XmlTransient private final Object pai;
 
         /**
          * Finaliza a população dos campos filhos desse nível
@@ -332,9 +562,9 @@ public class Evento_InfoEmpregador {
       /**
        * Exclusão das informações.
        *
-       * <p>CONDICAO_GRUPO: OC
+       * @param <T> Tipo do retorno do método finish()
        */
-      @XmlAccessorType(XmlAccessType.PROPERTY)
+      @XmlAccessorType(XmlAccessType.FIELD)
       @XmlType(
           name = "",
           propOrder = {
@@ -342,18 +572,37 @@ public class Evento_InfoEmpregador {
           })
       public static class Exclusao<T> {
 
-        private final Object pai;
+        /** Período de validade das informações. */
+        private T_idePeriodo idePeriodo;
 
-        public Exclusao(Object pai) {
-          this.pai = pai;
+        /**
+         * Período de validade das informações.
+         *
+         * @return Valor do campo idePeriodo
+         */
+        public T_idePeriodo getIdePeriodo() {
+          return this.idePeriodo;
         }
 
         /**
          * Período de validade das informações.
          *
          * <p>CHAVE_GRUPO: {iniValid}, {fimValid}
+         *
+         * @return O objeto T_idePeriodo para população dos campos filhos
          */
-        private T_idePeriodo idePeriodo;
+        public T_idePeriodo<Exclusao<T>> setIdePeriodo() {
+          if (this.idePeriodo == null) {
+            this.idePeriodo = new T_idePeriodo(this);
+          }
+          return this.idePeriodo;
+        }
+
+        public Exclusao(Object pai) {
+          this.pai = pai;
+        }
+
+        @XmlTransient private final Object pai;
 
         /**
          * Finaliza a população dos campos filhos desse nível
@@ -370,9 +619,9 @@ public class Evento_InfoEmpregador {
   /**
    * Período de validade das informações.
    *
-   * <p>CHAVE_GRUPO: {iniValid}, {fimValid}
+   * @param <T> Tipo do retorno do método finish()
    */
-  @XmlAccessorType(XmlAccessType.PROPERTY)
+  @XmlAccessorType(XmlAccessType.FIELD)
   @XmlType(
       name = "",
       propOrder = {
@@ -381,10 +630,23 @@ public class Evento_InfoEmpregador {
       })
   public static class T_idePeriodo<T> {
 
-    private final Object pai;
+    /**
+     * Preencher com o mês e ano de início da validade das informações prestadas no evento, no
+     * formato AAAA-MM.
+     */
+    private String iniValid;
 
-    public T_idePeriodo(Object pai) {
-      this.pai = pai;
+    /** Preencher com o mês e ano de término da validade das informações, se houver. */
+    private String fimValid;
+
+    /**
+     * Preencher com o mês e ano de início da validade das informações prestadas no evento, no
+     * formato AAAA-MM.
+     *
+     * @return Valor do campo iniValid
+     */
+    public String getIniValid() {
+      return this.iniValid;
     }
 
     /**
@@ -393,16 +655,43 @@ public class Evento_InfoEmpregador {
      *
      * <p>Validação: Deve ser uma data válida, igual ou posterior à data de início de
      * obrigatoriedade deste evento para o empregador no eSocial, no formato AAAA-MM.
+     *
+     * @param iniValid Valor para atribuir ao campo iniValid
+     * @return O próprio T_idePeriodo para continuar populando outros campos
      */
-    private String iniValid;
+    public T_idePeriodo<T> setIniValid(String iniValid) {
+      this.iniValid = iniValid;
+      return this;
+    }
+
+    /**
+     * Preencher com o mês e ano de término da validade das informações, se houver.
+     *
+     * @return Valor do campo fimValid
+     */
+    public String getFimValid() {
+      return this.fimValid;
+    }
 
     /**
      * Preencher com o mês e ano de término da validade das informações, se houver.
      *
      * <p>Validação: Se informado, deve estar no formato AAAA-MM e ser um período igual ou posterior
      * a {iniValid}(./iniValid).
+     *
+     * @param fimValid Valor para atribuir ao campo fimValid
+     * @return O próprio T_idePeriodo para continuar populando outros campos
      */
-    private String fimValid;
+    public T_idePeriodo<T> setFimValid(String fimValid) {
+      this.fimValid = fimValid;
+      return this;
+    }
+
+    public T_idePeriodo(Object pai) {
+      this.pai = pai;
+    }
+
+    @XmlTransient private final Object pai;
 
     /**
      * Finaliza a população dos campos filhos desse nível
@@ -414,8 +703,12 @@ public class Evento_InfoEmpregador {
     }
   }
 
-  /** Detalhamento das informações do empregador. */
-  @XmlAccessorType(XmlAccessType.PROPERTY)
+  /**
+   * Detalhamento das informações do empregador.
+   *
+   * @param <T> Tipo do retorno do método finish()
+   */
+  @XmlAccessorType(XmlAccessType.FIELD)
   @XmlType(
       name = "",
       propOrder = {
@@ -432,10 +725,54 @@ public class Evento_InfoEmpregador {
       })
   public static class T_infoCadastro<T> {
 
-    private final Object pai;
+    /** Preencher com o código correspondente à classificação tributária do contribuinte. */
+    private String classTrib;
 
-    public T_infoCadastro(Object pai) {
-      this.pai = pai;
+    /** Indicativo de cooperativa. */
+    private String indCoop;
+
+    /** Indicativo de construtora. */
+    private String indConstr;
+
+    /** Indicativo de desoneração da folha. */
+    private String indDesFolha;
+
+    /**
+     * Indicativo da opção pelo produtor rural pela forma de tributação da contribuição
+     * previdenciária, nos termos do art. 25, § 13, da Lei 8.212/1991 e do art. 25, § 7°, da Lei
+     * 8.870/1994. O não preenchimento deste campo por parte do produtor rural implica opção pela
+     * comercialização da sua produção.
+     */
+    private String indOpcCP;
+
+    /**
+     * Indicativo de microempresa - ME ou empresa de pequeno porte - EPP para permissão de acesso ao
+     * módulo simplificado. Não preencher caso o empregador não se enquadre como micro ou pequena
+     * empresa.
+     */
+    private String indPorte;
+
+    /** Indica se houve opção pelo registro eletrônico de empregados. */
+    private String indOptRegEletron;
+
+    /** CNPJ do Ente Federativo Responsável - EFR. */
+    private String cnpjEFR;
+
+    /** Informações complementares - Empresas isentas - Dados da isenção. */
+    private DadosIsencao dadosIsencao;
+
+    /**
+     * Informações exclusivas de organismos internacionais e outras instituições extraterritoriais.
+     */
+    private InfoOrgInternacional infoOrgInternacional;
+
+    /**
+     * Preencher com o código correspondente à classificação tributária do contribuinte.
+     *
+     * @return Valor do campo classTrib
+     */
+    public String getClassTrib() {
+      return this.classTrib;
     }
 
     /**
@@ -444,31 +781,94 @@ public class Evento_InfoEmpregador {
      * <p>Validação: Deve ser um código válido e existente na Tabela 08. Os códigos [21] e [22]
      * somente podem ser utilizados se {tpInsc}(1000_ideEmpregador_tpInsc) for igual a [2]. Para os
      * demais códigos, {tpInsc}(1000_ideEmpregador_tpInsc) deve ser igual a [1].
+     *
+     * @param classTrib Valor para atribuir ao campo classTrib
+     * @return O próprio T_infoCadastro para continuar populando outros campos
      */
-    private String classTrib;
+    public T_infoCadastro<T> setClassTrib(String classTrib) {
+      this.classTrib = classTrib;
+      return this;
+    }
+
+    /**
+     * Indicativo de cooperativa.
+     *
+     * @return Valor do campo indCoop
+     */
+    public String getIndCoop() {
+      return this.indCoop;
+    }
 
     /**
      * Indicativo de cooperativa.
      *
      * <p>Validação: O preenchimento do campo é exclusivo e obrigatório para PJ. Somente pode ser
      * diferente de [0] se a natureza jurídica do declarante for igual a 214-3.
+     *
+     * @param indCoop Valor para atribuir ao campo indCoop
+     * @return O próprio T_infoCadastro para continuar populando outros campos
      */
-    private String indCoop;
+    public T_infoCadastro<T> setIndCoop(String indCoop) {
+      this.indCoop = indCoop;
+      return this;
+    }
+
+    /**
+     * Indicativo de construtora.
+     *
+     * @return Valor do campo indConstr
+     */
+    public String getIndConstr() {
+      return this.indConstr;
+    }
 
     /**
      * Indicativo de construtora.
      *
      * <p>Validação: O preenchimento do campo é exclusivo e obrigatório para PJ.
+     *
+     * @param indConstr Valor para atribuir ao campo indConstr
+     * @return O próprio T_infoCadastro para continuar populando outros campos
      */
-    private String indConstr;
+    public T_infoCadastro<T> setIndConstr(String indConstr) {
+      this.indConstr = indConstr;
+      return this;
+    }
+
+    /**
+     * Indicativo de desoneração da folha.
+     *
+     * @return Valor do campo indDesFolha
+     */
+    public String getIndDesFolha() {
+      return this.indDesFolha;
+    }
 
     /**
      * Indicativo de desoneração da folha.
      *
      * <p>Validação: Pode ser igual a [1] apenas se {classTrib}(./classTrib) = [02, 03, 99]. Nos
      * demais casos, deve ser igual a [0].
+     *
+     * @param indDesFolha Valor para atribuir ao campo indDesFolha
+     * @return O próprio T_infoCadastro para continuar populando outros campos
      */
-    private String indDesFolha;
+    public T_infoCadastro<T> setIndDesFolha(String indDesFolha) {
+      this.indDesFolha = indDesFolha;
+      return this;
+    }
+
+    /**
+     * Indicativo da opção pelo produtor rural pela forma de tributação da contribuição
+     * previdenciária, nos termos do art. 25, § 13, da Lei 8.212/1991 e do art. 25, § 7°, da Lei
+     * 8.870/1994. O não preenchimento deste campo por parte do produtor rural implica opção pela
+     * comercialização da sua produção.
+     *
+     * @return Valor do campo indOpcCP
+     */
+    public String getIndOpcCP() {
+      return this.indOpcCP;
+    }
 
     /**
      * Indicativo da opção pelo produtor rural pela forma de tributação da contribuição
@@ -477,8 +877,25 @@ public class Evento_InfoEmpregador {
      * comercialização da sua produção.
      *
      * <p>Validação: Não preencher se {classTrib}(./classTrib) for diferente de [07, 21].
+     *
+     * @param indOpcCP Valor para atribuir ao campo indOpcCP
+     * @return O próprio T_infoCadastro para continuar populando outros campos
      */
-    private String indOpcCP;
+    public T_infoCadastro<T> setIndOpcCP(String indOpcCP) {
+      this.indOpcCP = indOpcCP;
+      return this;
+    }
+
+    /**
+     * Indicativo de microempresa - ME ou empresa de pequeno porte - EPP para permissão de acesso ao
+     * módulo simplificado. Não preencher caso o empregador não se enquadre como micro ou pequena
+     * empresa.
+     *
+     * @return Valor do campo indPorte
+     */
+    public String getIndPorte() {
+      return this.indPorte;
+    }
 
     /**
      * Indicativo de microempresa - ME ou empresa de pequeno porte - EPP para permissão de acesso ao
@@ -486,11 +903,43 @@ public class Evento_InfoEmpregador {
      * empresa.
      *
      * <p>Validação: Não preencher se {classTrib}(./classTrib) = [21, 22].
+     *
+     * @param indPorte Valor para atribuir ao campo indPorte
+     * @return O próprio T_infoCadastro para continuar populando outros campos
      */
-    private String indPorte;
+    public T_infoCadastro<T> setIndPorte(String indPorte) {
+      this.indPorte = indPorte;
+      return this;
+    }
 
-    /** Indica se houve opção pelo registro eletrônico de empregados. */
-    private String indOptRegEletron;
+    /**
+     * Indica se houve opção pelo registro eletrônico de empregados.
+     *
+     * @return Valor do campo indOptRegEletron
+     */
+    public String getIndOptRegEletron() {
+      return this.indOptRegEletron;
+    }
+
+    /**
+     * Indica se houve opção pelo registro eletrônico de empregados.
+     *
+     * @param indOptRegEletron Valor para atribuir ao campo indOptRegEletron
+     * @return O próprio T_infoCadastro para continuar populando outros campos
+     */
+    public T_infoCadastro<T> setIndOptRegEletron(String indOptRegEletron) {
+      this.indOptRegEletron = indOptRegEletron;
+      return this;
+    }
+
+    /**
+     * CNPJ do Ente Federativo Responsável - EFR.
+     *
+     * @return Valor do campo cnpjEFR
+     */
+    public String getCnpjEFR() {
+      return this.cnpjEFR;
+    }
 
     /**
      * CNPJ do Ente Federativo Responsável - EFR.
@@ -499,23 +948,67 @@ public class Evento_InfoEmpregador {
      * Administração Pública (grupo [1]). Nesse caso, informar o campo com 14 (catorze) algarismos.
      *
      * <p>Informação validada no cadastro do CNPJ da RFB.
+     *
+     * @param cnpjEFR Valor para atribuir ao campo cnpjEFR
+     * @return O próprio T_infoCadastro para continuar populando outros campos
      */
-    private String cnpjEFR;
+    public T_infoCadastro<T> setCnpjEFR(String cnpjEFR) {
+      this.cnpjEFR = cnpjEFR;
+      return this;
+    }
+
+    /**
+     * Informações complementares - Empresas isentas - Dados da isenção.
+     *
+     * @return Valor do campo dadosIsencao
+     */
+    public DadosIsencao getDadosIsencao() {
+      return this.dadosIsencao;
+    }
 
     /**
      * Informações complementares - Empresas isentas - Dados da isenção.
      *
      * <p>CONDICAO_GRUPO: OC (se {classTrib}(1000_infoEmpregador_inclusao_infoCadastro_classTrib) =
      * [80]); N (nos demais casos)
+     *
+     * @return O objeto DadosIsencao para população dos campos filhos
      */
-    private DadosIsencao dadosIsencao;
+    public DadosIsencao<T_infoCadastro<T>> setDadosIsencao() {
+      if (this.dadosIsencao == null) {
+        this.dadosIsencao = new DadosIsencao(this);
+      }
+      return this.dadosIsencao;
+    }
+
+    /**
+     * Informações exclusivas de organismos internacionais e outras instituições extraterritoriais.
+     *
+     * @return Valor do campo infoOrgInternacional
+     */
+    public InfoOrgInternacional getInfoOrgInternacional() {
+      return this.infoOrgInternacional;
+    }
 
     /**
      * Informações exclusivas de organismos internacionais e outras instituições extraterritoriais.
      *
      * <p>CONDICAO_GRUPO: O (se a natureza jurídica pertencer ao grupo [5]); N (nos demais casos)
+     *
+     * @return O objeto InfoOrgInternacional para população dos campos filhos
      */
-    private InfoOrgInternacional infoOrgInternacional;
+    public InfoOrgInternacional<T_infoCadastro<T>> setInfoOrgInternacional() {
+      if (this.infoOrgInternacional == null) {
+        this.infoOrgInternacional = new InfoOrgInternacional(this);
+      }
+      return this.infoOrgInternacional;
+    }
+
+    public T_infoCadastro(Object pai) {
+      this.pai = pai;
+    }
+
+    @XmlTransient private final Object pai;
 
     /**
      * Finaliza a população dos campos filhos desse nível
@@ -525,14 +1018,12 @@ public class Evento_InfoEmpregador {
     public T finish() {
       return (T) pai;
     }
-
     /**
      * Informações complementares - Empresas isentas - Dados da isenção.
      *
-     * <p>CONDICAO_GRUPO: OC (se {classTrib}(1000_infoEmpregador_inclusao_infoCadastro_classTrib) =
-     * [80]); N (nos demais casos)
+     * @param <T> Tipo do retorno do método finish()
      */
-    @XmlAccessorType(XmlAccessType.PROPERTY)
+    @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(
         name = "",
         propOrder = {
@@ -547,12 +1038,6 @@ public class Evento_InfoEmpregador {
         })
     public static class DadosIsencao<T> {
 
-      private final Object pai;
-
-      public DadosIsencao(Object pai) {
-        this.pai = pai;
-      }
-
       /** Sigla e nome do Ministério ou lei que concedeu o certificado. */
       private String ideMinLei;
 
@@ -566,11 +1051,7 @@ public class Evento_InfoEmpregador {
       /** Data de emissão do certificado/publicação da lei. */
       private javax.xml.datatype.XMLGregorianCalendar dtEmisCertif;
 
-      /**
-       * Data de vencimento do certificado.
-       *
-       * <p>Validação: Não pode ser anterior a {dtEmisCertif}(./dtEmisCertif).
-       */
+      /** Data de vencimento do certificado. */
       private javax.xml.datatype.XMLGregorianCalendar dtVencCertif;
 
       /** Número do protocolo do pedido de renovação. */
@@ -588,6 +1069,178 @@ public class Evento_InfoEmpregador {
       private Integer pagDou;
 
       /**
+       * Sigla e nome do Ministério ou lei que concedeu o certificado.
+       *
+       * @return Valor do campo ideMinLei
+       */
+      public String getIdeMinLei() {
+        return this.ideMinLei;
+      }
+
+      /**
+       * Sigla e nome do Ministério ou lei que concedeu o certificado.
+       *
+       * @param ideMinLei Valor para atribuir ao campo ideMinLei
+       * @return O próprio DadosIsencao para continuar populando outros campos
+       */
+      public DadosIsencao<T> setIdeMinLei(String ideMinLei) {
+        this.ideMinLei = ideMinLei;
+        return this;
+      }
+
+      /**
+       * Número do Certificado de Entidade Beneficente de Assistência Social - CEBAS, número da
+       * portaria de concessão do certificado, ou, no caso de concessão através de lei específica, o
+       * número da lei.
+       *
+       * @return Valor do campo nrCertif
+       */
+      public String getNrCertif() {
+        return this.nrCertif;
+      }
+
+      /**
+       * Número do Certificado de Entidade Beneficente de Assistência Social - CEBAS, número da
+       * portaria de concessão do certificado, ou, no caso de concessão através de lei específica, o
+       * número da lei.
+       *
+       * @param nrCertif Valor para atribuir ao campo nrCertif
+       * @return O próprio DadosIsencao para continuar populando outros campos
+       */
+      public DadosIsencao<T> setNrCertif(String nrCertif) {
+        this.nrCertif = nrCertif;
+        return this;
+      }
+
+      /**
+       * Data de emissão do certificado/publicação da lei.
+       *
+       * @return Valor do campo dtEmisCertif
+       */
+      public javax.xml.datatype.XMLGregorianCalendar getDtEmisCertif() {
+        return this.dtEmisCertif;
+      }
+
+      /**
+       * Data de emissão do certificado/publicação da lei.
+       *
+       * @param dtEmisCertif Valor para atribuir ao campo dtEmisCertif
+       * @return O próprio DadosIsencao para continuar populando outros campos
+       */
+      public DadosIsencao<T> setDtEmisCertif(javax.xml.datatype.XMLGregorianCalendar dtEmisCertif) {
+        this.dtEmisCertif = dtEmisCertif;
+        return this;
+      }
+
+      /**
+       * Data de vencimento do certificado.
+       *
+       * @return Valor do campo dtVencCertif
+       */
+      public javax.xml.datatype.XMLGregorianCalendar getDtVencCertif() {
+        return this.dtVencCertif;
+      }
+
+      /**
+       * Data de vencimento do certificado.
+       *
+       * <p>Validação: Não pode ser anterior a {dtEmisCertif}(./dtEmisCertif).
+       *
+       * @param dtVencCertif Valor para atribuir ao campo dtVencCertif
+       * @return O próprio DadosIsencao para continuar populando outros campos
+       */
+      public DadosIsencao<T> setDtVencCertif(javax.xml.datatype.XMLGregorianCalendar dtVencCertif) {
+        this.dtVencCertif = dtVencCertif;
+        return this;
+      }
+
+      /**
+       * Número do protocolo do pedido de renovação.
+       *
+       * @return Valor do campo nrProtRenov
+       */
+      public String getNrProtRenov() {
+        return this.nrProtRenov;
+      }
+
+      /**
+       * Número do protocolo do pedido de renovação.
+       *
+       * @param nrProtRenov Valor para atribuir ao campo nrProtRenov
+       * @return O próprio DadosIsencao para continuar populando outros campos
+       */
+      public DadosIsencao<T> setNrProtRenov(String nrProtRenov) {
+        this.nrProtRenov = nrProtRenov;
+        return this;
+      }
+
+      /**
+       * Data do protocolo de renovação.
+       *
+       * @return Valor do campo dtProtRenov
+       */
+      public javax.xml.datatype.XMLGregorianCalendar getDtProtRenov() {
+        return this.dtProtRenov;
+      }
+
+      /**
+       * Data do protocolo de renovação.
+       *
+       * @param dtProtRenov Valor para atribuir ao campo dtProtRenov
+       * @return O próprio DadosIsencao para continuar populando outros campos
+       */
+      public DadosIsencao<T> setDtProtRenov(javax.xml.datatype.XMLGregorianCalendar dtProtRenov) {
+        this.dtProtRenov = dtProtRenov;
+        return this;
+      }
+
+      /**
+       * Data de publicação no Diário Oficial da União - DOU.
+       *
+       * @return Valor do campo dtDou
+       */
+      public javax.xml.datatype.XMLGregorianCalendar getDtDou() {
+        return this.dtDou;
+      }
+
+      /**
+       * Data de publicação no Diário Oficial da União - DOU.
+       *
+       * @param dtDou Valor para atribuir ao campo dtDou
+       * @return O próprio DadosIsencao para continuar populando outros campos
+       */
+      public DadosIsencao<T> setDtDou(javax.xml.datatype.XMLGregorianCalendar dtDou) {
+        this.dtDou = dtDou;
+        return this;
+      }
+
+      /**
+       * Número da página no DOU referente à publicação do documento de concessão do certificado.
+       *
+       * @return Valor do campo pagDou
+       */
+      public Integer getPagDou() {
+        return this.pagDou;
+      }
+
+      /**
+       * Número da página no DOU referente à publicação do documento de concessão do certificado.
+       *
+       * @param pagDou Valor para atribuir ao campo pagDou
+       * @return O próprio DadosIsencao para continuar populando outros campos
+       */
+      public DadosIsencao<T> setPagDou(Integer pagDou) {
+        this.pagDou = pagDou;
+        return this;
+      }
+
+      public DadosIsencao(Object pai) {
+        this.pai = pai;
+      }
+
+      @XmlTransient private final Object pai;
+
+      /**
        * Finaliza a população dos campos filhos desse nível
        *
        * @return O nível anterior da árvore
@@ -600,9 +1253,9 @@ public class Evento_InfoEmpregador {
     /**
      * Informações exclusivas de organismos internacionais e outras instituições extraterritoriais.
      *
-     * <p>CONDICAO_GRUPO: O (se a natureza jurídica pertencer ao grupo [5]); N (nos demais casos)
+     * @param <T> Tipo do retorno do método finish()
      */
-    @XmlAccessorType(XmlAccessType.PROPERTY)
+    @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(
         name = "",
         propOrder = {
@@ -610,14 +1263,34 @@ public class Evento_InfoEmpregador {
         })
     public static class InfoOrgInternacional<T> {
 
-      private final Object pai;
+      /** Indicativo da existência de acordo internacional para isenção de multa. */
+      private String indAcordoIsenMulta;
+
+      /**
+       * Indicativo da existência de acordo internacional para isenção de multa.
+       *
+       * @return Valor do campo indAcordoIsenMulta
+       */
+      public String getIndAcordoIsenMulta() {
+        return this.indAcordoIsenMulta;
+      }
+
+      /**
+       * Indicativo da existência de acordo internacional para isenção de multa.
+       *
+       * @param indAcordoIsenMulta Valor para atribuir ao campo indAcordoIsenMulta
+       * @return O próprio InfoOrgInternacional para continuar populando outros campos
+       */
+      public InfoOrgInternacional<T> setIndAcordoIsenMulta(String indAcordoIsenMulta) {
+        this.indAcordoIsenMulta = indAcordoIsenMulta;
+        return this;
+      }
 
       public InfoOrgInternacional(Object pai) {
         this.pai = pai;
       }
 
-      /** Indicativo da existência de acordo internacional para isenção de multa. */
-      private String indAcordoIsenMulta;
+      @XmlTransient private final Object pai;
 
       /**
        * Finaliza a população dos campos filhos desse nível

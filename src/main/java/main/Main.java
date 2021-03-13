@@ -7,6 +7,7 @@ package main;
 
 import com.google.googlejavaformat.java.Formatter;
 import esocial.v1_0.Evento_InfoEmpregador;
+import esocial.v1_0.Teste;
 import java.io.File;
 import java.io.StringWriter;
 import javax.xml.bind.JAXBContext;
@@ -36,8 +37,37 @@ public class Main {
   
     public static void main(String[] args){
 
+      File out = new File("src/main/java/esocial/v1_0");
       try {
         
+        
+        Evento_InfoEmpregador event = new esocial.v1_0.Evento_InfoEmpregador();
+        event.setEvtInfoEmpregador()
+                .setIdeEmpregador()
+                  .setNrInsc("312412341")
+                  .setTpInsc("12")
+                .finish()
+                .setIdeEvento()
+                  .setProcEmi("1233asfsadfiusdfiad76f8a")
+                  .setTpAmb("555")
+                  .setVerProc("1.0.0")
+                .finish()
+                .setInfoEmpregador()
+                  .setInclusao()
+                    .setIdePeriodo()
+                      .setIniValid("2021-03")
+                    .finish()
+                    .setInfoCadastro()
+                      .setDadosIsencao()
+                        .setPagDou(3)
+                      .finish() // A chamada dos finish() finais é opcional
+                    .finish()
+                  .finish()
+                .finish()
+              .finish();
+        
+        System.out.println(event.getEvtInfoEmpregador().getInfoEmpregador().getInclusao().getIdePeriodo().getIniValid());
+//        
 //        JAXBContext jaxbContext = JAXBContext.newInstance(esocial.v1_0.Evento_InfoEmpregador.class);
 //        Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
 //
@@ -45,23 +75,17 @@ public class Main {
 //        jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 //        StringWriter sw = new StringWriter();
 //        
-//        Evento_InfoEmpregador cat = new esocial.v1_0.Evento_InfoEmpregador();
-//        
-//        jaxbMarshaller.marshal(cat, sw);
+//        jaxbMarshaller.marshal(event, sw);
 //        String xmlString = sw.toString();
 //        
 //        System.out.println(xmlString);
         //if(1==1) return;
         
-        
-        Evento_InfoEmpregador cat = new esocial.v1_0.Evento_InfoEmpregador();
-        Evento_InfoEmpregador finish = cat.evtInfoEmpregador()
-                .ideEmpregador()
-                .finish()
-                .finish();
-              
-        
         Context globalTypesContext = loadGlobalTypes();
+        
+        //System.out.println(new Formatter().formatSource(globalTypesContext.getRootClass().toString()));
+        globalTypesContext.writeToDir(out);
+        System.out.println("---------------------------------------------------------------------");
         System.out.println("------> Lendo arquivo do evento InfoEmpregador");
         Document doc = readXsd(new File("schemas/1_0/evtInfoEmpregador.xsd"));
         
@@ -87,7 +111,7 @@ public class Main {
         ctx.transformESocialSubClassToRoot();
         System.out.println("------> Finalizando evento InfoEmpregador");
         System.out.println("------> Formatando código java final");
-        System.out.println(new Formatter().formatSource(ctx.getRootClass().toString()));
+        ctx.writeToDir(out);
 
        } catch (Exception e) {
           e.printStackTrace();

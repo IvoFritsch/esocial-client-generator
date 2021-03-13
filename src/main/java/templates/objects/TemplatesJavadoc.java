@@ -5,10 +5,8 @@
  */
 package templates.objects;
 
-import java.util.ArrayList;
 import java.util.List;
 import main.Utils;
-import org.w3c.dom.Node;
 import parser.nodes.JavadocNode;
 import templates.TemplatesManager;
 
@@ -23,6 +21,8 @@ public class TemplatesJavadoc {
   public List<String> lines;
   public boolean isReferringClassChoice = false;
 
+  public TemplateOptions options = new TemplateOptions();
+  
   public TemplatesJavadoc(JavadocNode n) {
     title = n.title;
     lines = n.lines;
@@ -42,7 +42,28 @@ public class TemplatesJavadoc {
   
   @Override
   public String toString() {
-    return TemplatesManager.process("javadoc", this);
+    String ret = TemplatesManager.process("javadoc", this);
+    options = new TemplateOptions();
+    return ret;
+  }
+  
+  public TemplatesJavadoc getOnlyTitle(){
+    options.onlyTitle = true;
+    return this;
+  }
+  
+  public TemplatesJavadoc param(String param){
+    options.param = param;
+    return this;
+  }
+  
+  public TemplatesJavadoc returns(String returns){
+    options.returns = returns;
+    return this;
+  }
+
+  public TemplateOptions getOptions() {
+    return options;
   }
   
   public String toString(int tabs) {
@@ -66,5 +87,23 @@ public class TemplatesJavadoc {
     Utils.appendTabulation(sb, tabs);
     sb.append(" */\n");
     return sb.toString();
+  }
+
+  public static class TemplateOptions {
+    public boolean onlyTitle = false;
+    public String param;
+    public String returns;
+
+    public String getParam() {
+      return param;
+    }
+
+    public String getReturns() {
+      return returns;
+    }
+
+    public boolean getOnlyTitle() {
+      return onlyTitle;
+    }
   }
 }
