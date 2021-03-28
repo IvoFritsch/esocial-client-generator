@@ -34,7 +34,7 @@ public final class JavadocNode extends SchemaNode {
   
   @Override
   public void traverse() {
-    while(nextNode()){
+    while(nextChildNode()){
       if(currentChildNumber == 0) {
         title = currentChild.getTextContent();
       } else {

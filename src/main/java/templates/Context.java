@@ -7,13 +7,17 @@ package templates;
 
 import com.google.googlejavaformat.java.Formatter;
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Stack;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.apache.commons.io.FileUtils;
 import templates.objects.TemplatesClass;
+import templates.objects.TemplatesEnumeration;
 import templates.objects.TemplatesField;
 import templates.objects.TemplatesSimpleType;
 
@@ -67,6 +71,10 @@ public class Context {
       return null;
     }
   }
+
+  public TemplatesSimpleType getCurrentProccessingSimpleType() {
+    return currentProccessingSimpleType;
+  }
   
   public TemplatesField startField(){
     TemplatesField f = new TemplatesField();
@@ -74,6 +82,10 @@ public class Context {
     f.fatherClass.addField(f);
     proccessingFields.push(f);
     return f;
+  }
+  
+  public TemplatesEnumeration startEnumeration(){
+    return currentProccessingSimpleType.addEnumeration();
   }
   
   public TemplatesSimpleType startSimpleType(){
@@ -149,6 +161,7 @@ public class Context {
   }
   
   public void writeToDir(File dir) {
+    String unformatted = null;
     try {
       
       String path = dir.toString();
@@ -156,10 +169,15 @@ public class Context {
         path += "/";
       }
       path += rootClass.name + ".java";
-
-      String formatted = new Formatter().formatSource(rootClass.toString());
+      unformatted = rootClass.toString();
+      String formatted = new Formatter().formatSource(unformatted);
       FileUtils.write(new File(path), formatted, "UTF-8");
     } catch (Exception e) {
+      try {
+        if(unformatted != null) {
+          FileUtils.write(new File("with-error.txt"), unformatted, "UTF-8");
+        }
+      } catch (IOException ex) {}
       throw new RuntimeException(e);
     }
   }

@@ -57,6 +57,12 @@ public class TemplatesJavadoc {
     return this;
   }
   
+  public TemplatesJavadoc isList(boolean isList, int maxOccurs) {
+    options.isList = isList;
+    options.maxOccurs = maxOccurs;
+    return this;
+  }
+  
   public TemplatesJavadoc returns(String returns){
     options.returns = returns;
     return this;
@@ -91,9 +97,19 @@ public class TemplatesJavadoc {
 
   public static class TemplateOptions {
     public boolean onlyTitle = false;
+    public int maxOccurs;
     public String param;
     public String returns;
+    public boolean isList;
 
+    public boolean isIsList() {
+      return isList;
+    }
+
+    public int getMaxOccurs() {
+      return maxOccurs;
+    }
+    
     public String getParam() {
       return param;
     }

@@ -12,7 +12,6 @@ import javax.xml.bind.annotation.XmlTransient;
     name = "",
     propOrder = {
       "evtInfoEmpregador",
-      "signature",
     })
 @XmlRootElement(name = "eSocial")
 public class Evento_InfoEmpregador {
@@ -20,12 +19,10 @@ public class Evento_InfoEmpregador {
   /** Evento Informações do Empregador. */
   private EvtInfoEmpregador evtInfoEmpregador;
 
-  private Signature signature;
-
   /**
    * Evento Informações do Empregador.
    *
-   * @return Valor do campo evtInfoEmpregador
+   * @return Conteúdo do campo evtInfoEmpregador
    */
   public EvtInfoEmpregador getEvtInfoEmpregador() {
     return this.evtInfoEmpregador;
@@ -59,15 +56,6 @@ public class Evento_InfoEmpregador {
     return this.evtInfoEmpregador;
   }
 
-  public Signature getSignature() {
-    return this.signature;
-  }
-
-  public Evento_InfoEmpregador setSignature(Signature signature) {
-    this.signature = signature;
-    return this;
-  }
-
   /**
    * Evento Informações do Empregador.
    *
@@ -95,7 +83,7 @@ public class Evento_InfoEmpregador {
     /**
      * Informações de identificação do evento.
      *
-     * @return Valor do campo ideEvento
+     * @return Conteúdo do campo ideEvento
      */
     public Tipos.T_ideEvento_evtTab getIdeEvento() {
       return this.ideEvento;
@@ -116,7 +104,7 @@ public class Evento_InfoEmpregador {
     /**
      * Informações de identificação do empregador.
      *
-     * @return Valor do campo ideEmpregador
+     * @return Conteúdo do campo ideEmpregador
      */
     public IdeEmpregador getIdeEmpregador() {
       return this.ideEmpregador;
@@ -139,7 +127,7 @@ public class Evento_InfoEmpregador {
     /**
      * Informações do empregador.
      *
-     * @return Valor do campo infoEmpregador
+     * @return Conteúdo do campo infoEmpregador
      */
     public InfoEmpregador getInfoEmpregador() {
       return this.infoEmpregador;
@@ -199,7 +187,7 @@ public class Evento_InfoEmpregador {
       /**
        * Preencher com o código correspondente ao tipo de inscrição, conforme Tabela 05.
        *
-       * @return Valor do campo tpInsc
+       * @return Conteúdo do campo tpInsc
        */
       public String getTpInsc() {
         return this.tpInsc;
@@ -212,7 +200,28 @@ public class Evento_InfoEmpregador {
        * @return O próprio IdeEmpregador para continuar populando outros campos
        */
       public IdeEmpregador<T> setTpInsc(String tpInsc) {
+        if (!"1".equals(tpInsc) && !"2".equals(tpInsc))
+          throw new RuntimeException(
+              "Valor " + String.valueOf(tpInsc) + " inválido para o campo tpInsc");
         this.tpInsc = tpInsc;
+        return this;
+      }
+      /**
+       * CNPJ
+       *
+       * @return O próprio IdeEmpregador para continuar populando outros campos
+       */
+      public IdeEmpregador<T> setTpInsc_1() {
+        this.tpInsc = "1";
+        return this;
+      }
+      /**
+       * CPF
+       *
+       * @return O próprio IdeEmpregador para continuar populando outros campos
+       */
+      public IdeEmpregador<T> setTpInsc_2() {
+        this.tpInsc = "2";
         return this;
       }
 
@@ -220,7 +229,7 @@ public class Evento_InfoEmpregador {
        * Informar o número de inscrição do contribuinte de acordo com o tipo de inscrição indicado
        * no campo {tpInsc}(./tpInsc).
        *
-       * @return Valor do campo nrInsc
+       * @return Conteúdo do campo nrInsc
        */
       public String getNrInsc() {
         return this.nrInsc;
@@ -289,7 +298,7 @@ public class Evento_InfoEmpregador {
       /**
        * Inclusão de novas informações.
        *
-       * @return Valor do campo inclusao
+       * @return Conteúdo do campo inclusao
        */
       public Inclusao getInclusao() {
         return this.inclusao;
@@ -312,7 +321,7 @@ public class Evento_InfoEmpregador {
       /**
        * Alteração das informações.
        *
-       * @return Valor do campo alteracao
+       * @return Conteúdo do campo alteracao
        */
       public Alteracao getAlteracao() {
         return this.alteracao;
@@ -335,7 +344,7 @@ public class Evento_InfoEmpregador {
       /**
        * Exclusão das informações.
        *
-       * @return Valor do campo exclusao
+       * @return Conteúdo do campo exclusao
        */
       public Exclusao getExclusao() {
         return this.exclusao;
@@ -392,7 +401,7 @@ public class Evento_InfoEmpregador {
         /**
          * Período de validade das informações.
          *
-         * @return Valor do campo idePeriodo
+         * @return Conteúdo do campo idePeriodo
          */
         public T_idePeriodo getIdePeriodo() {
           return this.idePeriodo;
@@ -415,7 +424,7 @@ public class Evento_InfoEmpregador {
         /**
          * Detalhamento das informações do empregador.
          *
-         * @return Valor do campo infoCadastro
+         * @return Conteúdo do campo infoCadastro
          */
         public T_infoCadastro getInfoCadastro() {
           return this.infoCadastro;
@@ -476,7 +485,7 @@ public class Evento_InfoEmpregador {
         /**
          * Período de validade das informações.
          *
-         * @return Valor do campo idePeriodo
+         * @return Conteúdo do campo idePeriodo
          */
         public T_idePeriodo getIdePeriodo() {
           return this.idePeriodo;
@@ -499,7 +508,7 @@ public class Evento_InfoEmpregador {
         /**
          * Detalhamento das informações do empregador.
          *
-         * @return Valor do campo infoCadastro
+         * @return Conteúdo do campo infoCadastro
          */
         public T_infoCadastro getInfoCadastro() {
           return this.infoCadastro;
@@ -520,7 +529,7 @@ public class Evento_InfoEmpregador {
         /**
          * Novo período de validade das informações.
          *
-         * @return Valor do campo novaValidade
+         * @return Conteúdo do campo novaValidade
          */
         public T_idePeriodo getNovaValidade() {
           return this.novaValidade;
@@ -578,7 +587,7 @@ public class Evento_InfoEmpregador {
         /**
          * Período de validade das informações.
          *
-         * @return Valor do campo idePeriodo
+         * @return Conteúdo do campo idePeriodo
          */
         public T_idePeriodo getIdePeriodo() {
           return this.idePeriodo;
@@ -643,7 +652,7 @@ public class Evento_InfoEmpregador {
      * Preencher com o mês e ano de início da validade das informações prestadas no evento, no
      * formato AAAA-MM.
      *
-     * @return Valor do campo iniValid
+     * @return Conteúdo do campo iniValid
      */
     public String getIniValid() {
       return this.iniValid;
@@ -667,7 +676,7 @@ public class Evento_InfoEmpregador {
     /**
      * Preencher com o mês e ano de término da validade das informações, se houver.
      *
-     * @return Valor do campo fimValid
+     * @return Conteúdo do campo fimValid
      */
     public String getFimValid() {
       return this.fimValid;
@@ -769,7 +778,7 @@ public class Evento_InfoEmpregador {
     /**
      * Preencher com o código correspondente à classificação tributária do contribuinte.
      *
-     * @return Valor do campo classTrib
+     * @return Conteúdo do campo classTrib
      */
     public String getClassTrib() {
       return this.classTrib;
@@ -793,7 +802,7 @@ public class Evento_InfoEmpregador {
     /**
      * Indicativo de cooperativa.
      *
-     * @return Valor do campo indCoop
+     * @return Conteúdo do campo indCoop
      */
     public String getIndCoop() {
       return this.indCoop;
@@ -809,14 +818,56 @@ public class Evento_InfoEmpregador {
      * @return O próprio T_infoCadastro para continuar populando outros campos
      */
     public T_infoCadastro<T> setIndCoop(String indCoop) {
+      if (!"0".equals(indCoop)
+          && !"1".equals(indCoop)
+          && !"2".equals(indCoop)
+          && !"3".equals(indCoop))
+        throw new RuntimeException(
+            "Valor " + String.valueOf(indCoop) + " inválido para o campo indCoop");
       this.indCoop = indCoop;
+      return this;
+    }
+    /**
+     * Não é cooperativa
+     *
+     * @return O próprio T_infoCadastro para continuar populando outros campos
+     */
+    public T_infoCadastro<T> setIndCoop_0() {
+      this.indCoop = "0";
+      return this;
+    }
+    /**
+     * Cooperativa de trabalho
+     *
+     * @return O próprio T_infoCadastro para continuar populando outros campos
+     */
+    public T_infoCadastro<T> setIndCoop_1() {
+      this.indCoop = "1";
+      return this;
+    }
+    /**
+     * Cooperativa de produção
+     *
+     * @return O próprio T_infoCadastro para continuar populando outros campos
+     */
+    public T_infoCadastro<T> setIndCoop_2() {
+      this.indCoop = "2";
+      return this;
+    }
+    /**
+     * Outras cooperativas
+     *
+     * @return O próprio T_infoCadastro para continuar populando outros campos
+     */
+    public T_infoCadastro<T> setIndCoop_3() {
+      this.indCoop = "3";
       return this;
     }
 
     /**
      * Indicativo de construtora.
      *
-     * @return Valor do campo indConstr
+     * @return Conteúdo do campo indConstr
      */
     public String getIndConstr() {
       return this.indConstr;
@@ -831,14 +882,35 @@ public class Evento_InfoEmpregador {
      * @return O próprio T_infoCadastro para continuar populando outros campos
      */
     public T_infoCadastro<T> setIndConstr(String indConstr) {
+      if (!"0".equals(indConstr) && !"1".equals(indConstr))
+        throw new RuntimeException(
+            "Valor " + String.valueOf(indConstr) + " inválido para o campo indConstr");
       this.indConstr = indConstr;
+      return this;
+    }
+    /**
+     * Não é construtora
+     *
+     * @return O próprio T_infoCadastro para continuar populando outros campos
+     */
+    public T_infoCadastro<T> setIndConstr_0() {
+      this.indConstr = "0";
+      return this;
+    }
+    /**
+     * Empresa construtora
+     *
+     * @return O próprio T_infoCadastro para continuar populando outros campos
+     */
+    public T_infoCadastro<T> setIndConstr_1() {
+      this.indConstr = "1";
       return this;
     }
 
     /**
      * Indicativo de desoneração da folha.
      *
-     * @return Valor do campo indDesFolha
+     * @return Conteúdo do campo indDesFolha
      */
     public String getIndDesFolha() {
       return this.indDesFolha;
@@ -854,7 +926,28 @@ public class Evento_InfoEmpregador {
      * @return O próprio T_infoCadastro para continuar populando outros campos
      */
     public T_infoCadastro<T> setIndDesFolha(String indDesFolha) {
+      if (!"0".equals(indDesFolha) && !"1".equals(indDesFolha))
+        throw new RuntimeException(
+            "Valor " + String.valueOf(indDesFolha) + " inválido para o campo indDesFolha");
       this.indDesFolha = indDesFolha;
+      return this;
+    }
+    /**
+     * Não aplicável
+     *
+     * @return O próprio T_infoCadastro para continuar populando outros campos
+     */
+    public T_infoCadastro<T> setIndDesFolha_0() {
+      this.indDesFolha = "0";
+      return this;
+    }
+    /**
+     * Empresa enquadrada nos arts. 7º a 9º da Lei 12.546/2011
+     *
+     * @return O próprio T_infoCadastro para continuar populando outros campos
+     */
+    public T_infoCadastro<T> setIndDesFolha_1() {
+      this.indDesFolha = "1";
       return this;
     }
 
@@ -864,7 +957,7 @@ public class Evento_InfoEmpregador {
      * 8.870/1994. O não preenchimento deste campo por parte do produtor rural implica opção pela
      * comercialização da sua produção.
      *
-     * @return Valor do campo indOpcCP
+     * @return Conteúdo do campo indOpcCP
      */
     public String getIndOpcCP() {
       return this.indOpcCP;
@@ -882,7 +975,28 @@ public class Evento_InfoEmpregador {
      * @return O próprio T_infoCadastro para continuar populando outros campos
      */
     public T_infoCadastro<T> setIndOpcCP(String indOpcCP) {
+      if (!"1".equals(indOpcCP) && !"2".equals(indOpcCP))
+        throw new RuntimeException(
+            "Valor " + String.valueOf(indOpcCP) + " inválido para o campo indOpcCP");
       this.indOpcCP = indOpcCP;
+      return this;
+    }
+    /**
+     * Sobre a comercialização da sua produção
+     *
+     * @return O próprio T_infoCadastro para continuar populando outros campos
+     */
+    public T_infoCadastro<T> setIndOpcCP_1() {
+      this.indOpcCP = "1";
+      return this;
+    }
+    /**
+     * Sobre a folha de pagamento
+     *
+     * @return O próprio T_infoCadastro para continuar populando outros campos
+     */
+    public T_infoCadastro<T> setIndOpcCP_2() {
+      this.indOpcCP = "2";
       return this;
     }
 
@@ -891,7 +1005,7 @@ public class Evento_InfoEmpregador {
      * módulo simplificado. Não preencher caso o empregador não se enquadre como micro ou pequena
      * empresa.
      *
-     * @return Valor do campo indPorte
+     * @return Conteúdo do campo indPorte
      */
     public String getIndPorte() {
       return this.indPorte;
@@ -908,14 +1022,26 @@ public class Evento_InfoEmpregador {
      * @return O próprio T_infoCadastro para continuar populando outros campos
      */
     public T_infoCadastro<T> setIndPorte(String indPorte) {
+      if (!"S".equals(indPorte))
+        throw new RuntimeException(
+            "Valor " + String.valueOf(indPorte) + " inválido para o campo indPorte");
       this.indPorte = indPorte;
+      return this;
+    }
+    /**
+     * Sim
+     *
+     * @return O próprio T_infoCadastro para continuar populando outros campos
+     */
+    public T_infoCadastro<T> setIndPorte_S() {
+      this.indPorte = "S";
       return this;
     }
 
     /**
      * Indica se houve opção pelo registro eletrônico de empregados.
      *
-     * @return Valor do campo indOptRegEletron
+     * @return Conteúdo do campo indOptRegEletron
      */
     public String getIndOptRegEletron() {
       return this.indOptRegEletron;
@@ -928,14 +1054,37 @@ public class Evento_InfoEmpregador {
      * @return O próprio T_infoCadastro para continuar populando outros campos
      */
     public T_infoCadastro<T> setIndOptRegEletron(String indOptRegEletron) {
+      if (!"0".equals(indOptRegEletron) && !"1".equals(indOptRegEletron))
+        throw new RuntimeException(
+            "Valor "
+                + String.valueOf(indOptRegEletron)
+                + " inválido para o campo indOptRegEletron");
       this.indOptRegEletron = indOptRegEletron;
+      return this;
+    }
+    /**
+     * Não optou pelo registro eletrônico de empregados
+     *
+     * @return O próprio T_infoCadastro para continuar populando outros campos
+     */
+    public T_infoCadastro<T> setIndOptRegEletron_0() {
+      this.indOptRegEletron = "0";
+      return this;
+    }
+    /**
+     * Optou pelo registro eletrônico de empregados
+     *
+     * @return O próprio T_infoCadastro para continuar populando outros campos
+     */
+    public T_infoCadastro<T> setIndOptRegEletron_1() {
+      this.indOptRegEletron = "1";
       return this;
     }
 
     /**
      * CNPJ do Ente Federativo Responsável - EFR.
      *
-     * @return Valor do campo cnpjEFR
+     * @return Conteúdo do campo cnpjEFR
      */
     public String getCnpjEFR() {
       return this.cnpjEFR;
@@ -960,7 +1109,7 @@ public class Evento_InfoEmpregador {
     /**
      * Informações complementares - Empresas isentas - Dados da isenção.
      *
-     * @return Valor do campo dadosIsencao
+     * @return Conteúdo do campo dadosIsencao
      */
     public DadosIsencao getDadosIsencao() {
       return this.dadosIsencao;
@@ -984,7 +1133,7 @@ public class Evento_InfoEmpregador {
     /**
      * Informações exclusivas de organismos internacionais e outras instituições extraterritoriais.
      *
-     * @return Valor do campo infoOrgInternacional
+     * @return Conteúdo do campo infoOrgInternacional
      */
     public InfoOrgInternacional getInfoOrgInternacional() {
       return this.infoOrgInternacional;
@@ -1071,7 +1220,7 @@ public class Evento_InfoEmpregador {
       /**
        * Sigla e nome do Ministério ou lei que concedeu o certificado.
        *
-       * @return Valor do campo ideMinLei
+       * @return Conteúdo do campo ideMinLei
        */
       public String getIdeMinLei() {
         return this.ideMinLei;
@@ -1093,7 +1242,7 @@ public class Evento_InfoEmpregador {
        * portaria de concessão do certificado, ou, no caso de concessão através de lei específica, o
        * número da lei.
        *
-       * @return Valor do campo nrCertif
+       * @return Conteúdo do campo nrCertif
        */
       public String getNrCertif() {
         return this.nrCertif;
@@ -1115,7 +1264,7 @@ public class Evento_InfoEmpregador {
       /**
        * Data de emissão do certificado/publicação da lei.
        *
-       * @return Valor do campo dtEmisCertif
+       * @return Conteúdo do campo dtEmisCertif
        */
       public javax.xml.datatype.XMLGregorianCalendar getDtEmisCertif() {
         return this.dtEmisCertif;
@@ -1135,7 +1284,7 @@ public class Evento_InfoEmpregador {
       /**
        * Data de vencimento do certificado.
        *
-       * @return Valor do campo dtVencCertif
+       * @return Conteúdo do campo dtVencCertif
        */
       public javax.xml.datatype.XMLGregorianCalendar getDtVencCertif() {
         return this.dtVencCertif;
@@ -1157,7 +1306,7 @@ public class Evento_InfoEmpregador {
       /**
        * Número do protocolo do pedido de renovação.
        *
-       * @return Valor do campo nrProtRenov
+       * @return Conteúdo do campo nrProtRenov
        */
       public String getNrProtRenov() {
         return this.nrProtRenov;
@@ -1177,7 +1326,7 @@ public class Evento_InfoEmpregador {
       /**
        * Data do protocolo de renovação.
        *
-       * @return Valor do campo dtProtRenov
+       * @return Conteúdo do campo dtProtRenov
        */
       public javax.xml.datatype.XMLGregorianCalendar getDtProtRenov() {
         return this.dtProtRenov;
@@ -1197,7 +1346,7 @@ public class Evento_InfoEmpregador {
       /**
        * Data de publicação no Diário Oficial da União - DOU.
        *
-       * @return Valor do campo dtDou
+       * @return Conteúdo do campo dtDou
        */
       public javax.xml.datatype.XMLGregorianCalendar getDtDou() {
         return this.dtDou;
@@ -1217,7 +1366,7 @@ public class Evento_InfoEmpregador {
       /**
        * Número da página no DOU referente à publicação do documento de concessão do certificado.
        *
-       * @return Valor do campo pagDou
+       * @return Conteúdo do campo pagDou
        */
       public Integer getPagDou() {
         return this.pagDou;
@@ -1269,7 +1418,7 @@ public class Evento_InfoEmpregador {
       /**
        * Indicativo da existência de acordo internacional para isenção de multa.
        *
-       * @return Valor do campo indAcordoIsenMulta
+       * @return Conteúdo do campo indAcordoIsenMulta
        */
       public String getIndAcordoIsenMulta() {
         return this.indAcordoIsenMulta;
@@ -1282,7 +1431,30 @@ public class Evento_InfoEmpregador {
        * @return O próprio InfoOrgInternacional para continuar populando outros campos
        */
       public InfoOrgInternacional<T> setIndAcordoIsenMulta(String indAcordoIsenMulta) {
+        if (!"0".equals(indAcordoIsenMulta) && !"1".equals(indAcordoIsenMulta))
+          throw new RuntimeException(
+              "Valor "
+                  + String.valueOf(indAcordoIsenMulta)
+                  + " inválido para o campo indAcordoIsenMulta");
         this.indAcordoIsenMulta = indAcordoIsenMulta;
+        return this;
+      }
+      /**
+       * Sem acordo
+       *
+       * @return O próprio InfoOrgInternacional para continuar populando outros campos
+       */
+      public InfoOrgInternacional<T> setIndAcordoIsenMulta_0() {
+        this.indAcordoIsenMulta = "0";
+        return this;
+      }
+      /**
+       * Com acordo
+       *
+       * @return O próprio InfoOrgInternacional para continuar populando outros campos
+       */
+      public InfoOrgInternacional<T> setIndAcordoIsenMulta_1() {
+        this.indAcordoIsenMulta = "1";
         return this;
       }
 

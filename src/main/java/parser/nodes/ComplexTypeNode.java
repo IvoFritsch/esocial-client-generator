@@ -43,7 +43,7 @@ public final class ComplexTypeNode extends SchemaNode {
 
   @Override
   public void traverse() {
-    while(nextNode()){
+    while(nextChildNode()){
       switch(getCurrentChildName()){
         case "annotation": 
           if(fatherField != null) {

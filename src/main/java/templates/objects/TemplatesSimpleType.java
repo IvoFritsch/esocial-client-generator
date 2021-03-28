@@ -40,10 +40,23 @@ public class TemplatesSimpleType {
       throw new RuntimeException(String.valueOf(this.name) + " -> incapaz de resolver o simpleType: " + rawType);
     }
     correspondingType = st.resolveTypeAndGet();
+    // Se esse simple type não tem suas próprias enumerations, copia do SimpleType resolvido
+    if(!this.isEnumeration) {
+      this.isEnumeration = st.isEnumeration;
+      this.enums = st.enums;
+    }
     if(fatherField != null) {
       fatherField.setType(correspondingType);
     }
     return correspondingType;
+  }
+  
+  public TemplatesEnumeration addEnumeration() {
+    this.isEnumeration = true;
+    TemplatesEnumeration toAdd = new TemplatesEnumeration();
+    toAdd.father = this;
+    enums.add(toAdd);
+    return toAdd;
   }
 
   @Override

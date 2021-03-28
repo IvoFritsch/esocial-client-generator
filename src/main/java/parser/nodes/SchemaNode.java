@@ -58,7 +58,7 @@ public abstract class SchemaNode {
    * Posiciona no próximo nó filho
    * @return
    */
-  protected final boolean nextNode(){
+  protected final boolean nextChildNode(){
       Node ret = childNodes.item(nextChildNumber);
       
       currentChild = ret;

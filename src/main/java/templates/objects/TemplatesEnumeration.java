@@ -12,8 +12,17 @@ package templates.objects;
  */
 public class TemplatesEnumeration {
   
-  public String name;
-  public TemplatesJavadoc javadoc;
   public String value;
+  public TemplatesJavadoc javadoc;
+  public TemplatesSimpleType father;
+
+  public TemplatesJavadoc getJavadoc() {
+    return javadoc;
+  }
+
+  public String getValue() {
+    return value;
+  }
+  
   
 }

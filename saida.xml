@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?><eSocial>
+    <evtAdmissao>
+        <ideEvento/>
+        <trabalhador>
+            <nmTrab>Paulo Alfredo Fritsch</nmTrab>
+            <estCiv>3</estCiv>
+            <nascimento>
+                <paisNac>18</paisNac>
+            </nascimento>
+            <dependente>
+                <nmDep>Pedro Fritsch</nmDep>
+            </dependente>
+            <dependente>
+                <nmDep>Ivo Fritsch</nmDep>
+                <sexoDep>M</sexoDep>
+            </dependente>
+        </trabalhador>
+        <vinculo>
+            <infoRegimeTrab>
+                <infoCeletista>
+                    <tpAdmissao>5</tpAdmissao>
+                </infoCeletista>
+            </infoRegimeTrab>
+        </vinculo>
+    </evtAdmissao>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+<SignedInfo>
+<CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+<SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"/>
+<Reference URI="">
+<Transforms>
+<Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+<Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+</Transforms>
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+<DigestValue>qKziJkKeFwEsnjru6TLQhc5r0T124q6h8BJ/GIL1daU=</DigestValue>
+</Reference>
+</SignedInfo>
+<SignatureValue>
+SRI5TfnT6RwvvEMY/it5PYAlD/K5UHLKb16sdbcwUbKzxoXzQr5ff1DPAac4pv9vnLAcmGH2eyie&#13;
+9V4F2jEDboK+Ka1XcmTGOyVJTr7l708XXoBc3y1FnF3s9UtggZ0nvndOkxaPGY/0N6MvcP+q7Yu3&#13;
+TKXpIYC8bFDqH1HzSXP+6mk6ScB7MJyPzuA6W/DsA5q3L0YZLyy+ZD77wgTRWEKBrHDwFcSN8J9I&#13;
+QbI9I5kjFmlL2G5HSJ5rfQPW7MenTHTCYWk/NqViBE33pKh4bWNRbiAU62zrNjWsLXZnxd6FcRtb&#13;
++Y1eEHi10yzNQCzjYqefSpMx0iRSDw5LWP/f9g==
+</SignatureValue>
+<KeyInfo>
+<X509Data>
+<X509Certificate>
+MIIHszCCBZugAwIBAgIIcLVm/4WXzPEwDQYJKoZIhvcNAQELBQAwdjELMAkGA1UEBhMCQlIxEzAR&#13;
+BgNVBAoTCklDUC1CcmFzaWwxNjA0BgNVBAsTLVNlY3JldGFyaWEgZGEgUmVjZWl0YSBGZWRlcmFs&#13;
+IGRvIEJyYXNpbCAtIFJGQjEaMBgGA1UEAxMRQUMgUkVERSBJREVJQSBSRkIwHhcNMjEwMzE3MTkz&#13;
+NDU5WhcNMjIwMzE3MTkzNDU5WjCCAQ0xCzAJBgNVBAYTAkJSMRMwEQYDVQQKEwpJQ1AtQnJhc2ls&#13;
+MQswCQYDVQQIEwJSUzEWMBQGA1UEBxMNTk9WTyBIQU1CVVJHTzEXMBUGA1UECxMOMzE3MjU5NzQw&#13;
+MDAxNjYxNjA0BgNVBAsTLVNlY3JldGFyaWEgZGEgUmVjZWl0YSBGZWRlcmFsIGRvIEJyYXNpbCAt&#13;
+IFJGQjEWMBQGA1UECxMNUkZCIGUtQ05QSiBBMTETMBEGA1UECxMKcHJlc2VuY2lhbDFGMEQGA1UE&#13;
+AxM9UVVBTElTQVVERSBRVUFMSURBREUgRU0gU0FVREUgRU1QUkVTQVJJQUwgTFREQToxMDY1Njc0&#13;
+MTAwMDE4OTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBALYcbVbiCAVdvBQk6BXo80ET&#13;
+YpT5X9dll/Q9X9O/oMdWDH17qirPpoeo76fjnbgQLAP1KcrgCm3aObbyGZZkBOYInqyF5obB2ecX&#13;
+g8UCwnt1HVRVLeEinWqdDa4RNg5u7n5aN+Rllzx4YYQP4Vwb9JB4s36NQH877yh/SjoP4TIZHf56&#13;
+7TNnRQbOt53hOfcAdDgLRATLmp+FTvfYWJs/2Bkxxm6btF/oUWP6RQGYi2iqcU/8rce5DTdrzb/g&#13;
+oEGq0/1e6wSq2bLC/Q4bFgIwf7HFDxq79oKJwNy4fPl7Rh6rb62LgFmjGnouCGZnRjrq87dcP/6E&#13;
+gK5/b6Eh086ATzsCAwEAAaOCAqowggKmMB8GA1UdIwQYMBaAFPpT890wNX5U9nWwXVB01ddHvR+k&#13;
+MA4GA1UdDwEB/wQEAwIF4DBvBgNVHSAEaDBmMGQGBmBMAQIBZTBaMFgGCCsGAQUFBwIBFkxodHRw&#13;
+Oi8vcmVwb3NpdG9yaW8uYWNyZWRlaWRlaWEuY29tLmJyL2FjLXJlZGVpZGVpYXJmYi9kcGMtYWNy&#13;
+ZWRlaWRlaWFyZmIucGRmMIG2BgNVHR8Ega4wgaswU6BRoE+GTWh0dHA6Ly9yZXBvc2l0b3Jpby5h&#13;
+Y3JlZGVpZGVpYS5jb20uYnIvYWMtcmVkZWlkZWlhcmZiL2xjci1hYy1yZWRlaWRlaWFyZmIuY3Js&#13;
+MFSgUqBQhk5odHRwOi8vcmVwb3NpdG9yaW8yLmFjcmVkZWlkZWlhLmNvbS5ici9hYy1yZWRlaWRl&#13;
+aWFyZmIvbGNyLWFjLXJlZGVpZGVpYXJmYi5jcmwwZQYIKwYBBQUHAQEEWTBXMFUGCCsGAQUFBzAC&#13;
+hklodHRwOi8vcmVwb3NpdG9yaW8uYWNyZWRlaWRlaWEuY29tLmJyL2FjLXJlZGVpZGVpYXJmYi9h&#13;
+Yy1yZWRlaWRlaWFyZmIucDdiMIHCBgNVHREEgbowgbeBIEFEVkpPQ0VMSU5PQEFMTUVJREFNQVRU&#13;
+T1MuQ09NLkJSoCUGBWBMAQMCoBwTGkpPQ0VMSU5PIERFIEFMTUVJREEgTUFUVE9ToBkGBWBMAQMD&#13;
+oBATDjEwNjU2NzQxMDAwMTg5oDgGBWBMAQMEoC8TLTI0MDUxOTY4NTMxNDc1NzAwMTAwMDAwMDAw&#13;
+MDAwMDAwMDAwMDAwMDAwMDAwMKAXBgVgTAEDB6AOEwwwMDAwMDAwMDAwMDAwHQYDVR0lBBYwFAYI&#13;
+KwYBBQUHAwIGCCsGAQUFBwMEMA0GCSqGSIb3DQEBCwUAA4ICAQB4O0nGMk+2+rRw5xrRvEFf8Odc&#13;
+yPNa5EcbZK0PnCPWXAG+9cxY/+NndHIpAN2iRyeu31Xm4PO24qkGQax95psjkUnfRNun08eGEQ3r&#13;
+jWBHm7PdEDiPv5ZCHQxKV2Y6bgkD4PisIwPTraDGR84SPmNdtHwnXWEPAvxAsdhYQtYKYZIqOCyo&#13;
+VaRnVixPHBQBRMpfCgNwJ85O8AHEt6BmAlExrrJY2CWTJYlni01MnCnnVzQQH7tWLP0zIOK9YFni&#13;
+eWqWUDT0U+ag1fRyIfrkQTcV24V+LMmY/SYmqY75k9E4hnqXhpsPNRzQjajkYGPl0oz6F6Fw0XxR&#13;
+ssOZvMKHvkwEuyp/nkoWx+wujmUXmC7cO6+BEsYD+vads9EQDMss8J7VzOEjAkPhC4sy9zjngX0W&#13;
+tV0koF25lBsnHunXNV/LjuR/TPWolHXVKiqq4T0yVVtsAIxUknF/elw7Qa9suWuFzmB/amSKPjJw&#13;
+5J34oHxVeeIUiS3hc+QZzm9PiPdXvulB6f/ZB6gvFOtUlA+UfffeozlKZx0TNL6JcZDTjusMDX2D&#13;
+DGmPSsE3UW1bH9e/GYVwN37PSOJQVqSVoh4KyYT6+Tf26ErdmrUVxSxSIVtSrmuFRSATiyzH5i8K&#13;
+BOOss9vMQHhySYjsYyf4pnXrf3zEJ5K4XFACOtgzPhgvFrQGfw==
+</X509Certificate>
+</X509Data>
+</KeyInfo>
+</Signature></eSocial>

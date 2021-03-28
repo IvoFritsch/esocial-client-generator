@@ -1,8 +1,8 @@
 <#if javadoc??>
     ${javadoc.onlyTitle
-            .returns('Valor do campo '+name)}
+            .returns('Conteúdo do campo '+name)}
 </#if>
-public ${fullType} get${name?cap_first}(){
+public ${fullTypeWithList} get${name?cap_first}(){
     return this.${name};
 }
 

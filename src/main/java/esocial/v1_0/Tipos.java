@@ -39,7 +39,7 @@ public class Tipos {
     /**
      * Identificação do ambiente.
      *
-     * @return Valor do campo tpAmb
+     * @return Conteúdo do campo tpAmb
      */
     public String getTpAmb() {
       return this.tpAmb;
@@ -52,14 +52,66 @@ public class Tipos {
      * @return O próprio T_ideEvento_evtTab para continuar populando outros campos
      */
     public T_ideEvento_evtTab<T> setTpAmb(String tpAmb) {
+      if (!"1".equals(tpAmb)
+          && !"2".equals(tpAmb)
+          && !"7".equals(tpAmb)
+          && !"8".equals(tpAmb)
+          && !"9".equals(tpAmb))
+        throw new RuntimeException(
+            "Valor " + String.valueOf(tpAmb) + " inválido para o campo tpAmb");
       this.tpAmb = tpAmb;
+      return this;
+    }
+    /**
+     * Produção
+     *
+     * @return O próprio T_ideEvento_evtTab para continuar populando outros campos
+     */
+    public T_ideEvento_evtTab<T> setTpAmb_1() {
+      this.tpAmb = "1";
+      return this;
+    }
+    /**
+     * Produção restrita
+     *
+     * @return O próprio T_ideEvento_evtTab para continuar populando outros campos
+     */
+    public T_ideEvento_evtTab<T> setTpAmb_2() {
+      this.tpAmb = "2";
+      return this;
+    }
+    /**
+     * Validação (uso interno)
+     *
+     * @return O próprio T_ideEvento_evtTab para continuar populando outros campos
+     */
+    public T_ideEvento_evtTab<T> setTpAmb_7() {
+      this.tpAmb = "7";
+      return this;
+    }
+    /**
+     * Teste (uso interno)
+     *
+     * @return O próprio T_ideEvento_evtTab para continuar populando outros campos
+     */
+    public T_ideEvento_evtTab<T> setTpAmb_8() {
+      this.tpAmb = "8";
+      return this;
+    }
+    /**
+     * Desenvolvimento (uso interno)
+     *
+     * @return O próprio T_ideEvento_evtTab para continuar populando outros campos
+     */
+    public T_ideEvento_evtTab<T> setTpAmb_9() {
+      this.tpAmb = "9";
       return this;
     }
 
     /**
      * Processo de emissão do evento.
      *
-     * @return Valor do campo procEmi
+     * @return Conteúdo do campo procEmi
      */
     public String getProcEmi() {
       return this.procEmi;
@@ -72,14 +124,86 @@ public class Tipos {
      * @return O próprio T_ideEvento_evtTab para continuar populando outros campos
      */
     public T_ideEvento_evtTab<T> setProcEmi(String procEmi) {
+      if (!"1".equals(procEmi)
+          && !"2".equals(procEmi)
+          && !"3".equals(procEmi)
+          && !"4".equals(procEmi)
+          && !"22".equals(procEmi)
+          && !"81".equals(procEmi)
+          && !"91".equals(procEmi))
+        throw new RuntimeException(
+            "Valor " + String.valueOf(procEmi) + " inválido para o campo procEmi");
       this.procEmi = procEmi;
+      return this;
+    }
+    /**
+     * Aplicativo do empregador
+     *
+     * @return O próprio T_ideEvento_evtTab para continuar populando outros campos
+     */
+    public T_ideEvento_evtTab<T> setProcEmi_1() {
+      this.procEmi = "1";
+      return this;
+    }
+    /**
+     * Aplicativo governamental - Simplificado Pessoa Física
+     *
+     * @return O próprio T_ideEvento_evtTab para continuar populando outros campos
+     */
+    public T_ideEvento_evtTab<T> setProcEmi_2() {
+      this.procEmi = "2";
+      return this;
+    }
+    /**
+     * Aplicativo governamental - Web Geral
+     *
+     * @return O próprio T_ideEvento_evtTab para continuar populando outros campos
+     */
+    public T_ideEvento_evtTab<T> setProcEmi_3() {
+      this.procEmi = "3";
+      return this;
+    }
+    /**
+     * Aplicativo governamental - Simplificado Pessoa Jurídica
+     *
+     * @return O próprio T_ideEvento_evtTab para continuar populando outros campos
+     */
+    public T_ideEvento_evtTab<T> setProcEmi_4() {
+      this.procEmi = "4";
+      return this;
+    }
+    /**
+     * Aplicativo governamental para dispositivos móveis - Empregador Doméstico
+     *
+     * @return O próprio T_ideEvento_evtTab para continuar populando outros campos
+     */
+    public T_ideEvento_evtTab<T> setProcEmi_22() {
+      this.procEmi = "22";
+      return this;
+    }
+    /**
+     * Aplicativo governamental para envio de eventos pelo Judiciário
+     *
+     * @return O próprio T_ideEvento_evtTab para continuar populando outros campos
+     */
+    public T_ideEvento_evtTab<T> setProcEmi_81() {
+      this.procEmi = "81";
+      return this;
+    }
+    /**
+     * Aplicativo governamental - Integração com a Junta Comercial
+     *
+     * @return O próprio T_ideEvento_evtTab para continuar populando outros campos
+     */
+    public T_ideEvento_evtTab<T> setProcEmi_91() {
+      this.procEmi = "91";
       return this;
     }
 
     /**
      * Versão do processo de emissão do evento. Informar a versão do aplicativo emissor do evento.
      *
-     * @return Valor do campo verProc
+     * @return Conteúdo do campo verProc
      */
     public String getVerProc() {
       return this.verProc;
@@ -165,7 +289,7 @@ public class Tipos {
     /**
      * Informe [1] para arquivo original ou [2] para arquivo de retificação.
      *
-     * @return Valor do campo indRetif
+     * @return Conteúdo do campo indRetif
      */
     public String getIndRetif() {
       return this.indRetif;
@@ -178,14 +302,35 @@ public class Tipos {
      * @return O próprio T_ideEvento_folha para continuar populando outros campos
      */
     public T_ideEvento_folha<T> setIndRetif(String indRetif) {
+      if (!"1".equals(indRetif) && !"2".equals(indRetif))
+        throw new RuntimeException(
+            "Valor " + String.valueOf(indRetif) + " inválido para o campo indRetif");
       this.indRetif = indRetif;
+      return this;
+    }
+    /**
+     * Original
+     *
+     * @return O próprio T_ideEvento_folha para continuar populando outros campos
+     */
+    public T_ideEvento_folha<T> setIndRetif_1() {
+      this.indRetif = "1";
+      return this;
+    }
+    /**
+     * Retificação
+     *
+     * @return O próprio T_ideEvento_folha para continuar populando outros campos
+     */
+    public T_ideEvento_folha<T> setIndRetif_2() {
+      this.indRetif = "2";
       return this;
     }
 
     /**
      * Preencher com o número do recibo do arquivo a ser retificado.
      *
-     * @return Valor do campo nrRecibo
+     * @return Conteúdo do campo nrRecibo
      */
     public String getNrRecibo() {
       return this.nrRecibo;
@@ -209,7 +354,7 @@ public class Tipos {
     /**
      * Indicativo de período de apuração.
      *
-     * @return Valor do campo indApuracao
+     * @return Conteúdo do campo indApuracao
      */
     public String getIndApuracao() {
       return this.indApuracao;
@@ -222,7 +367,28 @@ public class Tipos {
      * @return O próprio T_ideEvento_folha para continuar populando outros campos
      */
     public T_ideEvento_folha<T> setIndApuracao(String indApuracao) {
+      if (!"1".equals(indApuracao) && !"2".equals(indApuracao))
+        throw new RuntimeException(
+            "Valor " + String.valueOf(indApuracao) + " inválido para o campo indApuracao");
       this.indApuracao = indApuracao;
+      return this;
+    }
+    /**
+     * Mensal
+     *
+     * @return O próprio T_ideEvento_folha para continuar populando outros campos
+     */
+    public T_ideEvento_folha<T> setIndApuracao_1() {
+      this.indApuracao = "1";
+      return this;
+    }
+    /**
+     * Anual (13° salário)
+     *
+     * @return O próprio T_ideEvento_folha para continuar populando outros campos
+     */
+    public T_ideEvento_folha<T> setIndApuracao_2() {
+      this.indApuracao = "2";
       return this;
     }
 
@@ -231,7 +397,7 @@ public class Tipos {
      * {indApuracao}(./indApuracao) for igual a [1], ou apenas o ano (formato AAAA), se
      * {indApuracao}(./indApuracao) for igual a [2].
      *
-     * @return Valor do campo perApur
+     * @return Conteúdo do campo perApur
      */
     public String getPerApur() {
       return this.perApur;
@@ -256,7 +422,7 @@ public class Tipos {
     /**
      * Indicativo do tipo de guia.
      *
-     * @return Valor do campo indGuia
+     * @return Conteúdo do campo indGuia
      */
     public String getIndGuia() {
       return this.indGuia;
@@ -269,14 +435,26 @@ public class Tipos {
      * @return O próprio T_ideEvento_folha para continuar populando outros campos
      */
     public T_ideEvento_folha<T> setIndGuia(String indGuia) {
+      if (!"1".equals(indGuia))
+        throw new RuntimeException(
+            "Valor " + String.valueOf(indGuia) + " inválido para o campo indGuia");
       this.indGuia = indGuia;
+      return this;
+    }
+    /**
+     * Documento de Arrecadação do eSocial - DAE
+     *
+     * @return O próprio T_ideEvento_folha para continuar populando outros campos
+     */
+    public T_ideEvento_folha<T> setIndGuia_1() {
+      this.indGuia = "1";
       return this;
     }
 
     /**
      * Identificação do ambiente.
      *
-     * @return Valor do campo tpAmb
+     * @return Conteúdo do campo tpAmb
      */
     public String getTpAmb() {
       return this.tpAmb;
@@ -289,14 +467,66 @@ public class Tipos {
      * @return O próprio T_ideEvento_folha para continuar populando outros campos
      */
     public T_ideEvento_folha<T> setTpAmb(String tpAmb) {
+      if (!"1".equals(tpAmb)
+          && !"2".equals(tpAmb)
+          && !"7".equals(tpAmb)
+          && !"8".equals(tpAmb)
+          && !"9".equals(tpAmb))
+        throw new RuntimeException(
+            "Valor " + String.valueOf(tpAmb) + " inválido para o campo tpAmb");
       this.tpAmb = tpAmb;
+      return this;
+    }
+    /**
+     * Produção
+     *
+     * @return O próprio T_ideEvento_folha para continuar populando outros campos
+     */
+    public T_ideEvento_folha<T> setTpAmb_1() {
+      this.tpAmb = "1";
+      return this;
+    }
+    /**
+     * Produção restrita
+     *
+     * @return O próprio T_ideEvento_folha para continuar populando outros campos
+     */
+    public T_ideEvento_folha<T> setTpAmb_2() {
+      this.tpAmb = "2";
+      return this;
+    }
+    /**
+     * Validação (uso interno)
+     *
+     * @return O próprio T_ideEvento_folha para continuar populando outros campos
+     */
+    public T_ideEvento_folha<T> setTpAmb_7() {
+      this.tpAmb = "7";
+      return this;
+    }
+    /**
+     * Teste (uso interno)
+     *
+     * @return O próprio T_ideEvento_folha para continuar populando outros campos
+     */
+    public T_ideEvento_folha<T> setTpAmb_8() {
+      this.tpAmb = "8";
+      return this;
+    }
+    /**
+     * Desenvolvimento (uso interno)
+     *
+     * @return O próprio T_ideEvento_folha para continuar populando outros campos
+     */
+    public T_ideEvento_folha<T> setTpAmb_9() {
+      this.tpAmb = "9";
       return this;
     }
 
     /**
      * Processo de emissão do evento.
      *
-     * @return Valor do campo procEmi
+     * @return Conteúdo do campo procEmi
      */
     public String getProcEmi() {
       return this.procEmi;
@@ -309,14 +539,86 @@ public class Tipos {
      * @return O próprio T_ideEvento_folha para continuar populando outros campos
      */
     public T_ideEvento_folha<T> setProcEmi(String procEmi) {
+      if (!"1".equals(procEmi)
+          && !"2".equals(procEmi)
+          && !"3".equals(procEmi)
+          && !"4".equals(procEmi)
+          && !"22".equals(procEmi)
+          && !"81".equals(procEmi)
+          && !"91".equals(procEmi))
+        throw new RuntimeException(
+            "Valor " + String.valueOf(procEmi) + " inválido para o campo procEmi");
       this.procEmi = procEmi;
+      return this;
+    }
+    /**
+     * Aplicativo do empregador
+     *
+     * @return O próprio T_ideEvento_folha para continuar populando outros campos
+     */
+    public T_ideEvento_folha<T> setProcEmi_1() {
+      this.procEmi = "1";
+      return this;
+    }
+    /**
+     * Aplicativo governamental - Simplificado Pessoa Física
+     *
+     * @return O próprio T_ideEvento_folha para continuar populando outros campos
+     */
+    public T_ideEvento_folha<T> setProcEmi_2() {
+      this.procEmi = "2";
+      return this;
+    }
+    /**
+     * Aplicativo governamental - Web Geral
+     *
+     * @return O próprio T_ideEvento_folha para continuar populando outros campos
+     */
+    public T_ideEvento_folha<T> setProcEmi_3() {
+      this.procEmi = "3";
+      return this;
+    }
+    /**
+     * Aplicativo governamental - Simplificado Pessoa Jurídica
+     *
+     * @return O próprio T_ideEvento_folha para continuar populando outros campos
+     */
+    public T_ideEvento_folha<T> setProcEmi_4() {
+      this.procEmi = "4";
+      return this;
+    }
+    /**
+     * Aplicativo governamental para dispositivos móveis - Empregador Doméstico
+     *
+     * @return O próprio T_ideEvento_folha para continuar populando outros campos
+     */
+    public T_ideEvento_folha<T> setProcEmi_22() {
+      this.procEmi = "22";
+      return this;
+    }
+    /**
+     * Aplicativo governamental para envio de eventos pelo Judiciário
+     *
+     * @return O próprio T_ideEvento_folha para continuar populando outros campos
+     */
+    public T_ideEvento_folha<T> setProcEmi_81() {
+      this.procEmi = "81";
+      return this;
+    }
+    /**
+     * Aplicativo governamental - Integração com a Junta Comercial
+     *
+     * @return O próprio T_ideEvento_folha para continuar populando outros campos
+     */
+    public T_ideEvento_folha<T> setProcEmi_91() {
+      this.procEmi = "91";
       return this;
     }
 
     /**
      * Versão do processo de emissão do evento. Informar a versão do aplicativo emissor do evento.
      *
-     * @return Valor do campo verProc
+     * @return Conteúdo do campo verProc
      */
     public String getVerProc() {
       return this.verProc;
@@ -398,7 +700,7 @@ public class Tipos {
     /**
      * Informe [1] para arquivo original ou [2] para arquivo de retificação.
      *
-     * @return Valor do campo indRetif
+     * @return Conteúdo do campo indRetif
      */
     public String getIndRetif() {
       return this.indRetif;
@@ -411,14 +713,35 @@ public class Tipos {
      * @return O próprio T_ideEvento_folha_opp para continuar populando outros campos
      */
     public T_ideEvento_folha_opp<T> setIndRetif(String indRetif) {
+      if (!"1".equals(indRetif) && !"2".equals(indRetif))
+        throw new RuntimeException(
+            "Valor " + String.valueOf(indRetif) + " inválido para o campo indRetif");
       this.indRetif = indRetif;
+      return this;
+    }
+    /**
+     * Original
+     *
+     * @return O próprio T_ideEvento_folha_opp para continuar populando outros campos
+     */
+    public T_ideEvento_folha_opp<T> setIndRetif_1() {
+      this.indRetif = "1";
+      return this;
+    }
+    /**
+     * Retificação
+     *
+     * @return O próprio T_ideEvento_folha_opp para continuar populando outros campos
+     */
+    public T_ideEvento_folha_opp<T> setIndRetif_2() {
+      this.indRetif = "2";
       return this;
     }
 
     /**
      * Preencher com o número do recibo do arquivo a ser retificado.
      *
-     * @return Valor do campo nrRecibo
+     * @return Conteúdo do campo nrRecibo
      */
     public String getNrRecibo() {
       return this.nrRecibo;
@@ -442,7 +765,7 @@ public class Tipos {
     /**
      * Indicativo de período de apuração.
      *
-     * @return Valor do campo indApuracao
+     * @return Conteúdo do campo indApuracao
      */
     public String getIndApuracao() {
       return this.indApuracao;
@@ -455,7 +778,28 @@ public class Tipos {
      * @return O próprio T_ideEvento_folha_opp para continuar populando outros campos
      */
     public T_ideEvento_folha_opp<T> setIndApuracao(String indApuracao) {
+      if (!"1".equals(indApuracao) && !"2".equals(indApuracao))
+        throw new RuntimeException(
+            "Valor " + String.valueOf(indApuracao) + " inválido para o campo indApuracao");
       this.indApuracao = indApuracao;
+      return this;
+    }
+    /**
+     * Mensal
+     *
+     * @return O próprio T_ideEvento_folha_opp para continuar populando outros campos
+     */
+    public T_ideEvento_folha_opp<T> setIndApuracao_1() {
+      this.indApuracao = "1";
+      return this;
+    }
+    /**
+     * Anual (13° salário)
+     *
+     * @return O próprio T_ideEvento_folha_opp para continuar populando outros campos
+     */
+    public T_ideEvento_folha_opp<T> setIndApuracao_2() {
+      this.indApuracao = "2";
       return this;
     }
 
@@ -464,7 +808,7 @@ public class Tipos {
      * {indApuracao}(./indApuracao) for igual a [1], ou apenas o ano (formato AAAA), se
      * {indApuracao}(./indApuracao) for igual a [2].
      *
-     * @return Valor do campo perApur
+     * @return Conteúdo do campo perApur
      */
     public String getPerApur() {
       return this.perApur;
@@ -489,7 +833,7 @@ public class Tipos {
     /**
      * Identificação do ambiente.
      *
-     * @return Valor do campo tpAmb
+     * @return Conteúdo do campo tpAmb
      */
     public String getTpAmb() {
       return this.tpAmb;
@@ -502,14 +846,66 @@ public class Tipos {
      * @return O próprio T_ideEvento_folha_opp para continuar populando outros campos
      */
     public T_ideEvento_folha_opp<T> setTpAmb(String tpAmb) {
+      if (!"1".equals(tpAmb)
+          && !"2".equals(tpAmb)
+          && !"7".equals(tpAmb)
+          && !"8".equals(tpAmb)
+          && !"9".equals(tpAmb))
+        throw new RuntimeException(
+            "Valor " + String.valueOf(tpAmb) + " inválido para o campo tpAmb");
       this.tpAmb = tpAmb;
+      return this;
+    }
+    /**
+     * Produção
+     *
+     * @return O próprio T_ideEvento_folha_opp para continuar populando outros campos
+     */
+    public T_ideEvento_folha_opp<T> setTpAmb_1() {
+      this.tpAmb = "1";
+      return this;
+    }
+    /**
+     * Produção restrita
+     *
+     * @return O próprio T_ideEvento_folha_opp para continuar populando outros campos
+     */
+    public T_ideEvento_folha_opp<T> setTpAmb_2() {
+      this.tpAmb = "2";
+      return this;
+    }
+    /**
+     * Validação (uso interno)
+     *
+     * @return O próprio T_ideEvento_folha_opp para continuar populando outros campos
+     */
+    public T_ideEvento_folha_opp<T> setTpAmb_7() {
+      this.tpAmb = "7";
+      return this;
+    }
+    /**
+     * Teste (uso interno)
+     *
+     * @return O próprio T_ideEvento_folha_opp para continuar populando outros campos
+     */
+    public T_ideEvento_folha_opp<T> setTpAmb_8() {
+      this.tpAmb = "8";
+      return this;
+    }
+    /**
+     * Desenvolvimento (uso interno)
+     *
+     * @return O próprio T_ideEvento_folha_opp para continuar populando outros campos
+     */
+    public T_ideEvento_folha_opp<T> setTpAmb_9() {
+      this.tpAmb = "9";
       return this;
     }
 
     /**
      * Processo de emissão do evento.
      *
-     * @return Valor do campo procEmi
+     * @return Conteúdo do campo procEmi
      */
     public String getProcEmi() {
       return this.procEmi;
@@ -522,14 +918,86 @@ public class Tipos {
      * @return O próprio T_ideEvento_folha_opp para continuar populando outros campos
      */
     public T_ideEvento_folha_opp<T> setProcEmi(String procEmi) {
+      if (!"1".equals(procEmi)
+          && !"2".equals(procEmi)
+          && !"3".equals(procEmi)
+          && !"4".equals(procEmi)
+          && !"22".equals(procEmi)
+          && !"81".equals(procEmi)
+          && !"91".equals(procEmi))
+        throw new RuntimeException(
+            "Valor " + String.valueOf(procEmi) + " inválido para o campo procEmi");
       this.procEmi = procEmi;
+      return this;
+    }
+    /**
+     * Aplicativo do empregador
+     *
+     * @return O próprio T_ideEvento_folha_opp para continuar populando outros campos
+     */
+    public T_ideEvento_folha_opp<T> setProcEmi_1() {
+      this.procEmi = "1";
+      return this;
+    }
+    /**
+     * Aplicativo governamental - Simplificado Pessoa Física
+     *
+     * @return O próprio T_ideEvento_folha_opp para continuar populando outros campos
+     */
+    public T_ideEvento_folha_opp<T> setProcEmi_2() {
+      this.procEmi = "2";
+      return this;
+    }
+    /**
+     * Aplicativo governamental - Web Geral
+     *
+     * @return O próprio T_ideEvento_folha_opp para continuar populando outros campos
+     */
+    public T_ideEvento_folha_opp<T> setProcEmi_3() {
+      this.procEmi = "3";
+      return this;
+    }
+    /**
+     * Aplicativo governamental - Simplificado Pessoa Jurídica
+     *
+     * @return O próprio T_ideEvento_folha_opp para continuar populando outros campos
+     */
+    public T_ideEvento_folha_opp<T> setProcEmi_4() {
+      this.procEmi = "4";
+      return this;
+    }
+    /**
+     * Aplicativo governamental para dispositivos móveis - Empregador Doméstico
+     *
+     * @return O próprio T_ideEvento_folha_opp para continuar populando outros campos
+     */
+    public T_ideEvento_folha_opp<T> setProcEmi_22() {
+      this.procEmi = "22";
+      return this;
+    }
+    /**
+     * Aplicativo governamental para envio de eventos pelo Judiciário
+     *
+     * @return O próprio T_ideEvento_folha_opp para continuar populando outros campos
+     */
+    public T_ideEvento_folha_opp<T> setProcEmi_81() {
+      this.procEmi = "81";
+      return this;
+    }
+    /**
+     * Aplicativo governamental - Integração com a Junta Comercial
+     *
+     * @return O próprio T_ideEvento_folha_opp para continuar populando outros campos
+     */
+    public T_ideEvento_folha_opp<T> setProcEmi_91() {
+      this.procEmi = "91";
       return this;
     }
 
     /**
      * Versão do processo de emissão do evento. Informar a versão do aplicativo emissor do evento.
      *
-     * @return Valor do campo verProc
+     * @return Conteúdo do campo verProc
      */
     public String getVerProc() {
       return this.verProc;
@@ -607,7 +1075,7 @@ public class Tipos {
     /**
      * Informe [1] para arquivo original ou [2] para arquivo de retificação.
      *
-     * @return Valor do campo indRetif
+     * @return Conteúdo do campo indRetif
      */
     public String getIndRetif() {
       return this.indRetif;
@@ -620,14 +1088,35 @@ public class Tipos {
      * @return O próprio T_ideEvento_folha_mensal para continuar populando outros campos
      */
     public T_ideEvento_folha_mensal<T> setIndRetif(String indRetif) {
+      if (!"1".equals(indRetif) && !"2".equals(indRetif))
+        throw new RuntimeException(
+            "Valor " + String.valueOf(indRetif) + " inválido para o campo indRetif");
       this.indRetif = indRetif;
+      return this;
+    }
+    /**
+     * Original
+     *
+     * @return O próprio T_ideEvento_folha_mensal para continuar populando outros campos
+     */
+    public T_ideEvento_folha_mensal<T> setIndRetif_1() {
+      this.indRetif = "1";
+      return this;
+    }
+    /**
+     * Retificação
+     *
+     * @return O próprio T_ideEvento_folha_mensal para continuar populando outros campos
+     */
+    public T_ideEvento_folha_mensal<T> setIndRetif_2() {
+      this.indRetif = "2";
       return this;
     }
 
     /**
      * Preencher com o número do recibo do arquivo a ser retificado.
      *
-     * @return Valor do campo nrRecibo
+     * @return Conteúdo do campo nrRecibo
      */
     public String getNrRecibo() {
       return this.nrRecibo;
@@ -651,7 +1140,7 @@ public class Tipos {
     /**
      * Informar o mês/ano (formato AAAA-MM) de referência das informações.
      *
-     * @return Valor do campo perApur
+     * @return Conteúdo do campo perApur
      */
     public String getPerApur() {
       return this.perApur;
@@ -674,7 +1163,7 @@ public class Tipos {
     /**
      * Indicativo do tipo de guia.
      *
-     * @return Valor do campo indGuia
+     * @return Conteúdo do campo indGuia
      */
     public String getIndGuia() {
       return this.indGuia;
@@ -687,14 +1176,26 @@ public class Tipos {
      * @return O próprio T_ideEvento_folha_mensal para continuar populando outros campos
      */
     public T_ideEvento_folha_mensal<T> setIndGuia(String indGuia) {
+      if (!"1".equals(indGuia))
+        throw new RuntimeException(
+            "Valor " + String.valueOf(indGuia) + " inválido para o campo indGuia");
       this.indGuia = indGuia;
+      return this;
+    }
+    /**
+     * Documento de Arrecadação do eSocial - DAE
+     *
+     * @return O próprio T_ideEvento_folha_mensal para continuar populando outros campos
+     */
+    public T_ideEvento_folha_mensal<T> setIndGuia_1() {
+      this.indGuia = "1";
       return this;
     }
 
     /**
      * Identificação do ambiente.
      *
-     * @return Valor do campo tpAmb
+     * @return Conteúdo do campo tpAmb
      */
     public String getTpAmb() {
       return this.tpAmb;
@@ -707,14 +1208,66 @@ public class Tipos {
      * @return O próprio T_ideEvento_folha_mensal para continuar populando outros campos
      */
     public T_ideEvento_folha_mensal<T> setTpAmb(String tpAmb) {
+      if (!"1".equals(tpAmb)
+          && !"2".equals(tpAmb)
+          && !"7".equals(tpAmb)
+          && !"8".equals(tpAmb)
+          && !"9".equals(tpAmb))
+        throw new RuntimeException(
+            "Valor " + String.valueOf(tpAmb) + " inválido para o campo tpAmb");
       this.tpAmb = tpAmb;
+      return this;
+    }
+    /**
+     * Produção
+     *
+     * @return O próprio T_ideEvento_folha_mensal para continuar populando outros campos
+     */
+    public T_ideEvento_folha_mensal<T> setTpAmb_1() {
+      this.tpAmb = "1";
+      return this;
+    }
+    /**
+     * Produção restrita
+     *
+     * @return O próprio T_ideEvento_folha_mensal para continuar populando outros campos
+     */
+    public T_ideEvento_folha_mensal<T> setTpAmb_2() {
+      this.tpAmb = "2";
+      return this;
+    }
+    /**
+     * Validação (uso interno)
+     *
+     * @return O próprio T_ideEvento_folha_mensal para continuar populando outros campos
+     */
+    public T_ideEvento_folha_mensal<T> setTpAmb_7() {
+      this.tpAmb = "7";
+      return this;
+    }
+    /**
+     * Teste (uso interno)
+     *
+     * @return O próprio T_ideEvento_folha_mensal para continuar populando outros campos
+     */
+    public T_ideEvento_folha_mensal<T> setTpAmb_8() {
+      this.tpAmb = "8";
+      return this;
+    }
+    /**
+     * Desenvolvimento (uso interno)
+     *
+     * @return O próprio T_ideEvento_folha_mensal para continuar populando outros campos
+     */
+    public T_ideEvento_folha_mensal<T> setTpAmb_9() {
+      this.tpAmb = "9";
       return this;
     }
 
     /**
      * Processo de emissão do evento.
      *
-     * @return Valor do campo procEmi
+     * @return Conteúdo do campo procEmi
      */
     public String getProcEmi() {
       return this.procEmi;
@@ -727,14 +1280,86 @@ public class Tipos {
      * @return O próprio T_ideEvento_folha_mensal para continuar populando outros campos
      */
     public T_ideEvento_folha_mensal<T> setProcEmi(String procEmi) {
+      if (!"1".equals(procEmi)
+          && !"2".equals(procEmi)
+          && !"3".equals(procEmi)
+          && !"4".equals(procEmi)
+          && !"22".equals(procEmi)
+          && !"81".equals(procEmi)
+          && !"91".equals(procEmi))
+        throw new RuntimeException(
+            "Valor " + String.valueOf(procEmi) + " inválido para o campo procEmi");
       this.procEmi = procEmi;
+      return this;
+    }
+    /**
+     * Aplicativo do empregador
+     *
+     * @return O próprio T_ideEvento_folha_mensal para continuar populando outros campos
+     */
+    public T_ideEvento_folha_mensal<T> setProcEmi_1() {
+      this.procEmi = "1";
+      return this;
+    }
+    /**
+     * Aplicativo governamental - Simplificado Pessoa Física
+     *
+     * @return O próprio T_ideEvento_folha_mensal para continuar populando outros campos
+     */
+    public T_ideEvento_folha_mensal<T> setProcEmi_2() {
+      this.procEmi = "2";
+      return this;
+    }
+    /**
+     * Aplicativo governamental - Web Geral
+     *
+     * @return O próprio T_ideEvento_folha_mensal para continuar populando outros campos
+     */
+    public T_ideEvento_folha_mensal<T> setProcEmi_3() {
+      this.procEmi = "3";
+      return this;
+    }
+    /**
+     * Aplicativo governamental - Simplificado Pessoa Jurídica
+     *
+     * @return O próprio T_ideEvento_folha_mensal para continuar populando outros campos
+     */
+    public T_ideEvento_folha_mensal<T> setProcEmi_4() {
+      this.procEmi = "4";
+      return this;
+    }
+    /**
+     * Aplicativo governamental para dispositivos móveis - Empregador Doméstico
+     *
+     * @return O próprio T_ideEvento_folha_mensal para continuar populando outros campos
+     */
+    public T_ideEvento_folha_mensal<T> setProcEmi_22() {
+      this.procEmi = "22";
+      return this;
+    }
+    /**
+     * Aplicativo governamental para envio de eventos pelo Judiciário
+     *
+     * @return O próprio T_ideEvento_folha_mensal para continuar populando outros campos
+     */
+    public T_ideEvento_folha_mensal<T> setProcEmi_81() {
+      this.procEmi = "81";
+      return this;
+    }
+    /**
+     * Aplicativo governamental - Integração com a Junta Comercial
+     *
+     * @return O próprio T_ideEvento_folha_mensal para continuar populando outros campos
+     */
+    public T_ideEvento_folha_mensal<T> setProcEmi_91() {
+      this.procEmi = "91";
       return this;
     }
 
     /**
      * Versão do processo de emissão do evento. Informar a versão do aplicativo emissor do evento.
      *
-     * @return Valor do campo verProc
+     * @return Conteúdo do campo verProc
      */
     public String getVerProc() {
       return this.verProc;
@@ -812,7 +1437,7 @@ public class Tipos {
     /**
      * Indicativo de período de apuração.
      *
-     * @return Valor do campo indApuracao
+     * @return Conteúdo do campo indApuracao
      */
     public String getIndApuracao() {
       return this.indApuracao;
@@ -825,7 +1450,28 @@ public class Tipos {
      * @return O próprio T_ideEvento_folha_sem_retificacao para continuar populando outros campos
      */
     public T_ideEvento_folha_sem_retificacao<T> setIndApuracao(String indApuracao) {
+      if (!"1".equals(indApuracao) && !"2".equals(indApuracao))
+        throw new RuntimeException(
+            "Valor " + String.valueOf(indApuracao) + " inválido para o campo indApuracao");
       this.indApuracao = indApuracao;
+      return this;
+    }
+    /**
+     * Mensal
+     *
+     * @return O próprio T_ideEvento_folha_sem_retificacao para continuar populando outros campos
+     */
+    public T_ideEvento_folha_sem_retificacao<T> setIndApuracao_1() {
+      this.indApuracao = "1";
+      return this;
+    }
+    /**
+     * Anual (13° salário)
+     *
+     * @return O próprio T_ideEvento_folha_sem_retificacao para continuar populando outros campos
+     */
+    public T_ideEvento_folha_sem_retificacao<T> setIndApuracao_2() {
+      this.indApuracao = "2";
       return this;
     }
 
@@ -834,7 +1480,7 @@ public class Tipos {
      * {indApuracao}(./indApuracao) for igual a [1], ou apenas o ano (formato AAAA), se
      * {indApuracao}(./indApuracao) for igual a [2].
      *
-     * @return Valor do campo perApur
+     * @return Conteúdo do campo perApur
      */
     public String getPerApur() {
       return this.perApur;
@@ -859,7 +1505,7 @@ public class Tipos {
     /**
      * Indicativo do tipo de guia.
      *
-     * @return Valor do campo indGuia
+     * @return Conteúdo do campo indGuia
      */
     public String getIndGuia() {
       return this.indGuia;
@@ -872,14 +1518,26 @@ public class Tipos {
      * @return O próprio T_ideEvento_folha_sem_retificacao para continuar populando outros campos
      */
     public T_ideEvento_folha_sem_retificacao<T> setIndGuia(String indGuia) {
+      if (!"1".equals(indGuia))
+        throw new RuntimeException(
+            "Valor " + String.valueOf(indGuia) + " inválido para o campo indGuia");
       this.indGuia = indGuia;
+      return this;
+    }
+    /**
+     * Documento de Arrecadação do eSocial - DAE
+     *
+     * @return O próprio T_ideEvento_folha_sem_retificacao para continuar populando outros campos
+     */
+    public T_ideEvento_folha_sem_retificacao<T> setIndGuia_1() {
+      this.indGuia = "1";
       return this;
     }
 
     /**
      * Identificação do ambiente.
      *
-     * @return Valor do campo tpAmb
+     * @return Conteúdo do campo tpAmb
      */
     public String getTpAmb() {
       return this.tpAmb;
@@ -892,14 +1550,66 @@ public class Tipos {
      * @return O próprio T_ideEvento_folha_sem_retificacao para continuar populando outros campos
      */
     public T_ideEvento_folha_sem_retificacao<T> setTpAmb(String tpAmb) {
+      if (!"1".equals(tpAmb)
+          && !"2".equals(tpAmb)
+          && !"7".equals(tpAmb)
+          && !"8".equals(tpAmb)
+          && !"9".equals(tpAmb))
+        throw new RuntimeException(
+            "Valor " + String.valueOf(tpAmb) + " inválido para o campo tpAmb");
       this.tpAmb = tpAmb;
+      return this;
+    }
+    /**
+     * Produção
+     *
+     * @return O próprio T_ideEvento_folha_sem_retificacao para continuar populando outros campos
+     */
+    public T_ideEvento_folha_sem_retificacao<T> setTpAmb_1() {
+      this.tpAmb = "1";
+      return this;
+    }
+    /**
+     * Produção restrita
+     *
+     * @return O próprio T_ideEvento_folha_sem_retificacao para continuar populando outros campos
+     */
+    public T_ideEvento_folha_sem_retificacao<T> setTpAmb_2() {
+      this.tpAmb = "2";
+      return this;
+    }
+    /**
+     * Validação (uso interno)
+     *
+     * @return O próprio T_ideEvento_folha_sem_retificacao para continuar populando outros campos
+     */
+    public T_ideEvento_folha_sem_retificacao<T> setTpAmb_7() {
+      this.tpAmb = "7";
+      return this;
+    }
+    /**
+     * Teste (uso interno)
+     *
+     * @return O próprio T_ideEvento_folha_sem_retificacao para continuar populando outros campos
+     */
+    public T_ideEvento_folha_sem_retificacao<T> setTpAmb_8() {
+      this.tpAmb = "8";
+      return this;
+    }
+    /**
+     * Desenvolvimento (uso interno)
+     *
+     * @return O próprio T_ideEvento_folha_sem_retificacao para continuar populando outros campos
+     */
+    public T_ideEvento_folha_sem_retificacao<T> setTpAmb_9() {
+      this.tpAmb = "9";
       return this;
     }
 
     /**
      * Processo de emissão do evento.
      *
-     * @return Valor do campo procEmi
+     * @return Conteúdo do campo procEmi
      */
     public String getProcEmi() {
       return this.procEmi;
@@ -912,14 +1622,86 @@ public class Tipos {
      * @return O próprio T_ideEvento_folha_sem_retificacao para continuar populando outros campos
      */
     public T_ideEvento_folha_sem_retificacao<T> setProcEmi(String procEmi) {
+      if (!"1".equals(procEmi)
+          && !"2".equals(procEmi)
+          && !"3".equals(procEmi)
+          && !"4".equals(procEmi)
+          && !"22".equals(procEmi)
+          && !"81".equals(procEmi)
+          && !"91".equals(procEmi))
+        throw new RuntimeException(
+            "Valor " + String.valueOf(procEmi) + " inválido para o campo procEmi");
       this.procEmi = procEmi;
+      return this;
+    }
+    /**
+     * Aplicativo do empregador
+     *
+     * @return O próprio T_ideEvento_folha_sem_retificacao para continuar populando outros campos
+     */
+    public T_ideEvento_folha_sem_retificacao<T> setProcEmi_1() {
+      this.procEmi = "1";
+      return this;
+    }
+    /**
+     * Aplicativo governamental - Simplificado Pessoa Física
+     *
+     * @return O próprio T_ideEvento_folha_sem_retificacao para continuar populando outros campos
+     */
+    public T_ideEvento_folha_sem_retificacao<T> setProcEmi_2() {
+      this.procEmi = "2";
+      return this;
+    }
+    /**
+     * Aplicativo governamental - Web Geral
+     *
+     * @return O próprio T_ideEvento_folha_sem_retificacao para continuar populando outros campos
+     */
+    public T_ideEvento_folha_sem_retificacao<T> setProcEmi_3() {
+      this.procEmi = "3";
+      return this;
+    }
+    /**
+     * Aplicativo governamental - Simplificado Pessoa Jurídica
+     *
+     * @return O próprio T_ideEvento_folha_sem_retificacao para continuar populando outros campos
+     */
+    public T_ideEvento_folha_sem_retificacao<T> setProcEmi_4() {
+      this.procEmi = "4";
+      return this;
+    }
+    /**
+     * Aplicativo governamental para dispositivos móveis - Empregador Doméstico
+     *
+     * @return O próprio T_ideEvento_folha_sem_retificacao para continuar populando outros campos
+     */
+    public T_ideEvento_folha_sem_retificacao<T> setProcEmi_22() {
+      this.procEmi = "22";
+      return this;
+    }
+    /**
+     * Aplicativo governamental para envio de eventos pelo Judiciário
+     *
+     * @return O próprio T_ideEvento_folha_sem_retificacao para continuar populando outros campos
+     */
+    public T_ideEvento_folha_sem_retificacao<T> setProcEmi_81() {
+      this.procEmi = "81";
+      return this;
+    }
+    /**
+     * Aplicativo governamental - Integração com a Junta Comercial
+     *
+     * @return O próprio T_ideEvento_folha_sem_retificacao para continuar populando outros campos
+     */
+    public T_ideEvento_folha_sem_retificacao<T> setProcEmi_91() {
+      this.procEmi = "91";
       return this;
     }
 
     /**
      * Versão do processo de emissão do evento. Informar a versão do aplicativo emissor do evento.
      *
-     * @return Valor do campo verProc
+     * @return Conteúdo do campo verProc
      */
     public String getVerProc() {
       return this.verProc;
@@ -989,7 +1771,7 @@ public class Tipos {
     /**
      * Informe [1] para arquivo original ou [2] para arquivo de retificação.
      *
-     * @return Valor do campo indRetif
+     * @return Conteúdo do campo indRetif
      */
     public String getIndRetif() {
       return this.indRetif;
@@ -1002,14 +1784,35 @@ public class Tipos {
      * @return O próprio T_ideEvento_trab para continuar populando outros campos
      */
     public T_ideEvento_trab<T> setIndRetif(String indRetif) {
+      if (!"1".equals(indRetif) && !"2".equals(indRetif))
+        throw new RuntimeException(
+            "Valor " + String.valueOf(indRetif) + " inválido para o campo indRetif");
       this.indRetif = indRetif;
+      return this;
+    }
+    /**
+     * Original
+     *
+     * @return O próprio T_ideEvento_trab para continuar populando outros campos
+     */
+    public T_ideEvento_trab<T> setIndRetif_1() {
+      this.indRetif = "1";
+      return this;
+    }
+    /**
+     * Retificação
+     *
+     * @return O próprio T_ideEvento_trab para continuar populando outros campos
+     */
+    public T_ideEvento_trab<T> setIndRetif_2() {
+      this.indRetif = "2";
       return this;
     }
 
     /**
      * Preencher com o número do recibo do arquivo a ser retificado.
      *
-     * @return Valor do campo nrRecibo
+     * @return Conteúdo do campo nrRecibo
      */
     public String getNrRecibo() {
       return this.nrRecibo;
@@ -1033,7 +1836,7 @@ public class Tipos {
     /**
      * Identificação do ambiente.
      *
-     * @return Valor do campo tpAmb
+     * @return Conteúdo do campo tpAmb
      */
     public String getTpAmb() {
       return this.tpAmb;
@@ -1046,14 +1849,66 @@ public class Tipos {
      * @return O próprio T_ideEvento_trab para continuar populando outros campos
      */
     public T_ideEvento_trab<T> setTpAmb(String tpAmb) {
+      if (!"1".equals(tpAmb)
+          && !"2".equals(tpAmb)
+          && !"7".equals(tpAmb)
+          && !"8".equals(tpAmb)
+          && !"9".equals(tpAmb))
+        throw new RuntimeException(
+            "Valor " + String.valueOf(tpAmb) + " inválido para o campo tpAmb");
       this.tpAmb = tpAmb;
+      return this;
+    }
+    /**
+     * Produção
+     *
+     * @return O próprio T_ideEvento_trab para continuar populando outros campos
+     */
+    public T_ideEvento_trab<T> setTpAmb_1() {
+      this.tpAmb = "1";
+      return this;
+    }
+    /**
+     * Produção restrita
+     *
+     * @return O próprio T_ideEvento_trab para continuar populando outros campos
+     */
+    public T_ideEvento_trab<T> setTpAmb_2() {
+      this.tpAmb = "2";
+      return this;
+    }
+    /**
+     * Validação (uso interno)
+     *
+     * @return O próprio T_ideEvento_trab para continuar populando outros campos
+     */
+    public T_ideEvento_trab<T> setTpAmb_7() {
+      this.tpAmb = "7";
+      return this;
+    }
+    /**
+     * Teste (uso interno)
+     *
+     * @return O próprio T_ideEvento_trab para continuar populando outros campos
+     */
+    public T_ideEvento_trab<T> setTpAmb_8() {
+      this.tpAmb = "8";
+      return this;
+    }
+    /**
+     * Desenvolvimento (uso interno)
+     *
+     * @return O próprio T_ideEvento_trab para continuar populando outros campos
+     */
+    public T_ideEvento_trab<T> setTpAmb_9() {
+      this.tpAmb = "9";
       return this;
     }
 
     /**
      * Processo de emissão do evento.
      *
-     * @return Valor do campo procEmi
+     * @return Conteúdo do campo procEmi
      */
     public String getProcEmi() {
       return this.procEmi;
@@ -1066,14 +1921,86 @@ public class Tipos {
      * @return O próprio T_ideEvento_trab para continuar populando outros campos
      */
     public T_ideEvento_trab<T> setProcEmi(String procEmi) {
+      if (!"1".equals(procEmi)
+          && !"2".equals(procEmi)
+          && !"3".equals(procEmi)
+          && !"4".equals(procEmi)
+          && !"22".equals(procEmi)
+          && !"81".equals(procEmi)
+          && !"91".equals(procEmi))
+        throw new RuntimeException(
+            "Valor " + String.valueOf(procEmi) + " inválido para o campo procEmi");
       this.procEmi = procEmi;
+      return this;
+    }
+    /**
+     * Aplicativo do empregador
+     *
+     * @return O próprio T_ideEvento_trab para continuar populando outros campos
+     */
+    public T_ideEvento_trab<T> setProcEmi_1() {
+      this.procEmi = "1";
+      return this;
+    }
+    /**
+     * Aplicativo governamental - Simplificado Pessoa Física
+     *
+     * @return O próprio T_ideEvento_trab para continuar populando outros campos
+     */
+    public T_ideEvento_trab<T> setProcEmi_2() {
+      this.procEmi = "2";
+      return this;
+    }
+    /**
+     * Aplicativo governamental - Web Geral
+     *
+     * @return O próprio T_ideEvento_trab para continuar populando outros campos
+     */
+    public T_ideEvento_trab<T> setProcEmi_3() {
+      this.procEmi = "3";
+      return this;
+    }
+    /**
+     * Aplicativo governamental - Simplificado Pessoa Jurídica
+     *
+     * @return O próprio T_ideEvento_trab para continuar populando outros campos
+     */
+    public T_ideEvento_trab<T> setProcEmi_4() {
+      this.procEmi = "4";
+      return this;
+    }
+    /**
+     * Aplicativo governamental para dispositivos móveis - Empregador Doméstico
+     *
+     * @return O próprio T_ideEvento_trab para continuar populando outros campos
+     */
+    public T_ideEvento_trab<T> setProcEmi_22() {
+      this.procEmi = "22";
+      return this;
+    }
+    /**
+     * Aplicativo governamental para envio de eventos pelo Judiciário
+     *
+     * @return O próprio T_ideEvento_trab para continuar populando outros campos
+     */
+    public T_ideEvento_trab<T> setProcEmi_81() {
+      this.procEmi = "81";
+      return this;
+    }
+    /**
+     * Aplicativo governamental - Integração com a Junta Comercial
+     *
+     * @return O próprio T_ideEvento_trab para continuar populando outros campos
+     */
+    public T_ideEvento_trab<T> setProcEmi_91() {
+      this.procEmi = "91";
       return this;
     }
 
     /**
      * Versão do processo de emissão do evento. Informar a versão do aplicativo emissor do evento.
      *
-     * @return Valor do campo verProc
+     * @return Conteúdo do campo verProc
      */
     public String getVerProc() {
       return this.verProc;
@@ -1147,7 +2074,7 @@ public class Tipos {
     /**
      * Informe [1] para arquivo original ou [2] para arquivo de retificação.
      *
-     * @return Valor do campo indRetif
+     * @return Conteúdo do campo indRetif
      */
     public String getIndRetif() {
       return this.indRetif;
@@ -1160,14 +2087,35 @@ public class Tipos {
      * @return O próprio T_ideEvento_trab_indGuia para continuar populando outros campos
      */
     public T_ideEvento_trab_indGuia<T> setIndRetif(String indRetif) {
+      if (!"1".equals(indRetif) && !"2".equals(indRetif))
+        throw new RuntimeException(
+            "Valor " + String.valueOf(indRetif) + " inválido para o campo indRetif");
       this.indRetif = indRetif;
+      return this;
+    }
+    /**
+     * Original
+     *
+     * @return O próprio T_ideEvento_trab_indGuia para continuar populando outros campos
+     */
+    public T_ideEvento_trab_indGuia<T> setIndRetif_1() {
+      this.indRetif = "1";
+      return this;
+    }
+    /**
+     * Retificação
+     *
+     * @return O próprio T_ideEvento_trab_indGuia para continuar populando outros campos
+     */
+    public T_ideEvento_trab_indGuia<T> setIndRetif_2() {
+      this.indRetif = "2";
       return this;
     }
 
     /**
      * Preencher com o número do recibo do arquivo a ser retificado.
      *
-     * @return Valor do campo nrRecibo
+     * @return Conteúdo do campo nrRecibo
      */
     public String getNrRecibo() {
       return this.nrRecibo;
@@ -1191,7 +2139,7 @@ public class Tipos {
     /**
      * Indicativo do tipo de guia.
      *
-     * @return Valor do campo indGuia
+     * @return Conteúdo do campo indGuia
      */
     public String getIndGuia() {
       return this.indGuia;
@@ -1204,14 +2152,26 @@ public class Tipos {
      * @return O próprio T_ideEvento_trab_indGuia para continuar populando outros campos
      */
     public T_ideEvento_trab_indGuia<T> setIndGuia(String indGuia) {
+      if (!"1".equals(indGuia))
+        throw new RuntimeException(
+            "Valor " + String.valueOf(indGuia) + " inválido para o campo indGuia");
       this.indGuia = indGuia;
+      return this;
+    }
+    /**
+     * Documento de Arrecadação do eSocial - DAE
+     *
+     * @return O próprio T_ideEvento_trab_indGuia para continuar populando outros campos
+     */
+    public T_ideEvento_trab_indGuia<T> setIndGuia_1() {
+      this.indGuia = "1";
       return this;
     }
 
     /**
      * Identificação do ambiente.
      *
-     * @return Valor do campo tpAmb
+     * @return Conteúdo do campo tpAmb
      */
     public String getTpAmb() {
       return this.tpAmb;
@@ -1224,14 +2184,66 @@ public class Tipos {
      * @return O próprio T_ideEvento_trab_indGuia para continuar populando outros campos
      */
     public T_ideEvento_trab_indGuia<T> setTpAmb(String tpAmb) {
+      if (!"1".equals(tpAmb)
+          && !"2".equals(tpAmb)
+          && !"7".equals(tpAmb)
+          && !"8".equals(tpAmb)
+          && !"9".equals(tpAmb))
+        throw new RuntimeException(
+            "Valor " + String.valueOf(tpAmb) + " inválido para o campo tpAmb");
       this.tpAmb = tpAmb;
+      return this;
+    }
+    /**
+     * Produção
+     *
+     * @return O próprio T_ideEvento_trab_indGuia para continuar populando outros campos
+     */
+    public T_ideEvento_trab_indGuia<T> setTpAmb_1() {
+      this.tpAmb = "1";
+      return this;
+    }
+    /**
+     * Produção restrita
+     *
+     * @return O próprio T_ideEvento_trab_indGuia para continuar populando outros campos
+     */
+    public T_ideEvento_trab_indGuia<T> setTpAmb_2() {
+      this.tpAmb = "2";
+      return this;
+    }
+    /**
+     * Validação (uso interno)
+     *
+     * @return O próprio T_ideEvento_trab_indGuia para continuar populando outros campos
+     */
+    public T_ideEvento_trab_indGuia<T> setTpAmb_7() {
+      this.tpAmb = "7";
+      return this;
+    }
+    /**
+     * Teste (uso interno)
+     *
+     * @return O próprio T_ideEvento_trab_indGuia para continuar populando outros campos
+     */
+    public T_ideEvento_trab_indGuia<T> setTpAmb_8() {
+      this.tpAmb = "8";
+      return this;
+    }
+    /**
+     * Desenvolvimento (uso interno)
+     *
+     * @return O próprio T_ideEvento_trab_indGuia para continuar populando outros campos
+     */
+    public T_ideEvento_trab_indGuia<T> setTpAmb_9() {
+      this.tpAmb = "9";
       return this;
     }
 
     /**
      * Processo de emissão do evento.
      *
-     * @return Valor do campo procEmi
+     * @return Conteúdo do campo procEmi
      */
     public String getProcEmi() {
       return this.procEmi;
@@ -1244,14 +2256,86 @@ public class Tipos {
      * @return O próprio T_ideEvento_trab_indGuia para continuar populando outros campos
      */
     public T_ideEvento_trab_indGuia<T> setProcEmi(String procEmi) {
+      if (!"1".equals(procEmi)
+          && !"2".equals(procEmi)
+          && !"3".equals(procEmi)
+          && !"4".equals(procEmi)
+          && !"22".equals(procEmi)
+          && !"81".equals(procEmi)
+          && !"91".equals(procEmi))
+        throw new RuntimeException(
+            "Valor " + String.valueOf(procEmi) + " inválido para o campo procEmi");
       this.procEmi = procEmi;
+      return this;
+    }
+    /**
+     * Aplicativo do empregador
+     *
+     * @return O próprio T_ideEvento_trab_indGuia para continuar populando outros campos
+     */
+    public T_ideEvento_trab_indGuia<T> setProcEmi_1() {
+      this.procEmi = "1";
+      return this;
+    }
+    /**
+     * Aplicativo governamental - Simplificado Pessoa Física
+     *
+     * @return O próprio T_ideEvento_trab_indGuia para continuar populando outros campos
+     */
+    public T_ideEvento_trab_indGuia<T> setProcEmi_2() {
+      this.procEmi = "2";
+      return this;
+    }
+    /**
+     * Aplicativo governamental - Web Geral
+     *
+     * @return O próprio T_ideEvento_trab_indGuia para continuar populando outros campos
+     */
+    public T_ideEvento_trab_indGuia<T> setProcEmi_3() {
+      this.procEmi = "3";
+      return this;
+    }
+    /**
+     * Aplicativo governamental - Simplificado Pessoa Jurídica
+     *
+     * @return O próprio T_ideEvento_trab_indGuia para continuar populando outros campos
+     */
+    public T_ideEvento_trab_indGuia<T> setProcEmi_4() {
+      this.procEmi = "4";
+      return this;
+    }
+    /**
+     * Aplicativo governamental para dispositivos móveis - Empregador Doméstico
+     *
+     * @return O próprio T_ideEvento_trab_indGuia para continuar populando outros campos
+     */
+    public T_ideEvento_trab_indGuia<T> setProcEmi_22() {
+      this.procEmi = "22";
+      return this;
+    }
+    /**
+     * Aplicativo governamental para envio de eventos pelo Judiciário
+     *
+     * @return O próprio T_ideEvento_trab_indGuia para continuar populando outros campos
+     */
+    public T_ideEvento_trab_indGuia<T> setProcEmi_81() {
+      this.procEmi = "81";
+      return this;
+    }
+    /**
+     * Aplicativo governamental - Integração com a Junta Comercial
+     *
+     * @return O próprio T_ideEvento_trab_indGuia para continuar populando outros campos
+     */
+    public T_ideEvento_trab_indGuia<T> setProcEmi_91() {
+      this.procEmi = "91";
       return this;
     }
 
     /**
      * Versão do processo de emissão do evento. Informar a versão do aplicativo emissor do evento.
      *
-     * @return Valor do campo verProc
+     * @return Conteúdo do campo verProc
      */
     public String getVerProc() {
       return this.verProc;
@@ -1319,7 +2403,7 @@ public class Tipos {
      * Preencher com o número do recibo do arquivo que deu origem ao presente arquivo de retorno ao
      * empregador.
      *
-     * @return Valor do campo nrRecArqBase
+     * @return Conteúdo do campo nrRecArqBase
      */
     public String getNrRecArqBase() {
       return this.nrRecArqBase;
@@ -1343,7 +2427,7 @@ public class Tipos {
     /**
      * Indicativo de período de apuração.
      *
-     * @return Valor do campo indApuracao
+     * @return Conteúdo do campo indApuracao
      */
     public String getIndApuracao() {
       return this.indApuracao;
@@ -1356,7 +2440,28 @@ public class Tipos {
      * @return O próprio T_ideEvento_retorno_trab para continuar populando outros campos
      */
     public T_ideEvento_retorno_trab<T> setIndApuracao(String indApuracao) {
+      if (!"1".equals(indApuracao) && !"2".equals(indApuracao))
+        throw new RuntimeException(
+            "Valor " + String.valueOf(indApuracao) + " inválido para o campo indApuracao");
       this.indApuracao = indApuracao;
+      return this;
+    }
+    /**
+     * Mensal
+     *
+     * @return O próprio T_ideEvento_retorno_trab para continuar populando outros campos
+     */
+    public T_ideEvento_retorno_trab<T> setIndApuracao_1() {
+      this.indApuracao = "1";
+      return this;
+    }
+    /**
+     * Anual (13° salário)
+     *
+     * @return O próprio T_ideEvento_retorno_trab para continuar populando outros campos
+     */
+    public T_ideEvento_retorno_trab<T> setIndApuracao_2() {
+      this.indApuracao = "2";
       return this;
     }
 
@@ -1365,7 +2470,7 @@ public class Tipos {
      * {indApuracao}(./indApuracao) for igual a [1], ou apenas o ano (formato AAAA), se
      * {indApuracao}(./indApuracao) for igual a [2].
      *
-     * @return Valor do campo perApur
+     * @return Conteúdo do campo perApur
      */
     public String getPerApur() {
       return this.perApur;
@@ -1427,7 +2532,7 @@ public class Tipos {
     /**
      * Indicativo de período de apuração.
      *
-     * @return Valor do campo indApuracao
+     * @return Conteúdo do campo indApuracao
      */
     public String getIndApuracao() {
       return this.indApuracao;
@@ -1440,7 +2545,28 @@ public class Tipos {
      * @return O próprio T_ideEvento_retorno_contrib para continuar populando outros campos
      */
     public T_ideEvento_retorno_contrib<T> setIndApuracao(String indApuracao) {
+      if (!"1".equals(indApuracao) && !"2".equals(indApuracao))
+        throw new RuntimeException(
+            "Valor " + String.valueOf(indApuracao) + " inválido para o campo indApuracao");
       this.indApuracao = indApuracao;
+      return this;
+    }
+    /**
+     * Mensal
+     *
+     * @return O próprio T_ideEvento_retorno_contrib para continuar populando outros campos
+     */
+    public T_ideEvento_retorno_contrib<T> setIndApuracao_1() {
+      this.indApuracao = "1";
+      return this;
+    }
+    /**
+     * Anual (13° salário)
+     *
+     * @return O próprio T_ideEvento_retorno_contrib para continuar populando outros campos
+     */
+    public T_ideEvento_retorno_contrib<T> setIndApuracao_2() {
+      this.indApuracao = "2";
       return this;
     }
 
@@ -1449,7 +2575,7 @@ public class Tipos {
      * {indApuracao}(./indApuracao) for igual a [1], ou apenas o ano (formato AAAA), se
      * {indApuracao}(./indApuracao) for igual a [2].
      *
-     * @return Valor do campo perApur
+     * @return Conteúdo do campo perApur
      */
     public String getPerApur() {
       return this.perApur;
@@ -1509,7 +2635,7 @@ public class Tipos {
     /**
      * Preencher com o código correspondente ao tipo de inscrição, conforme Tabela 05.
      *
-     * @return Valor do campo tpInsc
+     * @return Conteúdo do campo tpInsc
      */
     public String getTpInsc() {
       return this.tpInsc;
@@ -1522,7 +2648,28 @@ public class Tipos {
      * @return O próprio T_ideEmpregador para continuar populando outros campos
      */
     public T_ideEmpregador<T> setTpInsc(String tpInsc) {
+      if (!"1".equals(tpInsc) && !"2".equals(tpInsc))
+        throw new RuntimeException(
+            "Valor " + String.valueOf(tpInsc) + " inválido para o campo tpInsc");
       this.tpInsc = tpInsc;
+      return this;
+    }
+    /**
+     * CNPJ
+     *
+     * @return O próprio T_ideEmpregador para continuar populando outros campos
+     */
+    public T_ideEmpregador<T> setTpInsc_1() {
+      this.tpInsc = "1";
+      return this;
+    }
+    /**
+     * CPF
+     *
+     * @return O próprio T_ideEmpregador para continuar populando outros campos
+     */
+    public T_ideEmpregador<T> setTpInsc_2() {
+      this.tpInsc = "2";
       return this;
     }
 
@@ -1530,7 +2677,7 @@ public class Tipos {
      * Informar o número de inscrição do contribuinte de acordo com o tipo de inscrição indicado no
      * campo {ideEmpregador/tpInsc}(./tpInsc) e conforme informado em S-1000.
      *
-     * @return Valor do campo nrInsc
+     * @return Conteúdo do campo nrInsc
      */
     public String getNrInsc() {
       return this.nrInsc;
@@ -1589,7 +2736,7 @@ public class Tipos {
     /**
      * Preencher com o código correspondente ao tipo de inscrição, conforme Tabela 05.
      *
-     * @return Valor do campo tpInsc
+     * @return Conteúdo do campo tpInsc
      */
     public String getTpInsc() {
       return this.tpInsc;
@@ -1602,7 +2749,19 @@ public class Tipos {
      * @return O próprio T_ideEmpregador_cnpj para continuar populando outros campos
      */
     public T_ideEmpregador_cnpj<T> setTpInsc(String tpInsc) {
+      if (!"1".equals(tpInsc))
+        throw new RuntimeException(
+            "Valor " + String.valueOf(tpInsc) + " inválido para o campo tpInsc");
       this.tpInsc = tpInsc;
+      return this;
+    }
+    /**
+     * CNPJ
+     *
+     * @return O próprio T_ideEmpregador_cnpj para continuar populando outros campos
+     */
+    public T_ideEmpregador_cnpj<T> setTpInsc_1() {
+      this.tpInsc = "1";
       return this;
     }
 
@@ -1610,7 +2769,7 @@ public class Tipos {
      * Informar o número de inscrição do contribuinte de acordo com o tipo de inscrição indicado no
      * campo {ideEmpregador/tpInsc}(./tpInsc) e conforme informado em S-1000.
      *
-     * @return Valor do campo nrInsc
+     * @return Conteúdo do campo nrInsc
      */
     public String getNrInsc() {
       return this.nrInsc;
@@ -1671,7 +2830,7 @@ public class Tipos {
      * Preencher com o mês e ano de início da validade das informações prestadas no evento, no
      * formato AAAA-MM.
      *
-     * @return Valor do campo iniValid
+     * @return Conteúdo do campo iniValid
      */
     public String getIniValid() {
       return this.iniValid;
@@ -1695,7 +2854,7 @@ public class Tipos {
     /**
      * Preencher com o mês e ano de término da validade das informações, se houver.
      *
-     * @return Valor do campo fimValid
+     * @return Conteúdo do campo fimValid
      */
     public String getFimValid() {
       return this.fimValid;
@@ -1761,7 +2920,7 @@ public class Tipos {
     /**
      * Abrangência da decisão.
      *
-     * @return Valor do campo tpTrib
+     * @return Conteúdo do campo tpTrib
      */
     public String getTpTrib() {
       return this.tpTrib;
@@ -1774,7 +2933,28 @@ public class Tipos {
      * @return O próprio T_procJudTrab para continuar populando outros campos
      */
     public T_procJudTrab<T> setTpTrib(String tpTrib) {
+      if (!"1".equals(tpTrib) && !"2".equals(tpTrib))
+        throw new RuntimeException(
+            "Valor " + String.valueOf(tpTrib) + " inválido para o campo tpTrib");
       this.tpTrib = tpTrib;
+      return this;
+    }
+    /**
+     * IRRF
+     *
+     * @return O próprio T_procJudTrab para continuar populando outros campos
+     */
+    public T_procJudTrab<T> setTpTrib_1() {
+      this.tpTrib = "1";
+      return this;
+    }
+    /**
+     * Contribuições sociais do trabalhador
+     *
+     * @return O próprio T_procJudTrab para continuar populando outros campos
+     */
+    public T_procJudTrab<T> setTpTrib_2() {
+      this.tpTrib = "2";
       return this;
     }
 
@@ -1782,7 +2962,7 @@ public class Tipos {
      * Informar um número de processo judicial cadastrado através do evento S-1070, cujo
      * {indMatProc}(1070_infoProcesso_inclusao_dadosProc_indMatProc) seja igual a [1].
      *
-     * @return Valor do campo nrProcJud
+     * @return Conteúdo do campo nrProcJud
      */
     public String getNrProcJud() {
       return this.nrProcJud;
@@ -1806,7 +2986,7 @@ public class Tipos {
     /**
      * Código do indicativo da suspensão, atribuído pelo empregador em S-1070.
      *
-     * @return Valor do campo codSusp
+     * @return Conteúdo do campo codSusp
      */
     public Integer getCodSusp() {
       return this.codSusp;
@@ -1855,7 +3035,7 @@ public class Tipos {
     /**
      * Dia do mês efetivamente trabalhado pelo empregado com contrato de trabalho intermitente.
      *
-     * @return Valor do campo dia
+     * @return Conteúdo do campo dia
      */
     public String getDia() {
       return this.dia;
@@ -1936,7 +3116,7 @@ public class Tipos {
      * Informar o código atribuído pelo empregador que identifica a rubrica em sua folha de
      * pagamento.
      *
-     * @return Valor do campo codRubr
+     * @return Conteúdo do campo codRubr
      */
     public String getCodRubr() {
       return this.codRubr;
@@ -1958,7 +3138,7 @@ public class Tipos {
      * Preencher com o identificador da Tabela de Rubricas para a rubrica definida em
      * {codRubr}(./codRubr).
      *
-     * @return Valor do campo ideTabRubr
+     * @return Conteúdo do campo ideTabRubr
      */
     public String getIdeTabRubr() {
       return this.ideTabRubr;
@@ -1979,7 +3159,7 @@ public class Tipos {
     /**
      * Informar a quantidade de referência para apuração (em horas, cotas, meses, etc.).
      *
-     * @return Valor do campo qtdRubr
+     * @return Conteúdo do campo qtdRubr
      */
     public Double getQtdRubr() {
       return this.qtdRubr;
@@ -2006,7 +3186,7 @@ public class Tipos {
     /**
      * Informar o fator, percentual, etc. da rubrica, quando necessário.
      *
-     * @return Valor do campo fatorRubr
+     * @return Conteúdo do campo fatorRubr
      */
     public Double getFatorRubr() {
       return this.fatorRubr;
@@ -2028,7 +3208,7 @@ public class Tipos {
     /**
      * Valor total da rubrica.
      *
-     * @return Valor do campo vrRubr
+     * @return Conteúdo do campo vrRubr
      */
     public Double getVrRubr() {
       return this.vrRubr;
@@ -2050,7 +3230,7 @@ public class Tipos {
     /**
      * Indicativo de tipo de apuração de IR.
      *
-     * @return Valor do campo indApurIR
+     * @return Conteúdo do campo indApurIR
      */
     public String getIndApurIR() {
       return this.indApurIR;
@@ -2063,7 +3243,28 @@ public class Tipos {
      * @return O próprio T_itensRemun_rpps para continuar populando outros campos
      */
     public T_itensRemun_rpps<T> setIndApurIR(String indApurIR) {
+      if (!"0".equals(indApurIR) && !"1".equals(indApurIR))
+        throw new RuntimeException(
+            "Valor " + String.valueOf(indApurIR) + " inválido para o campo indApurIR");
       this.indApurIR = indApurIR;
+      return this;
+    }
+    /**
+     * Normal (apuração sob a folha de pagamento declarada no eSocial)
+     *
+     * @return O próprio T_itensRemun_rpps para continuar populando outros campos
+     */
+    public T_itensRemun_rpps<T> setIndApurIR_0() {
+      this.indApurIR = "0";
+      return this;
+    }
+    /**
+     * Situação especial de apuração de IR
+     *
+     * @return O próprio T_itensRemun_rpps para continuar populando outros campos
+     */
+    public T_itensRemun_rpps<T> setIndApurIR_1() {
+      this.indApurIR = "1";
       return this;
     }
 
@@ -2110,7 +3311,7 @@ public class Tipos {
     /**
      * Preencher com a data de nascimento.
      *
-     * @return Valor do campo dtNascto
+     * @return Conteúdo do campo dtNascto
      */
     public javax.xml.datatype.XMLGregorianCalendar getDtNascto() {
       return this.dtNascto;
@@ -2130,7 +3331,7 @@ public class Tipos {
     /**
      * Preencher com o código do país de nascimento do trabalhador.
      *
-     * @return Valor do campo paisNascto
+     * @return Conteúdo do campo paisNascto
      */
     public String getPaisNascto() {
       return this.paisNascto;
@@ -2152,7 +3353,7 @@ public class Tipos {
     /**
      * Preencher com o código do país de nacionalidade do trabalhador.
      *
-     * @return Valor do campo paisNac
+     * @return Conteúdo do campo paisNac
      */
     public String getPaisNac() {
       return this.paisNac;
@@ -2234,7 +3435,7 @@ public class Tipos {
     /**
      * Tipo de logradouro.
      *
-     * @return Valor do campo tpLograd
+     * @return Conteúdo do campo tpLograd
      */
     public String getTpLograd() {
       return this.tpLograd;
@@ -2256,7 +3457,7 @@ public class Tipos {
     /**
      * Descrição do logradouro.
      *
-     * @return Valor do campo dscLograd
+     * @return Conteúdo do campo dscLograd
      */
     public String getDscLograd() {
       return this.dscLograd;
@@ -2276,7 +3477,7 @@ public class Tipos {
     /**
      * Número do logradouro.
      *
-     * @return Valor do campo nrLograd
+     * @return Conteúdo do campo nrLograd
      */
     public String getNrLograd() {
       return this.nrLograd;
@@ -2298,7 +3499,7 @@ public class Tipos {
     /**
      * Complemento do logradouro.
      *
-     * @return Valor do campo complemento
+     * @return Conteúdo do campo complemento
      */
     public String getComplemento() {
       return this.complemento;
@@ -2318,7 +3519,7 @@ public class Tipos {
     /**
      * Nome do bairro/distrito.
      *
-     * @return Valor do campo bairro
+     * @return Conteúdo do campo bairro
      */
     public String getBairro() {
       return this.bairro;
@@ -2338,7 +3539,7 @@ public class Tipos {
     /**
      * Código de Endereçamento Postal - CEP.
      *
-     * @return Valor do campo cep
+     * @return Conteúdo do campo cep
      */
     public String getCep() {
       return this.cep;
@@ -2360,7 +3561,7 @@ public class Tipos {
     /**
      * Preencher com o código do município, conforme tabela do IBGE.
      *
-     * @return Valor do campo codMunic
+     * @return Conteúdo do campo codMunic
      */
     public Integer getCodMunic() {
       return this.codMunic;
@@ -2382,7 +3583,7 @@ public class Tipos {
     /**
      * Preencher com a sigla da Unidade da Federação - UF.
      *
-     * @return Valor do campo uf
+     * @return Conteúdo do campo uf
      */
     public String getUf() {
       return this.uf;
@@ -2395,7 +3596,170 @@ public class Tipos {
      * @return O próprio T_endereco_brasil para continuar populando outros campos
      */
     public T_endereco_brasil<T> setUf(String uf) {
+      if (!"AC".equals(uf)
+          && !"AL".equals(uf)
+          && !"AP".equals(uf)
+          && !"AM".equals(uf)
+          && !"BA".equals(uf)
+          && !"CE".equals(uf)
+          && !"DF".equals(uf)
+          && !"ES".equals(uf)
+          && !"GO".equals(uf)
+          && !"MA".equals(uf)
+          && !"MT".equals(uf)
+          && !"MS".equals(uf)
+          && !"MG".equals(uf)
+          && !"PA".equals(uf)
+          && !"PB".equals(uf)
+          && !"PR".equals(uf)
+          && !"PE".equals(uf)
+          && !"PI".equals(uf)
+          && !"RJ".equals(uf)
+          && !"RN".equals(uf)
+          && !"RS".equals(uf)
+          && !"RO".equals(uf)
+          && !"RR".equals(uf)
+          && !"SC".equals(uf)
+          && !"SP".equals(uf)
+          && !"SE".equals(uf)
+          && !"TO".equals(uf))
+        throw new RuntimeException("Valor " + String.valueOf(uf) + " inválido para o campo uf");
       this.uf = uf;
+      return this;
+    }
+
+    public T_endereco_brasil<T> setUf_AC() {
+      this.uf = "AC";
+      return this;
+    }
+
+    public T_endereco_brasil<T> setUf_AL() {
+      this.uf = "AL";
+      return this;
+    }
+
+    public T_endereco_brasil<T> setUf_AP() {
+      this.uf = "AP";
+      return this;
+    }
+
+    public T_endereco_brasil<T> setUf_AM() {
+      this.uf = "AM";
+      return this;
+    }
+
+    public T_endereco_brasil<T> setUf_BA() {
+      this.uf = "BA";
+      return this;
+    }
+
+    public T_endereco_brasil<T> setUf_CE() {
+      this.uf = "CE";
+      return this;
+    }
+
+    public T_endereco_brasil<T> setUf_DF() {
+      this.uf = "DF";
+      return this;
+    }
+
+    public T_endereco_brasil<T> setUf_ES() {
+      this.uf = "ES";
+      return this;
+    }
+
+    public T_endereco_brasil<T> setUf_GO() {
+      this.uf = "GO";
+      return this;
+    }
+
+    public T_endereco_brasil<T> setUf_MA() {
+      this.uf = "MA";
+      return this;
+    }
+
+    public T_endereco_brasil<T> setUf_MT() {
+      this.uf = "MT";
+      return this;
+    }
+
+    public T_endereco_brasil<T> setUf_MS() {
+      this.uf = "MS";
+      return this;
+    }
+
+    public T_endereco_brasil<T> setUf_MG() {
+      this.uf = "MG";
+      return this;
+    }
+
+    public T_endereco_brasil<T> setUf_PA() {
+      this.uf = "PA";
+      return this;
+    }
+
+    public T_endereco_brasil<T> setUf_PB() {
+      this.uf = "PB";
+      return this;
+    }
+
+    public T_endereco_brasil<T> setUf_PR() {
+      this.uf = "PR";
+      return this;
+    }
+
+    public T_endereco_brasil<T> setUf_PE() {
+      this.uf = "PE";
+      return this;
+    }
+
+    public T_endereco_brasil<T> setUf_PI() {
+      this.uf = "PI";
+      return this;
+    }
+
+    public T_endereco_brasil<T> setUf_RJ() {
+      this.uf = "RJ";
+      return this;
+    }
+
+    public T_endereco_brasil<T> setUf_RN() {
+      this.uf = "RN";
+      return this;
+    }
+
+    public T_endereco_brasil<T> setUf_RS() {
+      this.uf = "RS";
+      return this;
+    }
+
+    public T_endereco_brasil<T> setUf_RO() {
+      this.uf = "RO";
+      return this;
+    }
+
+    public T_endereco_brasil<T> setUf_RR() {
+      this.uf = "RR";
+      return this;
+    }
+
+    public T_endereco_brasil<T> setUf_SC() {
+      this.uf = "SC";
+      return this;
+    }
+
+    public T_endereco_brasil<T> setUf_SP() {
+      this.uf = "SP";
+      return this;
+    }
+
+    public T_endereco_brasil<T> setUf_SE() {
+      this.uf = "SE";
+      return this;
+    }
+
+    public T_endereco_brasil<T> setUf_TO() {
+      this.uf = "TO";
       return this;
     }
 
@@ -2458,7 +3822,7 @@ public class Tipos {
     /**
      * Preencher com o código do país.
      *
-     * @return Valor do campo paisResid
+     * @return Conteúdo do campo paisResid
      */
     public String getPaisResid() {
       return this.paisResid;
@@ -2480,7 +3844,7 @@ public class Tipos {
     /**
      * Descrição do logradouro.
      *
-     * @return Valor do campo dscLograd
+     * @return Conteúdo do campo dscLograd
      */
     public String getDscLograd() {
       return this.dscLograd;
@@ -2500,7 +3864,7 @@ public class Tipos {
     /**
      * Número do logradouro.
      *
-     * @return Valor do campo nrLograd
+     * @return Conteúdo do campo nrLograd
      */
     public String getNrLograd() {
       return this.nrLograd;
@@ -2522,7 +3886,7 @@ public class Tipos {
     /**
      * Complemento do logradouro.
      *
-     * @return Valor do campo complemento
+     * @return Conteúdo do campo complemento
      */
     public String getComplemento() {
       return this.complemento;
@@ -2542,7 +3906,7 @@ public class Tipos {
     /**
      * Nome do bairro/distrito.
      *
-     * @return Valor do campo bairro
+     * @return Conteúdo do campo bairro
      */
     public String getBairro() {
       return this.bairro;
@@ -2562,7 +3926,7 @@ public class Tipos {
     /**
      * Nome da cidade.
      *
-     * @return Valor do campo nmCid
+     * @return Conteúdo do campo nmCid
      */
     public String getNmCid() {
       return this.nmCid;
@@ -2582,7 +3946,7 @@ public class Tipos {
     /**
      * Código de Endereçamento Postal.
      *
-     * @return Valor do campo codPostal
+     * @return Conteúdo do campo codPostal
      */
     public String getCodPostal() {
       return this.codPostal;
@@ -2633,7 +3997,7 @@ public class Tipos {
     /**
      * Número de telefone do trabalhador, com DDD.
      *
-     * @return Valor do campo fonePrinc
+     * @return Conteúdo do campo fonePrinc
      */
     public String getFonePrinc() {
       return this.fonePrinc;
@@ -2655,7 +4019,7 @@ public class Tipos {
     /**
      * Endereço eletrônico.
      *
-     * @return Valor do campo emailPrinc
+     * @return Conteúdo do campo emailPrinc
      */
     public String getEmailPrinc() {
       return this.emailPrinc;
@@ -2712,7 +4076,7 @@ public class Tipos {
     /**
      * Preencher com o código correspondente ao tipo de inscrição, conforme Tabela 05.
      *
-     * @return Valor do campo tpInsc
+     * @return Conteúdo do campo tpInsc
      */
     public String getTpInsc() {
       return this.tpInsc;
@@ -2725,7 +4089,28 @@ public class Tipos {
      * @return O próprio T_aprend para continuar populando outros campos
      */
     public T_aprend<T> setTpInsc(String tpInsc) {
+      if (!"1".equals(tpInsc) && !"2".equals(tpInsc))
+        throw new RuntimeException(
+            "Valor " + String.valueOf(tpInsc) + " inválido para o campo tpInsc");
       this.tpInsc = tpInsc;
+      return this;
+    }
+    /**
+     * CNPJ
+     *
+     * @return O próprio T_aprend para continuar populando outros campos
+     */
+    public T_aprend<T> setTpInsc_1() {
+      this.tpInsc = "1";
+      return this;
+    }
+    /**
+     * CPF
+     *
+     * @return O próprio T_aprend para continuar populando outros campos
+     */
+    public T_aprend<T> setTpInsc_2() {
+      this.tpInsc = "2";
       return this;
     }
 
@@ -2733,7 +4118,7 @@ public class Tipos {
      * Informar o número de inscrição do estabelecimento para o qual a contratação de aprendiz foi
      * efetivada, de acordo com o tipo de inscrição indicado no campo {aprend/tpInsc}(./tpInsc).
      *
-     * @return Valor do campo nrInsc
+     * @return Conteúdo do campo nrInsc
      */
     public String getNrInsc() {
       return this.nrInsc;
@@ -2801,7 +4186,7 @@ public class Tipos {
     /**
      * Salário base do trabalhador, correspondente à parte fixa da remuneração.
      *
-     * @return Valor do campo vrSalFx
+     * @return Conteúdo do campo vrSalFx
      */
     public Double getVrSalFx() {
       return this.vrSalFx;
@@ -2823,7 +4208,7 @@ public class Tipos {
     /**
      * Unidade de pagamento da parte fixa da remuneração.
      *
-     * @return Valor do campo undSalFixo
+     * @return Conteúdo do campo undSalFixo
      */
     public String getUndSalFixo() {
       return this.undSalFixo;
@@ -2836,7 +4221,79 @@ public class Tipos {
      * @return O próprio T_remuneracao para continuar populando outros campos
      */
     public T_remuneracao<T> setUndSalFixo(String undSalFixo) {
+      if (!"1".equals(undSalFixo)
+          && !"2".equals(undSalFixo)
+          && !"3".equals(undSalFixo)
+          && !"4".equals(undSalFixo)
+          && !"5".equals(undSalFixo)
+          && !"6".equals(undSalFixo)
+          && !"7".equals(undSalFixo))
+        throw new RuntimeException(
+            "Valor " + String.valueOf(undSalFixo) + " inválido para o campo undSalFixo");
       this.undSalFixo = undSalFixo;
+      return this;
+    }
+    /**
+     * Por hora
+     *
+     * @return O próprio T_remuneracao para continuar populando outros campos
+     */
+    public T_remuneracao<T> setUndSalFixo_1() {
+      this.undSalFixo = "1";
+      return this;
+    }
+    /**
+     * Por dia
+     *
+     * @return O próprio T_remuneracao para continuar populando outros campos
+     */
+    public T_remuneracao<T> setUndSalFixo_2() {
+      this.undSalFixo = "2";
+      return this;
+    }
+    /**
+     * Por semana
+     *
+     * @return O próprio T_remuneracao para continuar populando outros campos
+     */
+    public T_remuneracao<T> setUndSalFixo_3() {
+      this.undSalFixo = "3";
+      return this;
+    }
+    /**
+     * Por quinzena
+     *
+     * @return O próprio T_remuneracao para continuar populando outros campos
+     */
+    public T_remuneracao<T> setUndSalFixo_4() {
+      this.undSalFixo = "4";
+      return this;
+    }
+    /**
+     * Por mês
+     *
+     * @return O próprio T_remuneracao para continuar populando outros campos
+     */
+    public T_remuneracao<T> setUndSalFixo_5() {
+      this.undSalFixo = "5";
+      return this;
+    }
+    /**
+     * Por tarefa
+     *
+     * @return O próprio T_remuneracao para continuar populando outros campos
+     */
+    public T_remuneracao<T> setUndSalFixo_6() {
+      this.undSalFixo = "6";
+      return this;
+    }
+    /**
+     * Não aplicável - Salário exclusivamente variável
+     *
+     * @return O próprio T_remuneracao para continuar populando outros campos
+     */
+    public T_remuneracao<T> setUndSalFixo_7() {
+      this.undSalFixo = "7";
       return this;
     }
 
@@ -2844,7 +4301,7 @@ public class Tipos {
      * Descrição do salário por tarefa ou variável e como este é calculado. Ex.: Comissões pagas no
      * percentual de 10% sobre as vendas.
      *
-     * @return Valor do campo dscSalVar
+     * @return Conteúdo do campo dscSalVar
      */
     public String getDscSalVar() {
       return this.dscSalVar;
@@ -2905,7 +4362,7 @@ public class Tipos {
     /**
      * Preencher com o código correspondente ao tipo de inscrição, conforme Tabela 05.
      *
-     * @return Valor do campo tpInsc
+     * @return Conteúdo do campo tpInsc
      */
     public String getTpInsc() {
       return this.tpInsc;
@@ -2918,7 +4375,37 @@ public class Tipos {
      * @return O próprio T_localTrabGeral para continuar populando outros campos
      */
     public T_localTrabGeral<T> setTpInsc(String tpInsc) {
+      if (!"1".equals(tpInsc) && !"3".equals(tpInsc) && !"4".equals(tpInsc))
+        throw new RuntimeException(
+            "Valor " + String.valueOf(tpInsc) + " inválido para o campo tpInsc");
       this.tpInsc = tpInsc;
+      return this;
+    }
+    /**
+     * CNPJ
+     *
+     * @return O próprio T_localTrabGeral para continuar populando outros campos
+     */
+    public T_localTrabGeral<T> setTpInsc_1() {
+      this.tpInsc = "1";
+      return this;
+    }
+    /**
+     * CAEPF
+     *
+     * @return O próprio T_localTrabGeral para continuar populando outros campos
+     */
+    public T_localTrabGeral<T> setTpInsc_3() {
+      this.tpInsc = "3";
+      return this;
+    }
+    /**
+     * CNO
+     *
+     * @return O próprio T_localTrabGeral para continuar populando outros campos
+     */
+    public T_localTrabGeral<T> setTpInsc_4() {
+      this.tpInsc = "4";
       return this;
     }
 
@@ -2926,7 +4413,7 @@ public class Tipos {
      * Informar o número de inscrição do contribuinte de acordo com o tipo de inscrição indicado no
      * campo {localTrabGeral/tpInsc}(./tpInsc).
      *
-     * @return Valor do campo nrInsc
+     * @return Conteúdo do campo nrInsc
      */
     public String getNrInsc() {
       return this.nrInsc;
@@ -2950,7 +4437,7 @@ public class Tipos {
     /**
      * Descrição complementar do local de trabalho.
      *
-     * @return Valor do campo descComp
+     * @return Conteúdo do campo descComp
      */
     public String getDescComp() {
       return this.descComp;
@@ -3016,7 +4503,7 @@ public class Tipos {
     /**
      * Quantidade média de horas relativas à jornada semanal do trabalhador.
      *
-     * @return Valor do campo qtdHrsSem
+     * @return Conteúdo do campo qtdHrsSem
      */
     public Double getQtdHrsSem() {
       return this.qtdHrsSem;
@@ -3039,7 +4526,7 @@ public class Tipos {
     /**
      * Tipo de jornada.
      *
-     * @return Valor do campo tpJornada
+     * @return Conteúdo do campo tpJornada
      */
     public String getTpJornada() {
       return this.tpJornada;
@@ -3052,14 +4539,87 @@ public class Tipos {
      * @return O próprio T_horContratual para continuar populando outros campos
      */
     public T_horContratual<T> setTpJornada(String tpJornada) {
+      if (!"2".equals(tpJornada)
+          && !"3".equals(tpJornada)
+          && !"4".equals(tpJornada)
+          && !"5".equals(tpJornada)
+          && !"6".equals(tpJornada)
+          && !"7".equals(tpJornada)
+          && !"9".equals(tpJornada))
+        throw new RuntimeException(
+            "Valor " + String.valueOf(tpJornada) + " inválido para o campo tpJornada");
       this.tpJornada = tpJornada;
+      return this;
+    }
+    /**
+     * Jornada 12 x 36 (12 horas de trabalho seguidas de 36 horas ininterruptas de descanso)
+     *
+     * @return O próprio T_horContratual para continuar populando outros campos
+     */
+    public T_horContratual<T> setTpJornada_2() {
+      this.tpJornada = "2";
+      return this;
+    }
+    /**
+     * Jornada com horário diário fixo e folga variável
+     *
+     * @return O próprio T_horContratual para continuar populando outros campos
+     */
+    public T_horContratual<T> setTpJornada_3() {
+      this.tpJornada = "3";
+      return this;
+    }
+    /**
+     * Jornada com horário diário fixo e folga fixa (no domingo)
+     *
+     * @return O próprio T_horContratual para continuar populando outros campos
+     */
+    public T_horContratual<T> setTpJornada_4() {
+      this.tpJornada = "4";
+      return this;
+    }
+    /**
+     * Jornada com horário diário fixo e folga fixa (exceto no domingo)
+     *
+     * @return O próprio T_horContratual para continuar populando outros campos
+     */
+    public T_horContratual<T> setTpJornada_5() {
+      this.tpJornada = "5";
+      return this;
+    }
+    /**
+     * Jornada com horário diário fixo e folga fixa (em outro dia da semana), com folga adicional
+     * periódica no domingo
+     *
+     * @return O próprio T_horContratual para continuar populando outros campos
+     */
+    public T_horContratual<T> setTpJornada_6() {
+      this.tpJornada = "6";
+      return this;
+    }
+    /**
+     * Turno ininterrupto de revezamento
+     *
+     * @return O próprio T_horContratual para continuar populando outros campos
+     */
+    public T_horContratual<T> setTpJornada_7() {
+      this.tpJornada = "7";
+      return this;
+    }
+    /**
+     * Demais tipos de jornada
+     *
+     * @return O próprio T_horContratual para continuar populando outros campos
+     */
+    public T_horContratual<T> setTpJornada_9() {
+      this.tpJornada = "9";
       return this;
     }
 
     /**
      * Preencher com o código relativo ao tipo de contrato em tempo parcial.
      *
-     * @return Valor do campo tmpParc
+     * @return Conteúdo do campo tmpParc
      */
     public String getTmpParc() {
       return this.tmpParc;
@@ -3075,14 +4635,56 @@ public class Tipos {
      * @return O próprio T_horContratual para continuar populando outros campos
      */
     public T_horContratual<T> setTmpParc(String tmpParc) {
+      if (!"0".equals(tmpParc)
+          && !"1".equals(tmpParc)
+          && !"2".equals(tmpParc)
+          && !"3".equals(tmpParc))
+        throw new RuntimeException(
+            "Valor " + String.valueOf(tmpParc) + " inválido para o campo tmpParc");
       this.tmpParc = tmpParc;
+      return this;
+    }
+    /**
+     * Não é contrato em tempo parcial
+     *
+     * @return O próprio T_horContratual para continuar populando outros campos
+     */
+    public T_horContratual<T> setTmpParc_0() {
+      this.tmpParc = "0";
+      return this;
+    }
+    /**
+     * Limitado a 25 horas semanais
+     *
+     * @return O próprio T_horContratual para continuar populando outros campos
+     */
+    public T_horContratual<T> setTmpParc_1() {
+      this.tmpParc = "1";
+      return this;
+    }
+    /**
+     * Limitado a 30 horas semanais
+     *
+     * @return O próprio T_horContratual para continuar populando outros campos
+     */
+    public T_horContratual<T> setTmpParc_2() {
+      this.tmpParc = "2";
+      return this;
+    }
+    /**
+     * Limitado a 26 horas semanais
+     *
+     * @return O próprio T_horContratual para continuar populando outros campos
+     */
+    public T_horContratual<T> setTmpParc_3() {
+      this.tmpParc = "3";
       return this;
     }
 
     /**
      * Indicar se a jornada semanal possui horário noturno (no todo ou em parte).
      *
-     * @return Valor do campo horNoturno
+     * @return Conteúdo do campo horNoturno
      */
     public String getHorNoturno() {
       return this.horNoturno;
@@ -3095,7 +4697,28 @@ public class Tipos {
      * @return O próprio T_horContratual para continuar populando outros campos
      */
     public T_horContratual<T> setHorNoturno(String horNoturno) {
+      if (!"S".equals(horNoturno) && !"N".equals(horNoturno))
+        throw new RuntimeException(
+            "Valor " + String.valueOf(horNoturno) + " inválido para o campo horNoturno");
       this.horNoturno = horNoturno;
+      return this;
+    }
+    /**
+     * Sim
+     *
+     * @return O próprio T_horContratual para continuar populando outros campos
+     */
+    public T_horContratual<T> setHorNoturno_S() {
+      this.horNoturno = "S";
+      return this;
+    }
+    /**
+     * Não
+     *
+     * @return O próprio T_horContratual para continuar populando outros campos
+     */
+    public T_horContratual<T> setHorNoturno_N() {
+      this.horNoturno = "N";
       return this;
     }
 
@@ -3103,7 +4726,7 @@ public class Tipos {
      * Descrição da jornada semanal contratual, contendo os dias da semana e os respectivos horários
      * contratuais (entrada, saída e intervalos).
      *
-     * @return Valor do campo dscJorn
+     * @return Conteúdo do campo dscJorn
      */
     public String getDscJorn() {
       return this.dscJorn;
@@ -3151,7 +4774,7 @@ public class Tipos {
     /**
      * Preencher com o número do processo judicial.
      *
-     * @return Valor do campo nrProcJud
+     * @return Conteúdo do campo nrProcJud
      */
     public String getNrProcJud() {
       return this.nrProcJud;
@@ -3204,7 +4827,7 @@ public class Tipos {
      * Informar o código do treinamento, capacitação, exercício simulado ou outra anotação, conforme
      * Tabela 28.
      *
-     * @return Valor do campo codTreiCap
+     * @return Conteúdo do campo codTreiCap
      */
     public Integer getCodTreiCap() {
       return this.codTreiCap;
@@ -3266,7 +4889,7 @@ public class Tipos {
     /**
      * Preencher com o número do CPF do trabalhador.
      *
-     * @return Valor do campo cpfTrab
+     * @return Conteúdo do campo cpfTrab
      */
     public String getCpfTrab() {
       return this.cpfTrab;
@@ -3287,7 +4910,7 @@ public class Tipos {
      * Matrícula atribuída ao trabalhador pela empresa ou, no caso de servidor público, a matrícula
      * constante no Sistema de Administração de Recursos Humanos do órgão.
      *
-     * @return Valor do campo matricula
+     * @return Conteúdo do campo matricula
      */
     public String getMatricula() {
       return this.matricula;
@@ -3354,7 +4977,7 @@ public class Tipos {
     /**
      * Preencher com o número do CPF do trabalhador.
      *
-     * @return Valor do campo cpfTrab
+     * @return Conteúdo do campo cpfTrab
      */
     public String getCpfTrab() {
       return this.cpfTrab;
@@ -3375,7 +4998,7 @@ public class Tipos {
      * Matrícula atribuída ao trabalhador pela empresa ou, no caso de servidor público, a matrícula
      * constante no Sistema de Administração de Recursos Humanos do órgão.
      *
-     * @return Valor do campo matricula
+     * @return Conteúdo do campo matricula
      */
     public String getMatricula() {
       return this.matricula;
@@ -3400,7 +5023,7 @@ public class Tipos {
     /**
      * Preencher com o código da categoria do trabalhador.
      *
-     * @return Valor do campo codCateg
+     * @return Conteúdo do campo codCateg
      */
     public Integer getCodCateg() {
       return this.codCateg;
@@ -3465,7 +5088,7 @@ public class Tipos {
     /**
      * Preencher com o número do CPF do trabalhador.
      *
-     * @return Valor do campo cpfTrab
+     * @return Conteúdo do campo cpfTrab
      */
     public String getCpfTrab() {
       return this.cpfTrab;
@@ -3485,7 +5108,7 @@ public class Tipos {
     /**
      * Matrícula atribuída ao trabalhador pela empresa.
      *
-     * @return Valor do campo matricula
+     * @return Conteúdo do campo matricula
      */
     public String getMatricula() {
       return this.matricula;
@@ -3509,7 +5132,7 @@ public class Tipos {
     /**
      * Preencher com o código da categoria do trabalhador.
      *
-     * @return Valor do campo codCateg
+     * @return Conteúdo do campo codCateg
      */
     public Integer getCodCateg() {
       return this.codCateg;
@@ -3566,7 +5189,7 @@ public class Tipos {
     /**
      * Indicador de contribuição substituída.
      *
-     * @return Valor do campo indSimples
+     * @return Conteúdo do campo indSimples
      */
     public String getIndSimples() {
       return this.indSimples;
@@ -3579,7 +5202,37 @@ public class Tipos {
      * @return O próprio T_infoSimples para continuar populando outros campos
      */
     public T_infoSimples<T> setIndSimples(String indSimples) {
+      if (!"1".equals(indSimples) && !"2".equals(indSimples) && !"3".equals(indSimples))
+        throw new RuntimeException(
+            "Valor " + String.valueOf(indSimples) + " inválido para o campo indSimples");
       this.indSimples = indSimples;
+      return this;
+    }
+    /**
+     * Contribuição substituída integralmente
+     *
+     * @return O próprio T_infoSimples para continuar populando outros campos
+     */
+    public T_infoSimples<T> setIndSimples_1() {
+      this.indSimples = "1";
+      return this;
+    }
+    /**
+     * Contribuição não substituída
+     *
+     * @return O próprio T_infoSimples para continuar populando outros campos
+     */
+    public T_infoSimples<T> setIndSimples_2() {
+      this.indSimples = "2";
+      return this;
+    }
+    /**
+     * Contribuição não substituída concomitante com contribuição substituída
+     *
+     * @return O próprio T_infoSimples para continuar populando outros campos
+     */
+    public T_infoSimples<T> setIndSimples_3() {
+      this.indSimples = "3";
       return this;
     }
 
@@ -3616,13 +5269,17 @@ public class Tipos {
     /** Indicador de desconto da contribuição previdenciária do trabalhador. */
     private String indMV;
 
-    /** Remuneração recebida pelo trabalhador em outras empresas ou atividades */
-    private RemunOutrEmpr remunOutrEmpr;
+    /**
+     * Remuneração recebida pelo trabalhador em outras empresas ou atividades
+     *
+     * <p>- Esse campo pode ser repetido até 999 vezes
+     */
+    private java.util.List<RemunOutrEmpr> remunOutrEmpr;
 
     /**
      * Indicador de desconto da contribuição previdenciária do trabalhador.
      *
-     * @return Valor do campo indMV
+     * @return Conteúdo do campo indMV
      */
     public String getIndMV() {
       return this.indMV;
@@ -3635,21 +5292,58 @@ public class Tipos {
      * @return O próprio T_infoMV para continuar populando outros campos
      */
     public T_infoMV<T> setIndMV(String indMV) {
+      if (!"1".equals(indMV) && !"2".equals(indMV) && !"3".equals(indMV))
+        throw new RuntimeException(
+            "Valor " + String.valueOf(indMV) + " inválido para o campo indMV");
       this.indMV = indMV;
+      return this;
+    }
+    /**
+     * O declarante aplica a(s) alíquota(s) de desconto do segurado sobre a remuneração por ele
+     * informada (o percentual da(s) alíquota(s) será(ão) obtido(s) considerando a remuneração total
+     * do trabalhador)
+     *
+     * @return O próprio T_infoMV para continuar populando outros campos
+     */
+    public T_infoMV<T> setIndMV_1() {
+      this.indMV = "1";
+      return this;
+    }
+    /**
+     * O declarante aplica a(s) alíquota(s) de desconto do segurado sobre a diferença entre o limite
+     * máximo do salário de contribuição e a remuneração de outra(s) empresa(s) para as quais o
+     * trabalhador informou que houve o desconto
+     *
+     * @return O próprio T_infoMV para continuar populando outros campos
+     */
+    public T_infoMV<T> setIndMV_2() {
+      this.indMV = "2";
+      return this;
+    }
+    /**
+     * O declarante não realiza desconto do segurado, uma vez que houve desconto sobre o limite
+     * máximo de salário de contribuição em outra(s) empresa(s)
+     *
+     * @return O próprio T_infoMV para continuar populando outros campos
+     */
+    public T_infoMV<T> setIndMV_3() {
+      this.indMV = "3";
       return this;
     }
 
     /**
      * Remuneração recebida pelo trabalhador em outras empresas ou atividades
      *
-     * @return Valor do campo remunOutrEmpr
+     * @return Conteúdo do campo remunOutrEmpr
      */
-    public RemunOutrEmpr getRemunOutrEmpr() {
+    public java.util.List<RemunOutrEmpr> getRemunOutrEmpr() {
       return this.remunOutrEmpr;
     }
 
     /**
      * Remuneração recebida pelo trabalhador em outras empresas ou atividades
+     *
+     * <p>- Esse campo pode ser repetido até 999 vezes
      *
      * <p>DESCRICAO_COMPLETA:Informações relativas ao trabalhador que possui vínculo empregatício
      * com outra(s) empresa(s) e/ou que exerce outras atividades como contribuinte individual,
@@ -3659,11 +5353,13 @@ public class Tipos {
      *
      * @return O objeto RemunOutrEmpr para população dos campos filhos
      */
-    public RemunOutrEmpr<T_infoMV<T>> setRemunOutrEmpr() {
+    public RemunOutrEmpr<T_infoMV<T>> setRemunOutrEmpr_Next() {
       if (this.remunOutrEmpr == null) {
-        this.remunOutrEmpr = new RemunOutrEmpr(this);
+        this.remunOutrEmpr = new java.util.ArrayList<>();
       }
-      return this.remunOutrEmpr;
+      RemunOutrEmpr toAdd = new RemunOutrEmpr(this);
+      this.remunOutrEmpr.add(toAdd);
+      return toAdd;
     }
 
     public T_infoMV(Object pai) {
@@ -3717,7 +5413,7 @@ public class Tipos {
       /**
        * Preencher com o código correspondente ao tipo de inscrição, conforme Tabela 05.
        *
-       * @return Valor do campo tpInsc
+       * @return Conteúdo do campo tpInsc
        */
       public String getTpInsc() {
         return this.tpInsc;
@@ -3730,7 +5426,28 @@ public class Tipos {
        * @return O próprio RemunOutrEmpr para continuar populando outros campos
        */
       public RemunOutrEmpr<T> setTpInsc(String tpInsc) {
+        if (!"1".equals(tpInsc) && !"2".equals(tpInsc))
+          throw new RuntimeException(
+              "Valor " + String.valueOf(tpInsc) + " inválido para o campo tpInsc");
         this.tpInsc = tpInsc;
+        return this;
+      }
+      /**
+       * CNPJ
+       *
+       * @return O próprio RemunOutrEmpr para continuar populando outros campos
+       */
+      public RemunOutrEmpr<T> setTpInsc_1() {
+        this.tpInsc = "1";
+        return this;
+      }
+      /**
+       * CPF
+       *
+       * @return O próprio RemunOutrEmpr para continuar populando outros campos
+       */
+      public RemunOutrEmpr<T> setTpInsc_2() {
+        this.tpInsc = "2";
         return this;
       }
 
@@ -3738,7 +5455,7 @@ public class Tipos {
        * Informar o número de inscrição do contribuinte de acordo com o tipo de inscrição indicado
        * no campo {remunOutrEmpr/tpInsc}(./tpInsc).
        *
-       * @return Valor do campo nrInsc
+       * @return Conteúdo do campo nrInsc
        */
       public String getNrInsc() {
         return this.nrInsc;
@@ -3767,7 +5484,7 @@ public class Tipos {
       /**
        * Preencher com o código da categoria do trabalhador na qual houve a remuneração.
        *
-       * @return Valor do campo codCateg
+       * @return Conteúdo do campo codCateg
        */
       public Integer getCodCateg() {
         return this.codCateg;
@@ -3790,7 +5507,7 @@ public class Tipos {
        * Preencher com o valor da remuneração recebida pelo trabalhador na outra empresa/atividade,
        * sobre a qual houve desconto/recolhimento da contribuição do segurado.
        *
-       * @return Valor do campo vlrRemunOE
+       * @return Conteúdo do campo vlrRemunOE
        */
       public Double getVlrRemunOE() {
         return this.vlrRemunOE;
@@ -3869,7 +5586,7 @@ public class Tipos {
     /**
      * Natureza do estágio.
      *
-     * @return Valor do campo natEstagio
+     * @return Conteúdo do campo natEstagio
      */
     public String getNatEstagio() {
       return this.natEstagio;
@@ -3882,14 +5599,35 @@ public class Tipos {
      * @return O próprio T_infoEstagiario para continuar populando outros campos
      */
     public T_infoEstagiario<T> setNatEstagio(String natEstagio) {
+      if (!"O".equals(natEstagio) && !"N".equals(natEstagio))
+        throw new RuntimeException(
+            "Valor " + String.valueOf(natEstagio) + " inválido para o campo natEstagio");
       this.natEstagio = natEstagio;
+      return this;
+    }
+    /**
+     * Obrigatório
+     *
+     * @return O próprio T_infoEstagiario para continuar populando outros campos
+     */
+    public T_infoEstagiario<T> setNatEstagio_O() {
+      this.natEstagio = "O";
+      return this;
+    }
+    /**
+     * Não obrigatório
+     *
+     * @return O próprio T_infoEstagiario para continuar populando outros campos
+     */
+    public T_infoEstagiario<T> setNatEstagio_N() {
+      this.natEstagio = "N";
       return this;
     }
 
     /**
      * Informar o nível do estágio.
      *
-     * @return Valor do campo nivEstagio
+     * @return Conteúdo do campo nivEstagio
      */
     public String getNivEstagio() {
       return this.nivEstagio;
@@ -3902,14 +5640,76 @@ public class Tipos {
      * @return O próprio T_infoEstagiario para continuar populando outros campos
      */
     public T_infoEstagiario<T> setNivEstagio(String nivEstagio) {
+      if (!"1".equals(nivEstagio)
+          && !"2".equals(nivEstagio)
+          && !"3".equals(nivEstagio)
+          && !"4".equals(nivEstagio)
+          && !"8".equals(nivEstagio)
+          && !"9".equals(nivEstagio))
+        throw new RuntimeException(
+            "Valor " + String.valueOf(nivEstagio) + " inválido para o campo nivEstagio");
       this.nivEstagio = nivEstagio;
+      return this;
+    }
+    /**
+     * Fundamental
+     *
+     * @return O próprio T_infoEstagiario para continuar populando outros campos
+     */
+    public T_infoEstagiario<T> setNivEstagio_1() {
+      this.nivEstagio = "1";
+      return this;
+    }
+    /**
+     * Médio
+     *
+     * @return O próprio T_infoEstagiario para continuar populando outros campos
+     */
+    public T_infoEstagiario<T> setNivEstagio_2() {
+      this.nivEstagio = "2";
+      return this;
+    }
+    /**
+     * Formação profissional
+     *
+     * @return O próprio T_infoEstagiario para continuar populando outros campos
+     */
+    public T_infoEstagiario<T> setNivEstagio_3() {
+      this.nivEstagio = "3";
+      return this;
+    }
+    /**
+     * Superior
+     *
+     * @return O próprio T_infoEstagiario para continuar populando outros campos
+     */
+    public T_infoEstagiario<T> setNivEstagio_4() {
+      this.nivEstagio = "4";
+      return this;
+    }
+    /**
+     * Especial
+     *
+     * @return O próprio T_infoEstagiario para continuar populando outros campos
+     */
+    public T_infoEstagiario<T> setNivEstagio_8() {
+      this.nivEstagio = "8";
+      return this;
+    }
+    /**
+     * Mãe social (Lei 7.644/1987)
+     *
+     * @return O próprio T_infoEstagiario para continuar populando outros campos
+     */
+    public T_infoEstagiario<T> setNivEstagio_9() {
+      this.nivEstagio = "9";
       return this;
     }
 
     /**
      * Área de atuação do estagiário.
      *
-     * @return Valor do campo areaAtuacao
+     * @return Conteúdo do campo areaAtuacao
      */
     public String getAreaAtuacao() {
       return this.areaAtuacao;
@@ -3929,7 +5729,7 @@ public class Tipos {
     /**
      * Número da apólice de seguro.
      *
-     * @return Valor do campo nrApol
+     * @return Conteúdo do campo nrApol
      */
     public String getNrApol() {
       return this.nrApol;
@@ -3949,7 +5749,7 @@ public class Tipos {
     /**
      * Data prevista para o término do estágio.
      *
-     * @return Valor do campo dtPrevTerm
+     * @return Conteúdo do campo dtPrevTerm
      */
     public javax.xml.datatype.XMLGregorianCalendar getDtPrevTerm() {
       return this.dtPrevTerm;
@@ -3971,7 +5771,7 @@ public class Tipos {
     /**
      * Instituição de ensino.
      *
-     * @return Valor do campo instEnsino
+     * @return Conteúdo do campo instEnsino
      */
     public InstEnsino getInstEnsino() {
       return this.instEnsino;
@@ -3992,7 +5792,7 @@ public class Tipos {
     /**
      * Agente de integração.
      *
-     * @return Valor do campo ageIntegracao
+     * @return Conteúdo do campo ageIntegracao
      */
     public AgeIntegracao getAgeIntegracao() {
       return this.ageIntegracao;
@@ -4015,7 +5815,7 @@ public class Tipos {
     /**
      * Supervisor do estágio.
      *
-     * @return Valor do campo supervisorEstagio
+     * @return Conteúdo do campo supervisorEstagio
      */
     public SupervisorEstagio getSupervisorEstagio() {
       return this.supervisorEstagio;
@@ -4100,7 +5900,7 @@ public class Tipos {
        * Preencher com o CNPJ da instituição de ensino. Deve ser preenchido apenas se a instituição
        * de ensino for brasileira.
        *
-       * @return Valor do campo cnpjInstEnsino
+       * @return Conteúdo do campo cnpjInstEnsino
        */
       public String getCnpjInstEnsino() {
         return this.cnpjInstEnsino;
@@ -4123,7 +5923,7 @@ public class Tipos {
       /**
        * Informar a razão social.
        *
-       * @return Valor do campo nmRazao
+       * @return Conteúdo do campo nmRazao
        */
       public String getNmRazao() {
         return this.nmRazao;
@@ -4146,7 +5946,7 @@ public class Tipos {
       /**
        * Descrição do logradouro.
        *
-       * @return Valor do campo dscLograd
+       * @return Conteúdo do campo dscLograd
        */
       public String getDscLograd() {
         return this.dscLograd;
@@ -4169,7 +5969,7 @@ public class Tipos {
       /**
        * Número do logradouro.
        *
-       * @return Valor do campo nrLograd
+       * @return Conteúdo do campo nrLograd
        */
       public String getNrLograd() {
         return this.nrLograd;
@@ -4194,7 +5994,7 @@ public class Tipos {
       /**
        * Nome do bairro/distrito.
        *
-       * @return Valor do campo bairro
+       * @return Conteúdo do campo bairro
        */
       public String getBairro() {
         return this.bairro;
@@ -4217,7 +6017,7 @@ public class Tipos {
       /**
        * Código de Endereçamento Postal - CEP.
        *
-       * @return Valor do campo cep
+       * @return Conteúdo do campo cep
        */
       public String getCep() {
         return this.cep;
@@ -4240,7 +6040,7 @@ public class Tipos {
       /**
        * Preencher com o código do município, conforme tabela do IBGE.
        *
-       * @return Valor do campo codMunic
+       * @return Conteúdo do campo codMunic
        */
       public Integer getCodMunic() {
         return this.codMunic;
@@ -4263,7 +6063,7 @@ public class Tipos {
       /**
        * Preencher com a sigla da Unidade da Federação - UF.
        *
-       * @return Valor do campo uf
+       * @return Conteúdo do campo uf
        */
       public String getUf() {
         return this.uf;
@@ -4279,7 +6079,170 @@ public class Tipos {
        * @return O próprio InstEnsino para continuar populando outros campos
        */
       public InstEnsino<T> setUf(String uf) {
+        if (!"AC".equals(uf)
+            && !"AL".equals(uf)
+            && !"AP".equals(uf)
+            && !"AM".equals(uf)
+            && !"BA".equals(uf)
+            && !"CE".equals(uf)
+            && !"DF".equals(uf)
+            && !"ES".equals(uf)
+            && !"GO".equals(uf)
+            && !"MA".equals(uf)
+            && !"MT".equals(uf)
+            && !"MS".equals(uf)
+            && !"MG".equals(uf)
+            && !"PA".equals(uf)
+            && !"PB".equals(uf)
+            && !"PR".equals(uf)
+            && !"PE".equals(uf)
+            && !"PI".equals(uf)
+            && !"RJ".equals(uf)
+            && !"RN".equals(uf)
+            && !"RS".equals(uf)
+            && !"RO".equals(uf)
+            && !"RR".equals(uf)
+            && !"SC".equals(uf)
+            && !"SP".equals(uf)
+            && !"SE".equals(uf)
+            && !"TO".equals(uf))
+          throw new RuntimeException("Valor " + String.valueOf(uf) + " inválido para o campo uf");
         this.uf = uf;
+        return this;
+      }
+
+      public InstEnsino<T> setUf_AC() {
+        this.uf = "AC";
+        return this;
+      }
+
+      public InstEnsino<T> setUf_AL() {
+        this.uf = "AL";
+        return this;
+      }
+
+      public InstEnsino<T> setUf_AP() {
+        this.uf = "AP";
+        return this;
+      }
+
+      public InstEnsino<T> setUf_AM() {
+        this.uf = "AM";
+        return this;
+      }
+
+      public InstEnsino<T> setUf_BA() {
+        this.uf = "BA";
+        return this;
+      }
+
+      public InstEnsino<T> setUf_CE() {
+        this.uf = "CE";
+        return this;
+      }
+
+      public InstEnsino<T> setUf_DF() {
+        this.uf = "DF";
+        return this;
+      }
+
+      public InstEnsino<T> setUf_ES() {
+        this.uf = "ES";
+        return this;
+      }
+
+      public InstEnsino<T> setUf_GO() {
+        this.uf = "GO";
+        return this;
+      }
+
+      public InstEnsino<T> setUf_MA() {
+        this.uf = "MA";
+        return this;
+      }
+
+      public InstEnsino<T> setUf_MT() {
+        this.uf = "MT";
+        return this;
+      }
+
+      public InstEnsino<T> setUf_MS() {
+        this.uf = "MS";
+        return this;
+      }
+
+      public InstEnsino<T> setUf_MG() {
+        this.uf = "MG";
+        return this;
+      }
+
+      public InstEnsino<T> setUf_PA() {
+        this.uf = "PA";
+        return this;
+      }
+
+      public InstEnsino<T> setUf_PB() {
+        this.uf = "PB";
+        return this;
+      }
+
+      public InstEnsino<T> setUf_PR() {
+        this.uf = "PR";
+        return this;
+      }
+
+      public InstEnsino<T> setUf_PE() {
+        this.uf = "PE";
+        return this;
+      }
+
+      public InstEnsino<T> setUf_PI() {
+        this.uf = "PI";
+        return this;
+      }
+
+      public InstEnsino<T> setUf_RJ() {
+        this.uf = "RJ";
+        return this;
+      }
+
+      public InstEnsino<T> setUf_RN() {
+        this.uf = "RN";
+        return this;
+      }
+
+      public InstEnsino<T> setUf_RS() {
+        this.uf = "RS";
+        return this;
+      }
+
+      public InstEnsino<T> setUf_RO() {
+        this.uf = "RO";
+        return this;
+      }
+
+      public InstEnsino<T> setUf_RR() {
+        this.uf = "RR";
+        return this;
+      }
+
+      public InstEnsino<T> setUf_SC() {
+        this.uf = "SC";
+        return this;
+      }
+
+      public InstEnsino<T> setUf_SP() {
+        this.uf = "SP";
+        return this;
+      }
+
+      public InstEnsino<T> setUf_SE() {
+        this.uf = "SE";
+        return this;
+      }
+
+      public InstEnsino<T> setUf_TO() {
+        this.uf = "TO";
         return this;
       }
 
@@ -4318,7 +6281,7 @@ public class Tipos {
       /**
        * CNPJ do agente de integração.
        *
-       * @return Valor do campo cnpjAgntInteg
+       * @return Conteúdo do campo cnpjAgntInteg
        */
       public String getCnpjAgntInteg() {
         return this.cnpjAgntInteg;
@@ -4372,7 +6335,7 @@ public class Tipos {
       /**
        * CPF do responsável pela supervisão do estagiário.
        *
-       * @return Valor do campo cpfSupervisor
+       * @return Conteúdo do campo cpfSupervisor
        */
       public String getCpfSupervisor() {
         return this.cpfSupervisor;
@@ -4431,7 +6394,7 @@ public class Tipos {
     /**
      * Informar o CPF do beneficiário.
      *
-     * @return Valor do campo cpfBenef
+     * @return Conteúdo do campo cpfBenef
      */
     public String getCpfBenef() {
       return this.cpfBenef;
@@ -4451,7 +6414,7 @@ public class Tipos {
     /**
      * Número do benefício.
      *
-     * @return Valor do campo nrBeneficio
+     * @return Conteúdo do campo nrBeneficio
      */
     public String getNrBeneficio() {
       return this.nrBeneficio;
@@ -4516,7 +6479,7 @@ public class Tipos {
     /**
      * Preencher com o código correspondente ao tipo de inscrição, conforme Tabela 05.
      *
-     * @return Valor do campo tpInsc
+     * @return Conteúdo do campo tpInsc
      */
     public String getTpInsc() {
       return this.tpInsc;
@@ -4529,7 +6492,28 @@ public class Tipos {
      * @return O próprio T_sucessaoVinc para continuar populando outros campos
      */
     public T_sucessaoVinc<T> setTpInsc(String tpInsc) {
+      if (!"1".equals(tpInsc) && !"2".equals(tpInsc))
+        throw new RuntimeException(
+            "Valor " + String.valueOf(tpInsc) + " inválido para o campo tpInsc");
       this.tpInsc = tpInsc;
+      return this;
+    }
+    /**
+     * CNPJ
+     *
+     * @return O próprio T_sucessaoVinc para continuar populando outros campos
+     */
+    public T_sucessaoVinc<T> setTpInsc_1() {
+      this.tpInsc = "1";
+      return this;
+    }
+    /**
+     * CPF
+     *
+     * @return O próprio T_sucessaoVinc para continuar populando outros campos
+     */
+    public T_sucessaoVinc<T> setTpInsc_2() {
+      this.tpInsc = "2";
       return this;
     }
 
@@ -4537,7 +6521,7 @@ public class Tipos {
      * Informar o número de inscrição do empregador anterior, de acordo com o tipo de inscrição
      * indicado no campo {sucessaoVinc/tpInsc}(./tpInsc).
      *
-     * @return Valor do campo nrInsc
+     * @return Conteúdo do campo nrInsc
      */
     public String getNrInsc() {
       return this.nrInsc;
@@ -4558,7 +6542,7 @@ public class Tipos {
     /**
      * Matrícula do trabalhador no empregador anterior.
      *
-     * @return Valor do campo matricAnt
+     * @return Conteúdo do campo matricAnt
      */
     public String getMatricAnt() {
       return this.matricAnt;
@@ -4579,7 +6563,7 @@ public class Tipos {
      * Preencher com a data de admissão do trabalhador. No caso de transferência do empregado, deve
      * ser preenchida a data inicial do vínculo no primeiro empregador (data de início do vínculo).
      *
-     * @return Valor do campo dtAdm
+     * @return Conteúdo do campo dtAdm
      */
     public javax.xml.datatype.XMLGregorianCalendar getDtAdm() {
       return this.dtAdm;

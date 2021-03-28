@@ -21,12 +21,18 @@ public final class ElementNode extends SchemaNode{
   
   public ElementNode(Node node) {
     super(node);
+    // Se é a assinatura, ignora esse campo
+    if("ds:Signature".equals(getThisAttrValue("ref"))){
+      return;
+    }
     attributedField = Main.ctx.startField();
     attributedField.name = getThisAttrValue("name");
     attributedField.setType(getThisAttrValue("type"));
-    if("ds:Signature".equals(getThisAttrValue("ref"))){
-      attributedField.name = "signature";
-      attributedField.setType("Signature");
+    String maxOccurs = getThisAttrValue("maxOccurs");
+    if(maxOccurs != null) {
+      attributedField.isList = true;
+      if(maxOccurs.equals("unbounded")) maxOccurs = "-1";
+      attributedField.maxOccurs = Integer.parseInt(maxOccurs);
     }
     traverse();
     finish();
@@ -34,7 +40,7 @@ public final class ElementNode extends SchemaNode{
 
   @Override
   public void traverse() {
-    while(nextNode()) {
+    while(nextChildNode()) {
       switch(getCurrentChildName()){
         case "annotation": 
           attributedField.javadoc = new TemplatesJavadoc(new JavadocNode(currentChild));
@@ -47,6 +53,7 @@ public final class ElementNode extends SchemaNode{
         case "simpleType": 
           SimpleTypeNode simpleTypeNode = new SimpleTypeNode(currentChild, attributedField);
           attributedField.setType(simpleTypeNode.attributedSimpleType.correspondingType);
+          attributedField.setResolvedSimpleType(simpleTypeNode.attributedSimpleType);
           break;
       }
     }
@@ -56,6 +63,4 @@ public final class ElementNode extends SchemaNode{
   public void finish() {
     Main.ctx.finishField();
   }
-
-  
 }

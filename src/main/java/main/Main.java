@@ -5,18 +5,14 @@
  */
 package main;
 
-import com.google.googlejavaformat.java.Formatter;
-import esocial.v1_0.Evento_InfoEmpregador;
-import esocial.v1_0.Teste;
 import java.io.File;
-import java.io.StringWriter;
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.Marshaller;
+import java.util.Collection;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathExpression;
 import javax.xml.xpath.XPathFactory;
+import org.apache.commons.io.FileUtils;
 import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
 import org.w3c.dom.Node;
@@ -36,92 +32,75 @@ public class Main {
     public static Context ctx;
   
     public static void main(String[] args){
-
-      File out = new File("src/main/java/esocial/v1_0");
+      
+      String in = "schemas";
+      String out = "src/main/java/esocial";
       try {
         
-        
-        Evento_InfoEmpregador event = new esocial.v1_0.Evento_InfoEmpregador();
-        event.setEvtInfoEmpregador()
-                .setIdeEmpregador()
-                  .setNrInsc("312412341")
-                  .setTpInsc("12")
-                .finish()
-                .setIdeEvento()
-                  .setProcEmi("1233asfsadfiusdfiad76f8a")
-                  .setTpAmb("555")
-                  .setVerProc("1.0.0")
-                .finish()
-                .setInfoEmpregador()
-                  .setInclusao()
-                    .setIdePeriodo()
-                      .setIniValid("2021-03")
-                    .finish()
-                    .setInfoCadastro()
-                      .setDadosIsencao()
-                        .setPagDou(3)
-                      .finish() // A chamada dos finish() finais é opcional
-                    .finish()
-                  .finish()
-                .finish()
-              .finish();
-        
-        System.out.println(event.getEvtInfoEmpregador().getInfoEmpregador().getInclusao().getIdePeriodo().getIniValid());
-//        
-//        JAXBContext jaxbContext = JAXBContext.newInstance(esocial.v1_0.Evento_InfoEmpregador.class);
-//        Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
-//
-//        // output pretty printed
-//        jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-//        StringWriter sw = new StringWriter();
-//        
-//        jaxbMarshaller.marshal(event, sw);
-//        String xmlString = sw.toString();
-//        
-//        System.out.println(xmlString);
-        //if(1==1) return;
-        
-        Context globalTypesContext = loadGlobalTypes();
-        
-        //System.out.println(new Formatter().formatSource(globalTypesContext.getRootClass().toString()));
-        globalTypesContext.writeToDir(out);
-        System.out.println("---------------------------------------------------------------------");
-        System.out.println("------> Lendo arquivo do evento InfoEmpregador");
-        Document doc = readXsd(new File("schemas/1_0/evtInfoEmpregador.xsd"));
-        
-        System.out.println("------> Parseando evento InfoEmpregador");
-        ctx = new Context(new TemplatesClass("InfoEmpregador"));
-        ctx.importTypesFrom(globalTypesContext);
-        NodeList childNodes = doc.getDocumentElement().getChildNodes();
-        for(int i = 0; i < childNodes.getLength(); i++){
-          Node item = childNodes.item(i);
-          switch(SchemaNode.getNodeName(item)) {
-            case "element": 
-              new ElementNode(item);
-              break;
-            case "complexType": 
-              new ComplexTypeNode(item);
-              break;
-            case "simpleType": 
-              new SimpleTypeNode(item);
-              break;
-          }
-        }
-        ctx.finishResolvingAllTypes();
-        ctx.transformESocialSubClassToRoot();
-        System.out.println("------> Finalizando evento InfoEmpregador");
-        System.out.println("------> Formatando código java final");
-        ctx.writeToDir(out);
+        final String[] SUFFIX = {"xsd"};  // use the suffix to filter
 
+        Collection<File> files = FileUtils.listFiles(new File(in), SUFFIX, true);
+        if(files.isEmpty()) {
+          throw new RuntimeException("Nenhum arquivo xsd encontrado no caminho especificado");
+        }
+        String versaoAtual = null;
+        Context currentGlobalTypesContext = null;
+        for(File f : files) {
+          String path = f.toString();
+          path = path.replace("\\", "/");
+          String[] splitted = path.split("/");
+          String version = splitted[splitted.length - 2];
+          String fileName = splitted[splitted.length - 1];
+          fileName = fileName.split("[.]")[0];
+          if(!fileName.startsWith("evt")) {
+            continue;
+          }
+          
+          if(!version.equals(versaoAtual)) {
+            versaoAtual = version;
+            System.out.println("---------------------------------------------------------------------");
+            System.out.println("------> Iniciando versão "+ versaoAtual);
+            System.out.println("------> Criando classe de Tipos da versão "+ versaoAtual);
+            currentGlobalTypesContext = loadGlobalTypes(new File(in + "/" + versaoAtual + "/tipos.xsd"));
+            currentGlobalTypesContext.writeToDir(new File(out + "/" + versaoAtual));
+          }
+          String evento = fileName.replaceFirst("evt", "");
+          evento = evento.substring(0, 1).toUpperCase() + evento.substring(1);
+          System.out.println("------> Parseando evento " + evento);
+          ctx = new Context(new TemplatesClass(evento));
+          ctx.importTypesFrom(currentGlobalTypesContext);
+          Document doc = readXsd(new File(path));
+          NodeList childNodes = doc.getDocumentElement().getChildNodes();
+          for(int i = 0; i < childNodes.getLength(); i++){
+            Node item = childNodes.item(i);
+            switch(SchemaNode.getNodeName(item)) {
+              case "element": 
+                new ElementNode(item);
+                break;
+              case "complexType": 
+                new ComplexTypeNode(item);
+                break;
+              case "simpleType": 
+                new SimpleTypeNode(item);
+                break;
+            }
+          }
+          ctx.finishResolvingAllTypes();
+          ctx.transformESocialSubClassToRoot();
+          System.out.println("------> Identando e escrevendo evento " + evento);
+          ctx.writeToDir(new File(out + "/" + versaoAtual));
+          System.out.println("<<<<<");
+          //return;
+        }
        } catch (Exception e) {
           e.printStackTrace();
        }
     }
     
-    public static Context loadGlobalTypes() throws Exception{
+    public static Context loadGlobalTypes(File from) throws Exception{
       
       System.out.println("------> Lendo arquivo de tipos globais");
-      Document doc = readXsd(new File("schemas/1_0/tipos.xsd"));
+      Document doc = readXsd(from);
       System.out.println("------> Parseando tipos globais");
       ctx = new Context(new TemplatesClass("Tipos"));
       NodeList childNodes = doc.getDocumentElement().getChildNodes();

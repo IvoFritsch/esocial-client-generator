@@ -26,8 +26,10 @@ public final class RestrictionNode extends SchemaNode {
 
   @Override
   public void traverse() {
-    while(nextNode()){
+    while(nextChildNode()){
       switch(getCurrentChildName()){
+        case "enumeration":
+          new EnumerationNode(currentChild);
       }
     }
   }

@@ -1,4 +1,4 @@
 <#if javadoc??>
-    ${javadoc.onlyTitle}
+    ${javadoc.onlyTitle.isList(isList, maxOccurs)}
 </#if>
-private ${fullType} ${name};
+private ${fullTypeWithList} ${name};

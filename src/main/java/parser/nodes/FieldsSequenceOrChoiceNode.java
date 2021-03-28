@@ -25,7 +25,7 @@ public final class FieldsSequenceOrChoiceNode extends SchemaNode {
 
   @Override
   public void traverse() {
-    while(nextNode()){
+    while(nextChildNode()){
       switch(getCurrentChildName()){
         case "element": 
           new ElementNode(currentChild);

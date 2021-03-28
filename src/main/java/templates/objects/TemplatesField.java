@@ -5,6 +5,8 @@
  */
 package templates.objects;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import main.Main;
 import main.Utils;
@@ -23,6 +25,10 @@ public class TemplatesField {
   private String type;
   private boolean isClassType;
   private TemplatesClass resolvedClassType;
+  private TemplatesSimpleType resolvedSimpleType;
+  
+  public boolean isList;
+  public int maxOccurs;
   public boolean isDate = false;
   
 
@@ -57,10 +63,45 @@ public class TemplatesField {
     }
   }
 
+  public boolean isIsList() {
+    return isList;
+  }
+
+  public int getMaxOccurs() {
+    return maxOccurs;
+  }
   
   public String getFullType() {
     if(Utils.isResolvedType(type) || Main.ctx.classIsFromCurrentContext(type)) return type;
-    return "Tipos." + type;
+    
+    String ret = "Tipos." + type;
+    return ret;
+  }
+
+  public void setResolvedSimpleType(TemplatesSimpleType resolvedSimpleType) {
+    this.resolvedSimpleType = resolvedSimpleType;
+  }
+  
+  public boolean isIsEnumeration(){
+    if(resolvedSimpleType == null) return false;
+    return resolvedSimpleType.isEnumeration;
+  }
+  
+  public List<TemplatesEnumeration> getEnumerations(){
+    if(resolvedSimpleType == null) return new ArrayList<>();
+    return resolvedSimpleType.enums;
+  }
+  
+  public String getFullTypeWithList() {
+    String ret = null;
+    if(Utils.isResolvedType(type) || Main.ctx.classIsFromCurrentContext(type)) ret = type;
+    if(ret == null) {
+      ret = "Tipos." + type;
+    }
+    if(isList) {
+      ret = "java.util.List<" + ret + ">";
+    }
+    return ret;
   }
   
   public String getBuilderFunctionReturnType() {
@@ -87,6 +128,7 @@ public class TemplatesField {
     TemplatesSimpleType resolved = Main.ctx.getSimpleTypeFromCatalog(type);
     //System.out.println(name + "  " + type);
     if(resolved != null) {
+      resolvedSimpleType = resolved;
       // Caso esse field não tem javadoc, copia o javadoc do simpleType correspondente
       if(this.javadoc == null){
         this.javadoc = resolved.javadoc;
