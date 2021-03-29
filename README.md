@@ -14,9 +14,10 @@ Exemplo de código cliente utilizando a API gerada:
 Exemplo de classe gerada pelo sistema: [Evento_InfoEmpregador](src/main/java/esocial/v1_0/Evento_InfoEmpregador.java)
 
 TODO: 
-  - Assinatura digital automática com base em um certificado A1
-  - Suporte a itens com repetição (List<>)
-  - Geração de enums
+  - ⏩ Assinatura digital automática com base em um certificado A1
+  - ✔ Suporte a itens com repetição (List<>)
+  - ✔ Geração de enums
+  - ✔ Geração da documentação completa
   - API cliente para envio das requisições http para o E-social
 
 Copyright © [Haftware SI](https://haftware.com.br/) e [Elum Digital Think V2](https://www.linkedin.com/company/elum-digital-think/about/)
